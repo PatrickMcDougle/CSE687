@@ -18,5 +18,16 @@
     <ClCompile Include="CSE687_TestHarness_PM.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LogData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ILogData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LogData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

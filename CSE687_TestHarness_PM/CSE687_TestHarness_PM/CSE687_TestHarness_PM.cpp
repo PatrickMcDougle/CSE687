@@ -2,10 +2,31 @@
 //
 
 #include <iostream>
+#include "ILogData.h"
+#include "LogData.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
+
+    string string1("message one");
+    string string2("message two");
+    string string3( "message three");
+
+    logger::data::ILogData* logData1 = new logger::data::LogData(true, string1);
+    logger::data::ILogData* logData2 = new logger::data::LogData(false, string2);
+    logger::data::ILogData* logData3 = new logger::data::LogData(true, string3);
+    logger::data::ILogData* logData4 = new logger::data::LogData(true, "Look At Me Mom!");
+
+    cout << "1 | " << logData1->getDateTime() << " | " << logData1->isPassed() << " | " << logData1->getMessage() << endl;
+    cout << "2 | " << logData2->getDateTime() << " | " << logData2->isPassed() << " | " << logData2->getMessage() << endl;
+    cout << "3 | " << logData3->getDateTime() << " | " << logData3->isPassed() << " | " << logData3->getMessage() << endl;
+    cout << "4 | " << logData4->getDateTime() << " | " << logData4->isPassed() << " | " << logData4->getMessage() << endl;
+
+    cout << "1 | " << *logData1 << endl;
+    cout << "2 | " << *logData2 << endl;
+    cout << "3 | " << *logData3 << endl;
+    cout << "4 | " << *logData4 << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
