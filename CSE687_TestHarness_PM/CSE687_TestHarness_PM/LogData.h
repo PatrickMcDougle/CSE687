@@ -20,13 +20,9 @@ namespace logger::data {
 		bool _passed;
 		string _message;
 		time_t _timestamp;
-
 	};
 
 	ostream& operator<<(ostream& out, ILogData& logData);
 }
-
-
-
 
 #endif // !__LOG_DATA_H__

@@ -12,8 +12,6 @@ namespace logger::data {
 		virtual bool isPassed() = 0;
 		virtual string getMessage() = 0;
 		virtual string getDateTime() = 0;
-		//virtual ~ILogData() = 0; // Not Needed ???
-
 	};
 }
 

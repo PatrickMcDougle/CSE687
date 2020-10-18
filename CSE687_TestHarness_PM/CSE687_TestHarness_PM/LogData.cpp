@@ -36,12 +36,6 @@ logger::data::LogData::LogData(bool passed, const string& message) : _passed(pas
 	time(&_timestamp);
 }
 
-//ostream& logger::data::LogData::operator<<(ostream& out)
-//{
-//	out << this->getDateTime() << " | " << this->isPassed() << " | " << this->getMessage();
-//	return out;
-//}
-
 ostream& logger::data::operator<<(ostream& out, ILogData& logData)
 {
 	out << logData.getDateTime();
