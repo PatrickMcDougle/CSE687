@@ -44,6 +44,17 @@ int main()
 	cout << "Decorate 2: " << logTimestampDec.logInfo(*logData2) << endl;
 	cout << "Decorate 3: " << logTimestampDec.logInfo(*logData3) << endl;
 	cout << "Decorate 4: " << logTimestampDec.logInfo(*logData4) << endl;
+
+
+	logger::LogMessage logMessage2;
+	logger::LogTimestampDecorator logTimestampDec2(&logMessage2);
+	logger::LogStatusDecorator logStatusDec2(&logTimestampDec2);
+	logger::LogMessageDecorator logMessageDec2(&logStatusDec2);
+
+	cout << "Decorate 1: " << logMessageDec2.logInfo(*logData1) << endl;
+	cout << "Decorate 2: " << logMessageDec2.logInfo(*logData2) << endl;
+	cout << "Decorate 3: " << logMessageDec2.logInfo(*logData3) << endl;
+	cout << "Decorate 4: " << logMessageDec2.logInfo(*logData4) << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
