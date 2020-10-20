@@ -4,11 +4,12 @@
 
 #include <string>
 
-using namespace std;
+using std::string;
 
 namespace logger::data {
 	class ILogData {
 	public:
+		virtual ~ILogData() {}
 		virtual bool isPassed() = 0;
 		virtual string getMessage() = 0;
 		virtual string getDateTime() = 0;

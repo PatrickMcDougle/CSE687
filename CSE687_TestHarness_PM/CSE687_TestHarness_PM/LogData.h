@@ -2,14 +2,19 @@
 #ifndef __LOG_DATA_H__
 #define __LOG_DATA_H__
 
+#include <iostream>
 #include <string>
 #include "ILogData.h"
 
-using namespace std;
+using std::string;
+using std::ostream;
+using std::cout;
+using std::endl;
 
 namespace logger::data {
 	class LogData : public ILogData {
 	public:
+		virtual ~LogData() {}
 		virtual bool isPassed();
 		virtual string getMessage();
 		virtual string getDateTime();
@@ -17,9 +22,9 @@ namespace logger::data {
 		LogData(bool, const string&);
 
 	private:
-		bool _passed;
-		string _message;
-		time_t _timestamp;
+		bool passed_;
+		string message_;
+		time_t timestamp_;
 	};
 
 	ostream& operator<<(ostream& out, ILogData& logData);

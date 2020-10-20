@@ -1,22 +1,22 @@
-#include "LogData.h"
-#include <time.h>
 #include <iostream>
+#include <time.h>
+#include "LogData.h"
 
 bool logger::data::LogData::isPassed()
 {
-	return _passed;
+	return passed_;
 }
 
 string logger::data::LogData::getMessage()
 {
-	return _message;
+	return message_;
 }
 
 string logger::data::LogData::getDateTime()
 {
 	char buffer[80];
 
-	ctime_s(buffer, sizeof(buffer), &_timestamp);
+	ctime_s(buffer, sizeof(buffer), &timestamp_);
 	string timestring(buffer);
 	return timestring.substr(0, timestring.length() - 1); // remove the \n from string and return the rest.
 
@@ -31,9 +31,9 @@ string logger::data::LogData::getDateTime()
 	//return to_string( _timestamp);  // just return a number value.
 }
 
-logger::data::LogData::LogData(bool passed, const string& message) : _passed(passed), _message(message)
+logger::data::LogData::LogData(bool passed, const string& message) : passed_(passed), message_(message)
 {
-	time(&_timestamp);
+	time(&timestamp_);
 }
 
 ostream& logger::data::operator<<(ostream& out, ILogData& logData)

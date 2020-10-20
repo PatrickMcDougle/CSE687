@@ -4,10 +4,15 @@
 #include <iostream>
 #include "ILogData.h"
 #include "LogData.h"
+#include "LogMessage.h"
+#include "LogMessageDecorator.h"
+#include "LogStatusDecorator.h"
+#include "LogTimestampDecorator.h"
+
 
 int main()
 {
-	std::cout << "Hello World!\n";
+	cout << "Hello World!\n";
 
 	string string1("message one");
 	string string2("message two");
@@ -27,6 +32,18 @@ int main()
 	cout << "2 | " << *logData2 << endl;
 	cout << "3 | " << *logData3 << endl;
 	cout << "4 | " << *logData4 << endl;
+
+	// ===== LOG MESSAGE STUFF ===== //
+
+	logger::LogMessage logMessage;
+	logger::LogStatusDecorator logStatusDec(&logMessage);
+	logger::LogMessageDecorator logMessageDec(&logStatusDec);
+	logger::LogTimestampDecorator logTimestampDec(&logMessageDec);
+
+	cout << "Decorate 1: " << logTimestampDec.logInfo(*logData1) << endl;
+	cout << "Decorate 2: " << logTimestampDec.logInfo(*logData2) << endl;
+	cout << "Decorate 3: " << logTimestampDec.logInfo(*logData3) << endl;
+	cout << "Decorate 4: " << logTimestampDec.logInfo(*logData4) << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
