@@ -8,6 +8,7 @@
 #include "LogMessageDecorator.h"
 #include "LogStatusDecorator.h"
 #include "LogTimestampDecorator.h"
+#include "LoggerFactory.h"
 
 
 int main()
@@ -55,6 +56,11 @@ int main()
 	cout << "Decorate 2: " << logMessageDec2.logInfo(*logData2) << endl;
 	cout << "Decorate 3: " << logMessageDec2.logInfo(*logData3) << endl;
 	cout << "Decorate 4: " << logMessageDec2.logInfo(*logData4) << endl;
+
+	logger::LoggerFactory log_factory;
+	logger::ILogger* logger = log_factory.create(1, 2, 3);
+
+	cout << "LogFactory 1: " << logger->logInfo(true, "message one");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

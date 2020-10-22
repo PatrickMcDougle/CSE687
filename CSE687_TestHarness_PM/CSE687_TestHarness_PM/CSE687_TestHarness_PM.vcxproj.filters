@@ -48,6 +48,12 @@
     <ClCompile Include="LogMessage.cpp">
       <Filter>Source Files\logger</Filter>
     </ClCompile>
+    <ClCompile Include="MyLogger.cpp">
+      <Filter>Source Files\logger</Filter>
+    </ClCompile>
+    <ClCompile Include="LoggerFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ILogData.h">
@@ -73,6 +79,15 @@
     </ClInclude>
     <ClInclude Include="LogMessage.h">
       <Filter>Header Files\logger</Filter>
+    </ClInclude>
+    <ClInclude Include="ILogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyLogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoggerFactory.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

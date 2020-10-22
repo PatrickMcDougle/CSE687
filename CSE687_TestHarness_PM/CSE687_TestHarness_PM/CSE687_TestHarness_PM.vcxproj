@@ -143,20 +143,25 @@
     <ClCompile Include="ALogDecorator.cpp" />
     <ClCompile Include="CSE687_TestHarness_PM.cpp" />
     <ClCompile Include="LogData.cpp" />
+    <ClCompile Include="LoggerFactory.cpp" />
     <ClCompile Include="LogMessage.cpp" />
     <ClCompile Include="LogMessageDecorator.cpp" />
     <ClCompile Include="LogStatusDecorator.cpp" />
     <ClCompile Include="LogTimestampDecorator.cpp" />
+    <ClCompile Include="MyLogger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ALogDecorator.h" />
     <ClInclude Include="ILogComponent.h" />
     <ClInclude Include="ILogData.h" />
+    <ClInclude Include="ILogger.h" />
     <ClInclude Include="LogData.h" />
+    <ClInclude Include="LoggerFactory.h" />
     <ClInclude Include="LogMessage.h" />
     <ClInclude Include="LogMessageDecorator.h" />
     <ClInclude Include="LogStatusDecorator.h" />
     <ClInclude Include="LogTimestampDecorator.h" />
+    <ClInclude Include="MyLogger.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
