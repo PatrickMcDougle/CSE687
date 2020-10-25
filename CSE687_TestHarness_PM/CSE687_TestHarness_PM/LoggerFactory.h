@@ -20,8 +20,8 @@ namespace logger {
 		 * Order value of 0 (zero) will setup up logger to NOT use that part.
 		 * Order determins the order to print.
 		 */
-		ILogger*	create(
-			int test_pass_result_order,
+		ILogger* create(
+			int test_pass_result_order = 1,
 			int test_message_order = 0,
 			int test_timestamp_order = 0
 		);

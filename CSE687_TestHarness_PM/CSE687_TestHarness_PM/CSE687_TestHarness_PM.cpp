@@ -13,7 +13,8 @@
 
 int main()
 {
-	cout << "Hello World!\n";
+	cout << "|| =====< Start of Program >===== ||\n";
+	cout << "\n\n|| =====< Testing LogData functionality >===== ||\n";
 
 	string string1("message one");
 	string string2("message two");
@@ -35,6 +36,7 @@ int main()
 	cout << "4 | " << *logData4 << endl;
 
 	// ===== LOG MESSAGE STUFF ===== //
+	cout << "\n\n|| =====< Testing Logging of Messages >===== ||\n";
 
 	logger::LogMessage logMessage;
 	logger::LogStatusDecorator logStatusDec(&logMessage);
@@ -57,10 +59,47 @@ int main()
 	cout << "Decorate 3: " << logMessageDec2.logInfo(*logData3) << endl;
 	cout << "Decorate 4: " << logMessageDec2.logInfo(*logData4) << endl;
 
+	cout << "\n\n|| =====< Testing the Log Factory >===== ||\n";
+
 	logger::LoggerFactory log_factory;
 	logger::ILogger* logger = log_factory.create(1, 2, 3);
 
-	cout << "LogFactory 1: " << logger->logInfo(true, "message one");
+	cout << "LogFactory 1: " << logger->logInfo(true, string1) << endl;
+	cout << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
+	cout << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
+
+	logger = log_factory.create(2, 1, 3);
+
+	cout << "LogFactory 1: " << logger->logInfo(true, string1) << endl;
+	cout << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
+	cout << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
+
+	logger = log_factory.create(20, 30, 10);
+
+	cout << "LogFactory 1: " << logger->logInfo(true, string1) << endl;
+	cout << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
+	cout << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
+
+	logger = log_factory.create();
+
+	cout << "LogFactory 1: " << logger->logInfo(true, string1) << endl;
+	cout << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
+	cout << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
+
+	logger = log_factory.create(2, 1);
+
+	cout << "LogFactory 1: " << logger->logInfo(true, string1) << endl;
+	cout << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
+	cout << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
+
+	logger = log_factory.create(2, 0, 1);
+
+	cout << "LogFactory 1: " << logger->logInfo(true, string1) << endl;
+	cout << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
+	cout << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
+
+	cout << "\n\n|| =====< Done With Program >===== ||\n\n\n";
+	//cout << "|| =====< >===== ||\n"; // just easy way to copy and past.
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
