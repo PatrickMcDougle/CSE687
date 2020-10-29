@@ -11,7 +11,7 @@ using std::ostream;
 using std::cout;
 using std::endl;
 
-namespace logger::data {
+namespace logger {
 	class LogData : public ILogData {
 	public:
 		virtual ~LogData() {}

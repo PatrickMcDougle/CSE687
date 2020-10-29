@@ -4,7 +4,7 @@ logger::LogTimestampDecorator::LogTimestampDecorator(ILogComponent* component) :
 {
 }
 
-string logger::LogTimestampDecorator::logInfo(data::ILogData& logData) const
+string logger::LogTimestampDecorator::logInfo(logger::ILogData& logData) const
 {
 	string other = ALogDecorator::logInfo(logData);
 

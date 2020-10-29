@@ -11,7 +11,7 @@ namespace logger {
 	public:
 		LogMessage();
 
-		string logInfo(data::ILogData& logData) const override;
+		string logInfo(logger::ILogData& logData) const override;
 	};
 }
 

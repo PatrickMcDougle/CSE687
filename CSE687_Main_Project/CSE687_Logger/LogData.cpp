@@ -2,17 +2,17 @@
 #include <time.h>
 #include "LogData.h"
 
-bool logger::data::LogData::isPassed()
+bool logger::LogData::isPassed()
 {
 	return passed_;
 }
 
-string logger::data::LogData::getMessage()
+string logger::LogData::getMessage()
 {
 	return message_;
 }
 
-string logger::data::LogData::getDateTime()
+string logger::LogData::getDateTime()
 {
 	char buffer[80];
 
@@ -31,12 +31,12 @@ string logger::data::LogData::getDateTime()
 	//return to_string( _timestamp);  // just return a number value.
 }
 
-logger::data::LogData::LogData(bool passed, const string& message) : passed_(passed), message_(message)
+logger::LogData::LogData(bool passed, const string& message) : passed_(passed), message_(message)
 {
 	time(&timestamp_);
 }
 
-ostream& logger::data::operator<<(ostream& out, ILogData& logData)
+ostream& logger::operator<<(ostream& out, ILogData& logData)
 {
 	out << logData.getDateTime();
 	out << " | ";

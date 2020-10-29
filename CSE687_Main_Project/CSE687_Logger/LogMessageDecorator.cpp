@@ -4,7 +4,7 @@ logger::LogMessageDecorator::LogMessageDecorator(ILogComponent* component) : ALo
 {
 }
 
-string logger::LogMessageDecorator::logInfo(data::ILogData& logData) const
+string logger::LogMessageDecorator::logInfo(logger::ILogData& logData) const
 {
 	string other = ALogDecorator::logInfo(logData);
 

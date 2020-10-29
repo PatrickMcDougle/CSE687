@@ -6,7 +6,7 @@
 
 using std::string;
 
-namespace logger::data {
+namespace logger {
 	class ILogData {
 	public:
 		virtual ~ILogData() {}

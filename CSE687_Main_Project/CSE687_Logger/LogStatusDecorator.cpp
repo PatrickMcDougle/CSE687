@@ -4,7 +4,7 @@ logger::LogStatusDecorator::LogStatusDecorator(ILogComponent* component) : ALogD
 {
 }
 
-string logger::LogStatusDecorator::logInfo(data::ILogData& logData) const
+string logger::LogStatusDecorator::logInfo(logger::ILogData& logData) const
 {
 	string other = ALogDecorator::logInfo(logData);
 

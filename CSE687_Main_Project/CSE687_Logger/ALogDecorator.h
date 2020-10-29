@@ -4,6 +4,7 @@
 #define __A_LOG_DECORATOR_H__
 
 #include "ILogComponent.h"
+#include "ILogData.h"
 
 
 namespace logger {
@@ -16,7 +17,7 @@ namespace logger {
 	public:
 		ALogDecorator(ILogComponent* component);
 
-		string logInfo(data::ILogData& logData) const override;
+		string logInfo(logger::ILogData& logData) const override;
 	};
 }
 

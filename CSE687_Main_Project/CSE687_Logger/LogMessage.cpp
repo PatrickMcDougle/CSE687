@@ -4,7 +4,7 @@ logger::LogMessage::LogMessage()
 {
 }
 
-string logger::LogMessage::logInfo(data::ILogData& logData) const
+string logger::LogMessage::logInfo(logger::ILogData& logData) const
 {
 	return string();
 }

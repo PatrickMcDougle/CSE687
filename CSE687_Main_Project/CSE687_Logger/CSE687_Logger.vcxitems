@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{218cd305-c211-44ac-ad4d-d383fc9be38b}</ItemsProjectGuid>
+    <ItemsProjectName>CSE687_Logger</ItemsProjectName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ALogDecorator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ILogComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ILogData.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ILogger.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LogData.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LoggerFactory.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LogMessage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LogMessageDecorator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LogStatusDecorator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LogTimestampDecorator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MyLogger.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ALogDecorator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LogData.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LoggerFactory.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LogMessage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LogMessageDecorator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LogStatusDecorator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LogTimestampDecorator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MyLogger.cpp" />
+  </ItemGroup>
+</Project>

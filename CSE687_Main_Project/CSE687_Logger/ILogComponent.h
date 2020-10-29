@@ -12,7 +12,7 @@ namespace logger {
 	class ILogComponent {
 	public:
 		virtual ~ILogComponent() {}
-		virtual string logInfo(data::ILogData&) const = 0;
+		virtual string logInfo(logger::ILogData&) const = 0;
 	};
 }
 

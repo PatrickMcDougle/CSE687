@@ -10,7 +10,7 @@ string logger::MyLogger::logInfo(bool test_results, const string& test_message)
 		return string();
 	}
 
-	data::ILogData* log_data = new data::LogData(test_results, test_message);
+	logger::ILogData* log_data = new logger::LogData(test_results, test_message);
 
 	return this->log_component_->logInfo(*log_data);
 }
