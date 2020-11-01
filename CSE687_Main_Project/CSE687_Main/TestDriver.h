@@ -16,13 +16,12 @@ namespace test {
 		~TestDriver() {}
 		bool test();
 
-		bool loadTest(T* the_class, bool(T::* the_method)());
-		//bool loadTest(T* the_class, bool(T::* the_method)()) {
-		//	this.the_method_ = the_method;
-		//	this.the_class_ = the_class;
+		bool loadTest(T* the_class, bool(T::* the_method)()) {
+			this->the_method_ = the_method;
+			this->the_class_ = the_class;
 
-		//	return true;
-		//};
+			return true;
+		};
 
 		bool runTest()
 		{
