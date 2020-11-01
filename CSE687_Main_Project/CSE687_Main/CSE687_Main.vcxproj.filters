@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Interfaces">
+      <UniqueIdentifier>{64451972-d5cf-472e-99cb-1fb54e0544bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logger">
+      <UniqueIdentifier>{3f0be509-6182-4304-85cd-960d1572dabd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logger\Decorators">
+      <UniqueIdentifier>{3a381662-0d78-4722-abb3-6d0cf5454e5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Test">
+      <UniqueIdentifier>{169c0be6-4cd4-4aed-b198-30a727797461}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Test\Examples">
+      <UniqueIdentifier>{04200bd0-7370-4512-8bd3-06a5ac5c781d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logger">
+      <UniqueIdentifier>{ca710fcb-3baa-4866-bfff-0e83c4fc662e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Test">
+      <UniqueIdentifier>{ee2fa360-ac02-4480-8658-042774ad5e02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Test\Examples">
+      <UniqueIdentifier>{0e7de22d-4c5a-4fb7-94b7-8efca1756ddd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CSE687_TestHarness.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ALogDecorator.cpp">
+      <Filter>Source Files\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="LogData.cpp">
+      <Filter>Source Files\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="LoggerFactory.cpp">
+      <Filter>Source Files\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="LogMessage.cpp">
+      <Filter>Source Files\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="LogMessageDecorator.cpp">
+      <Filter>Source Files\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="LogStatusDecorator.cpp">
+      <Filter>Source Files\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="LogTimestampDecorator.cpp">
+      <Filter>Source Files\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="MyLogger.cpp">
+      <Filter>Source Files\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="TestDriver.cpp">
+      <Filter>Source Files\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassOfTests.cpp">
+      <Filter>Source Files\Test\Examples</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ILogComponent.h">
+      <Filter>Header Files\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ILogData.h">
+      <Filter>Header Files\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ILogger.h">
+      <Filter>Header Files\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ITest.h">
+      <Filter>Header Files\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ALogDecorator.h">
+      <Filter>Header Files\Logger\Decorators</Filter>
+    </ClInclude>
+    <ClInclude Include="LogMessageDecorator.h">
+      <Filter>Header Files\Logger\Decorators</Filter>
+    </ClInclude>
+    <ClInclude Include="LogStatusDecorator.h">
+      <Filter>Header Files\Logger\Decorators</Filter>
+    </ClInclude>
+    <ClInclude Include="LogTimestampDecorator.h">
+      <Filter>Header Files\Logger\Decorators</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassOfTests.h">
+      <Filter>Header Files\Test\Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="LogData.h">
+      <Filter>Header Files\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="LoggerFactory.h">
+      <Filter>Header Files\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="LogMessage.h">
+      <Filter>Header Files\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="MyLogger.h">
+      <Filter>Header Files\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="TestDriver.h">
+      <Filter>Header Files\Test</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
