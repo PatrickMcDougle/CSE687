@@ -12,7 +12,7 @@ string logger::LogStatusDecorator::logInfo(logger::ILogData& logData) const
 		other.append(" | ");
 	}
 
-	other.append(logData.isPassed() ? "TRUE" : "FALSE");
+	other.append(logData.isPassed() ? "TRUE " : "FALSE");
 
 	return other;
 }
