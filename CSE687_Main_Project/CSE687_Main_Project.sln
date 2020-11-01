@@ -5,13 +5,7 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CSE687_Main", "CSE687_Main\CSE687_Main.vcxproj", "{FBC18327-6952-4F1A-B507-B9C408F047A7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CSE687_Logger", "CSE687_Logger\CSE687_Logger.vcxitems", "{218CD305-C211-44AC-AD4D-D383FC9BE38B}"
-EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		CSE687_Logger\CSE687_Logger.vcxitems*{218cd305-c211-44ac-ad4d-d383fc9be38b}*SharedItemsImports = 9
-		CSE687_Logger\CSE687_Logger.vcxitems*{fbc18327-6952-4f1a-b507-b9c408f047a7}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86

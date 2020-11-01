@@ -2,13 +2,17 @@
 //
 
 #include <iostream>
-#include "../CSE687_Logger/ILogData.h"
-#include "../CSE687_Logger/LogData.h"
-#include "../CSE687_Logger/LogMessage.h"
-#include "../CSE687_Logger/LogMessageDecorator.h"
-#include "../CSE687_Logger/LogStatusDecorator.h"
-#include "../CSE687_Logger/LogTimestampDecorator.h"
-#include "../CSE687_Logger/LoggerFactory.h"
+#include "ILogData.h"
+#include "LogData.h"
+#include "LogMessage.h"
+#include "LogMessageDecorator.h"
+#include "LogStatusDecorator.h"
+#include "LogTimestampDecorator.h"
+#include "LoggerFactory.h"
+
+#include "ITest.h"
+#include "TestDriver.h"
+#include "ClassOfTests.h"
 
 
 int main()
@@ -98,9 +102,32 @@ int main()
 	cout << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
 	cout << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
 
+	cout << "\n\n|| =====< Testing the Test Driver >===== ||\n";
+
+	//test::ITest* itest = new test::TestDriver<test::ClassOfTests>();
+
+	test::TestDriver<test::ClassOfTests>* test_this = new test::TestDriver<test::ClassOfTests>();
+	test::ClassOfTests class_of_tests;
+
+	test_this->loadTest(&class_of_tests, &test::ClassOfTests::testTrue);
+
+	cout << "Load True Test and Run : " << test_this->runTest() << endl;
+
+	test_this->loadTest(&class_of_tests, &test::ClassOfTests::testFalse);
+
+	cout << "Load False Test and Run : " << test_this->runTest() << endl;
+
+	test_this->loadTest(&class_of_tests, &test::ClassOfTests::testException);
+
+	cout << "Load Exception Test and Run : " << test_this->runTest() << endl;
+
+
+
 	cout << "\n\n|| =====< Done With Program >===== ||\n\n\n";
 	//cout << "|| =====< >===== ||\n"; // just easy way to copy and past.
 }
+
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
