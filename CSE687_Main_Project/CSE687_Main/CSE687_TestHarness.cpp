@@ -13,6 +13,8 @@
 #include "ITest.h"
 #include "TestDriver.h"
 #include "ClassOfTests.h"
+#include <vector>
+#include <list>
 
 void TestingDevelopmentOfLogData(std::ostream& out_stream) {
 	out_stream << "\n\n|| =====< Testing LogData functionality >===== ||\n";
@@ -124,9 +126,9 @@ void TestingDevelopmentOfTestDriver(std::ostream& out_stream) {
 	logger::LoggerFactory log_factory;
 
 	test_this
-		->loadLogger(log_factory.create(30, 50, 10))
 		->loadClass(&class_of_tests)
 		->loadMethod(&test::ClassOfTests::testTrue)
+		->loadLogger(log_factory.create(30, 50, 10))
 		->loadMessage("Testing if method returns true.")
 		->test();
 
@@ -145,6 +147,11 @@ void TestingDevelopmentOfTestDriver(std::ostream& out_stream) {
 		->test();
 
 	out_stream << "Test 3 : " << test_this->testLogResults() << endl;
+
+	//std::list<test::ITest> list_of_tests;
+	test::TestDriver<test::ClassOfTests> first_test_class;
+
+	//list_of_tests.push_back(first_test_class);
 
 	delete test_this;
 }

@@ -12,14 +12,14 @@ namespace test {
 	class TestDriver : public ITest
 	{
 	private:
-		bool(T::* the_method_)();
 		T* the_class_;
+		bool(T::* the_method_)();
 		logger::ILogger* the_logger_;
 		std::string& the_message_;
 		std::string the_log_results_;
 
 	public:
-		TestDriver() : 
+		TestDriver() :
 			the_message_(*new std::string()),
 			the_class_(nullptr),
 			the_method_(nullptr),
@@ -45,7 +45,7 @@ namespace test {
 			return result;
 		}
 
-		std::string testLogResults() {
+		virtual std::string testLogResults() {
 			return the_log_results_;
 		}
 
@@ -59,12 +59,12 @@ namespace test {
 			return this;
 		}
 
-		TestDriver* loadLogger(logger::ILogger* logger) {
+		virtual ITest* loadLogger(logger::ILogger* logger) {
 			this->the_logger_ = logger;
 			return this;
 		}
 
-		TestDriver* loadMessage(const std::string& message) {
+		virtual ITest* loadMessage(const std::string& message) {
 			this->the_message_ = message;
 			return this;
 		}
