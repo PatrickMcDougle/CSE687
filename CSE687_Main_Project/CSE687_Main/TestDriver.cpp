@@ -6,14 +6,6 @@ bool test::TestDriver<T>::test()
 	return false;
 }
 
-template<typename T>
-bool test::TestDriver<T>::loadTest(T* the_class,  bool(T::* the_method)())
-{
-	this.the_method_ = the_method;
-	this.the_class_ = the_class;
-
-	return true;
-}
 
 //template<typename T>
 //bool test::TestDriver<T>::runTest()
