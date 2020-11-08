@@ -1,5 +1,9 @@
-// CSE687_TestHarness.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Creators - Team #5: Patrick McDougle, Edgardo Navarro, William Scott
+// Class: CSE 687 OOD
+// School: Syracuse University
+// Project Name: Test Harness
+// Create Date: 2020-10-11
+// Description: Contains the main function
 
 #include <iostream>
 #include "ILogData.h"
@@ -9,133 +13,179 @@
 #include "LogStatusDecorator.h"
 #include "LogTimestampDecorator.h"
 #include "LoggerFactory.h"
-
 #include "ITest.h"
 #include "TestDriver.h"
 #include "ClassOfTests.h"
+#include <vector>
+#include <list>
+using namespace test;
+using namespace logger;
 
-
-int main()
-{
-	cout << "|| =====< Start of Program >===== ||\n";
-	cout << "\n\n|| =====< Testing LogData functionality >===== ||\n";
+// Method creating a 4 Log Data objects and test functionality
+void TestingDevelopmentOfLogData(std::ostream& out_stream) {
+	out_stream << "\n\n|| =====< Testing LogData functionality >===== ||\n";
 
 	string string1("message one");
 	string string2("message two");
 	string string3("message three");
 
-	logger::ILogData* logData1 = new logger::LogData(true, string1);
-	logger::ILogData* logData2 = new logger::LogData(false, string2);
-	logger::ILogData* logData3 = new logger::LogData(true, string3);
-	logger::ILogData* logData4 = new logger::LogData(true, "Look At Me Mom!");
+	ILogData* logData1 = new LogData(true, string1);
+	ILogData* logData2 = new LogData(false, string2);
+	ILogData* logData3 = new LogData(true, string3);
+	ILogData* logData4 = new LogData(true, "Look At Me Mom!");
 
-	cout << "1 | " << logData1->getDateTime() << " | " << logData1->isPassed() << " | " << logData1->getMessage() << endl;
-	cout << "2 | " << logData2->getDateTime() << " | " << logData2->isPassed() << " | " << logData2->getMessage() << endl;
-	cout << "3 | " << logData3->getDateTime() << " | " << logData3->isPassed() << " | " << logData3->getMessage() << endl;
-	cout << "4 | " << logData4->getDateTime() << " | " << logData4->isPassed() << " | " << logData4->getMessage() << endl;
+	out_stream << "1 | " << logData1->getDateTime() << " | " << logData1->isPassed() << " | " << logData1->getMessage() << endl;
+	out_stream << "2 | " << logData2->getDateTime() << " | " << logData2->isPassed() << " | " << logData2->getMessage() << endl;
+	out_stream << "3 | " << logData3->getDateTime() << " | " << logData3->isPassed() << " | " << logData3->getMessage() << endl;
+	out_stream << "4 | " << logData4->getDateTime() << " | " << logData4->isPassed() << " | " << logData4->getMessage() << endl;
 
-	cout << "1 | " << *logData1 << endl;
-	cout << "2 | " << *logData2 << endl;
-	cout << "3 | " << *logData3 << endl;
-	cout << "4 | " << *logData4 << endl;
+	out_stream << "1 | " << *logData1 << endl;
+	out_stream << "2 | " << *logData2 << endl;
+	out_stream << "3 | " << *logData3 << endl;
+	out_stream << "4 | " << *logData4 << endl;
+}
 
-	// ===== LOG MESSAGE STUFF ===== //
-	cout << "\n\n|| =====< Testing Logging of Messages >===== ||\n";
+// Method creating a 4 Log Decorator objects and test functionality
+void TestingDevelopmentOfLogMessage(std::ostream& out_stream) {
+	out_stream << "\n\n|| =====< Testing Logging of Messages >===== ||\n";
 
-	logger::LogMessage logMessage;
-	logger::LogStatusDecorator logStatusDec(&logMessage);
-	logger::LogMessageDecorator logMessageDec(&logStatusDec);
-	logger::LogTimestampDecorator logTimestampDec(&logMessageDec);
+	string string1("message one");
+	string string2("message two");
+	string string3("message three");
 
-	cout << "Decorate 1: " << logTimestampDec.logInfo(*logData1) << endl;
-	cout << "Decorate 2: " << logTimestampDec.logInfo(*logData2) << endl;
-	cout << "Decorate 3: " << logTimestampDec.logInfo(*logData3) << endl;
-	cout << "Decorate 4: " << logTimestampDec.logInfo(*logData4) << endl;
+	ILogData* logData1 = new LogData(true, string1);
+	ILogData* logData2 = new LogData(false, string2);
+	ILogData* logData3 = new LogData(true, string3);
+	ILogData* logData4 = new LogData(true, "Look At Me Mom!");
 
+	LogMessage logMessage;
+	LogStatusDecorator logStatusDec(&logMessage);
+	LogMessageDecorator logMessageDec(&logStatusDec);
+	LogTimestampDecorator logTimestampDec(&logMessageDec);
 
-	logger::LogMessage logMessage2;
-	logger::LogTimestampDecorator logTimestampDec2(&logMessage2);
-	logger::LogStatusDecorator logStatusDec2(&logTimestampDec2);
-	logger::LogMessageDecorator logMessageDec2(&logStatusDec2);
+	out_stream << "Decorate 1: " << logTimestampDec.logInfo(*logData1) << endl;
+	out_stream << "Decorate 2: " << logTimestampDec.logInfo(*logData2) << endl;
+	out_stream << "Decorate 3: " << logTimestampDec.logInfo(*logData3) << endl;
+	out_stream << "Decorate 4: " << logTimestampDec.logInfo(*logData4) << endl;
 
-	cout << "Decorate 1: " << logMessageDec2.logInfo(*logData1) << endl;
-	cout << "Decorate 2: " << logMessageDec2.logInfo(*logData2) << endl;
-	cout << "Decorate 3: " << logMessageDec2.logInfo(*logData3) << endl;
-	cout << "Decorate 4: " << logMessageDec2.logInfo(*logData4) << endl;
+	LogMessage logMessage2;
+	LogTimestampDecorator logTimestampDec2(&logMessage2);
+	LogStatusDecorator logStatusDec2(&logTimestampDec2);
+	LogMessageDecorator logMessageDec2(&logStatusDec2);
 
-	cout << "\n\n|| =====< Testing the Log Factory >===== ||\n";
+	out_stream << "Decorate 1: " << logMessageDec2.logInfo(*logData1) << endl;
+	out_stream << "Decorate 2: " << logMessageDec2.logInfo(*logData2) << endl;
+	out_stream << "Decorate 3: " << logMessageDec2.logInfo(*logData3) << endl;
+	out_stream << "Decorate 4: " << logMessageDec2.logInfo(*logData4) << endl;
+}
 
-	logger::LoggerFactory log_factory;
-	logger::ILogger* logger = log_factory.create(1, 2, 3);
+// Method creating a 6 Log Factory objects and test functionality
+void TestingDevelopmentOfLogFactory(std::ostream& out_stream) {
+	out_stream << "\n\n|| =====< Testing the Log Factory >===== ||\n";
 
-	cout << "LogFactory 1: " << logger->logInfo(true, string1) << endl;
-	cout << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
-	cout << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
+	string string1("message one");
+	string string2("message two");
+	string string3("message three");
+
+	LoggerFactory log_factory;
+	ILogger* logger = log_factory.create(1, 2, 3);
+
+	out_stream << "LogFactory 1: " << logger->logInfo(true, string1) << endl;
+	out_stream << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
+	out_stream << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
 
 	logger = log_factory.create(2, 1, 3);
 
-	cout << "LogFactory 1: " << logger->logInfo(true, string1) << endl;
-	cout << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
-	cout << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
+	out_stream << "LogFactory 2: " << logger->logInfo(true, string1) << endl;
+	out_stream << "LogFactory 2: " << logger->logInfo(false, string2) << endl;
+	out_stream << "LogFactory 2: " << logger->logInfo(true, string3) << endl;
 
 	logger = log_factory.create(20, 30, 10);
 
-	cout << "LogFactory 1: " << logger->logInfo(true, string1) << endl;
-	cout << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
-	cout << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
+	out_stream << "LogFactory 3: " << logger->logInfo(true, string1) << endl;
+	out_stream << "LogFactory 3: " << logger->logInfo(false, string2) << endl;
+	out_stream << "LogFactory 3: " << logger->logInfo(true, string3) << endl;
 
 	logger = log_factory.create();
 
-	cout << "LogFactory 1: " << logger->logInfo(true, string1) << endl;
-	cout << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
-	cout << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
+	out_stream << "LogFactory 4: " << logger->logInfo(true, string1) << endl;
+	out_stream << "LogFactory 4: " << logger->logInfo(false, string2) << endl;
+	out_stream << "LogFactory 4: " << logger->logInfo(true, string3) << endl;
 
 	logger = log_factory.create(2, 1);
 
-	cout << "LogFactory 1: " << logger->logInfo(true, string1) << endl;
-	cout << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
-	cout << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
+	out_stream << "LogFactory 5: " << logger->logInfo(true, string1) << endl;
+	out_stream << "LogFactory 5: " << logger->logInfo(false, string2) << endl;
+	out_stream << "LogFactory 5: " << logger->logInfo(true, string3) << endl;
 
 	logger = log_factory.create(2, 0, 1);
 
-	cout << "LogFactory 1: " << logger->logInfo(true, string1) << endl;
-	cout << "LogFactory 1: " << logger->logInfo(false, string2) << endl;
-	cout << "LogFactory 1: " << logger->logInfo(true, string3) << endl;
-
-	cout << "\n\n|| =====< Testing the Test Driver >===== ||\n";
-
-	//test::ITest* itest = new test::TestDriver<test::ClassOfTests>();
-
-	test::TestDriver<test::ClassOfTests>* test_this = new test::TestDriver<test::ClassOfTests>();
-	test::ClassOfTests class_of_tests;
-
-	test_this->loadTest(&class_of_tests, &test::ClassOfTests::testTrue);
-
-	cout << "Load True Test and Run : " << test_this->runTest() << endl;
-
-	test_this->loadTest(&class_of_tests, &test::ClassOfTests::testFalse);
-
-	cout << "Load False Test and Run : " << test_this->runTest() << endl;
-
-	test_this->loadTest(&class_of_tests, &test::ClassOfTests::testException);
-
-	cout << "Load Exception Test and Run : " << test_this->runTest() << endl;
-
-
-
-	cout << "\n\n|| =====< Done With Program >===== ||\n\n\n";
-	//cout << "|| =====< >===== ||\n"; // just easy way to copy and past.
+	out_stream << "LogFactory 6: " << logger->logInfo(true, string1) << endl;
+	out_stream << "LogFactory 6: " << logger->logInfo(false, string2) << endl;
+	out_stream << "LogFactory 6: " << logger->logInfo(true, string3) << endl;
 }
 
+// Method creating a 3 Test Driver objects and test functionality
+void TestingDevelopmentOfTestDriver(std::ostream& out_stream) {
+	out_stream << "\n\n|| =====< Testing the Test Driver >===== ||\n";
 
+	auto test_this = new TestDriver<ClassOfTests>();
+	ClassOfTests class_of_tests;
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+	LoggerFactory log_factory;
 
-// Tips for Getting Started:
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+	test_this
+		->loadClass(&class_of_tests)
+		->loadMethod(&ClassOfTests::testTrue)
+		->loadLogger(log_factory.create(30, 50, 10))
+		->loadMessage("Testing if method returns true.")
+		->test();
+
+	out_stream << "Test 1 : " << test_this->testLogResults() << endl;
+
+	test_this
+		->loadMethod(&ClassOfTests::testFalse)
+		->loadMessage("Testing if method returns false.")
+		->test();
+
+	out_stream << "Test 2 : " << test_this->testLogResults() << endl;
+
+	test_this
+		->loadMethod(&ClassOfTests::testException)
+		->loadMessage("Testing if method throws an exception.")
+		->test();
+
+	out_stream << "Test 3 : " << test_this->testLogResults() << endl;
+
+	//std::list<ITest> list_of_tests;
+	TestDriver<ClassOfTests> first_test_class;
+
+	//list_of_tests.push_back(first_test_class);
+
+	delete test_this;
+}
+
+// Main Function
+int main()
+{
+	// Initialize out_stream
+	std::ostream& out_stream = std::cout;
+
+	// Alert User of Program Start
+	out_stream << "|| =====< Start of Program >===== ||\n";
+
+	// Run Method Testing the Log Data Classes
+	TestingDevelopmentOfLogData(out_stream);
+
+	// Run Method Tesing the Log Message Classes
+	TestingDevelopmentOfLogMessage(out_stream);
+
+	// Run Method Testing the Log Factory
+	TestingDevelopmentOfLogFactory(out_stream);
+
+	// Run Method Testing the Test Driver Classes
+	TestingDevelopmentOfTestDriver(out_stream);
+
+	// Alert User of Program End
+	out_stream << "\n\n|| =====< Done With Program >===== ||\n\n\n";
+}
