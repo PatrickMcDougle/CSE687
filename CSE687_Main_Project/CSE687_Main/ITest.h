@@ -16,7 +16,7 @@ using std::string;
 
 // Namespace for test
 namespace test {
-    // Class for ITest
+	// Class for ITest
 	class ITest
 	{
 	public:

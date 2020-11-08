@@ -10,24 +10,24 @@ using namespace logger;
 
 // Constructor
 LogTimestampDecorator::LogTimestampDecorator(ILogComponent* component)
-    :ALogDecorator(component)
+	:ALogDecorator(component)
 {
 }
 
 // Return details of log
 string LogTimestampDecorator::logInfo(logger::ILogData& logData) const
 {
-    // Initialize other
+	// Initialize other
 	string other = ALogDecorator::logInfo(logData);
 
-    // Logic to format other string
+	// Logic to format other string
 	if (other.length() > 1) {
 		other.append(" | ");
 	}
 
-    // Add timestamp to other
+	// Add timestamp to other
 	other.append(logData.getDateTime());
 
-    // Return other
+	// Return other
 	return other;
 }

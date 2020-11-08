@@ -17,13 +17,13 @@ using std::string;
 
 // Namespace for Logger
 namespace logger {
-    // Class for ILogger
+	// Class for ILogger
 	class ILogger
 	{
-	public :
+	public:
 		virtual ~ILogger() {} // Destructor
-		virtual string logInfo(bool, const string&)  = 0; // Return log detials
-		virtual void setLogComponent(ILogComponent*)  = 0; // Sets the log component
+		virtual string logInfo(bool, const string&) = 0; // Return log detials
+		virtual void setLogComponent(ILogComponent*) = 0; // Sets the log component
 	};
 }
 

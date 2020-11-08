@@ -21,7 +21,7 @@ using std::string;
 
 // Namespace for Logger
 namespace logger {
-    // Class for LoggerFactory
+	// Class for LoggerFactory
 	class LoggerFactory
 	{
 	public:
@@ -37,7 +37,7 @@ namespace logger {
 
 	private:
 
-        // LoadDecorator Inline Function
+		// LoadDecorator Inline Function
 		template<typename T>
 		inline T* LoadDecorator(ILogComponent* aTemplate)
 		{

@@ -13,7 +13,7 @@
 
 // Namespace for Logger
 namespace logger {
-    // Class for LogTimestampDecorator
+	// Class for LogTimestampDecorator
 	class LogTimestampDecorator : public ALogDecorator
 	{
 	public:

@@ -10,24 +10,24 @@ using namespace logger;
 
 // Constructor
 LogStatusDecorator::LogStatusDecorator(ILogComponent* component)
-    :ALogDecorator(component)
+	:ALogDecorator(component)
 {
 }
 
 // Return log details
 string LogStatusDecorator::logInfo(logger::ILogData& logData) const
 {
-    // Initialize other
+	// Initialize other
 	string other = ALogDecorator::logInfo(logData);
 
-    // Logic to format other string
+	// Logic to format other string
 	if (other.length() > 1) {
 		other.append(" | ");
 	}
 
-    // Add info regarding pass or fail to other
+	// Add info regarding pass or fail to other
 	other.append(logData.isPassed() ? "TRUE " : "FALSE");
 
-    // Return other
+	// Return other
 	return other;
 }

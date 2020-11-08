@@ -16,15 +16,15 @@ MyLogger::MyLogger()
 // Returns the passed test result and message as neat string
 string MyLogger::logInfo(bool test_results, const string& test_message)
 {
-    // If Log Compent is not set, returns an empty string
+	// If Log Compent is not set, returns an empty string
 	if (this->log_component_ == nullptr) {
 		return string();
 	}
 
-    // Create new ILogData with paramaters
+	// Create new ILogData with paramaters
 	ILogData* log_data = new LogData(test_results, test_message);
 
-    // Return log details
+	// Return log details
 	return this->log_component_->logInfo(*log_data);
 }
 

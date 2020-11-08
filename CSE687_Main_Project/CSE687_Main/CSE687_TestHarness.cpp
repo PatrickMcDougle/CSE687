@@ -165,28 +165,27 @@ void TestingDevelopmentOfTestDriver(std::ostream& out_stream) {
 	delete test_this;
 }
 
-
 // Main Function
 int main()
 {
-    // Initialize out_stream
+	// Initialize out_stream
 	std::ostream& out_stream = std::cout;
 
-    // Alert User of Program Start
+	// Alert User of Program Start
 	out_stream << "|| =====< Start of Program >===== ||\n";
 
-    // Run Method Testing the Log Data Classes
+	// Run Method Testing the Log Data Classes
 	TestingDevelopmentOfLogData(out_stream);
 
-    // Run Method Tesing the Log Message Classes
+	// Run Method Tesing the Log Message Classes
 	TestingDevelopmentOfLogMessage(out_stream);
 
-    // Run Method Testing the Log Factory
+	// Run Method Testing the Log Factory
 	TestingDevelopmentOfLogFactory(out_stream);
 
-    // Run Method Testing the Test Driver Classes
+	// Run Method Testing the Test Driver Classes
 	TestingDevelopmentOfTestDriver(out_stream);
 
-    // Alert User of Program End
+	// Alert User of Program End
 	out_stream << "\n\n|| =====< Done With Program >===== ||\n\n\n";
 }

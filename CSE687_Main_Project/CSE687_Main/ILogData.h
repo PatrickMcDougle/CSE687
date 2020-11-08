@@ -15,13 +15,13 @@ using std::string;
 
 // Namespace for Logger
 namespace logger {
-    // Class for ILogData
+	// Class for ILogData
 	class ILogData {
 	public:
 		virtual ~ILogData() {} // Destructor
 		virtual bool isPassed() = 0; // Return log result
 		virtual string getMessage() = 0; // Return log message
-		virtual string getDateTime() = 0; // Return current date & time 
+		virtual string getDateTime() = 0; // Return current date & time
 	};
 }
 

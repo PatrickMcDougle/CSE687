@@ -19,7 +19,7 @@ using std::string;
 
 // Namespace for Logger
 namespace logger {
-    // Class for MyLogger
+	// Class for MyLogger
 	class MyLogger : public ILogger
 	{
 	public:

@@ -11,24 +11,24 @@ using namespace logger;
 
 // Constructor
 LogMessageDecorator::LogMessageDecorator(ILogComponent* component)
-    :ALogDecorator(component)
+	:ALogDecorator(component)
 {
 }
 
 //  Return log details
 string LogMessageDecorator::logInfo(logger::ILogData& logData) const
 {
-    // Initialize other
+	// Initialize other
 	string other = ALogDecorator::logInfo(logData);
 
-    // Logic to format other string
+	// Logic to format other string
 	if (other.length() > 1) {
 		other.append(" | ");
 	}
 
-    // Logic to add message to other string
+	// Logic to add message to other string
 	other.append(logData.getMessage());
 
-    // Return other string
+	// Return other string
 	return other;
 }

@@ -14,7 +14,7 @@
 
 // Namespace for Logger
 namespace logger {
-    // Class for LogMessage
+	// Class for LogMessage
 	class LogMessage : public ILogComponent
 	{
 	public:

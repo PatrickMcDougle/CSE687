@@ -17,7 +17,7 @@ using std::string;
 
 // Namespace for Test
 namespace test {
-// Class for Test Driver
+	// Class for Test Driver
 	template<typename T>
 	class TestDriver : public ITest
 	{
@@ -69,12 +69,12 @@ namespace test {
 			return this;
 		}
 
-        virtual ITest* loadLogger(logger::ILogger* logger) { // Update the logger
+		virtual ITest* loadLogger(logger::ILogger* logger) { // Update the logger
 			this->the_logger_ = logger;
 			return this;
 		}
 
-		virtual ITest* loadMessage(const std::string& message) { // Update the message 
+		virtual ITest* loadMessage(const std::string& message) { // Update the message
 			this->the_message_ = message;
 			return this;
 		}

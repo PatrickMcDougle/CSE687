@@ -15,7 +15,7 @@
 
 // Namespace for Logger
 namespace logger {
-    // Class for ALogDecorator
+	// Class for ALogDecorator
 	class ALogDecorator : public ILogComponent
 	{
 	private:

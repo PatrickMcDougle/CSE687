@@ -20,12 +20,12 @@ using std::endl;
 
 // Namespace for Logger
 namespace logger {
-    // Class for LogData
+	// Class for LogData
 	class LogData : public ILogData {
 	public:
-        LogData(bool, const string&); // Constructor
+		LogData(bool, const string&); // Constructor
 		virtual ~LogData() {} // Destructor
-		virtual bool isPassed(); // 
+		virtual bool isPassed(); //
 		virtual string getMessage();
 		virtual string getDateTime();
 	private:

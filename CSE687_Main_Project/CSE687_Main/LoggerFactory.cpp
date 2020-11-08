@@ -12,17 +12,17 @@ using namespace logger;
 // Create a new ILogger
 ILogger* LoggerFactory::create(int test_pass_result_order, int test_message_order, int test_timestamp_order)
 {
-    // Initialize max_value
+	// Initialize max_value
 	int max_value = 0;
-	
-    // Determines which parameter has highest value
+
+	// Determines which parameter has highest value
 	max_value = (test_pass_result_order > test_message_order) ? test_pass_result_order : test_message_order;
 	max_value = (max_value > test_timestamp_order) ? max_value : test_timestamp_order;
 
-    // New Log Component
+	// New Log Component
 	ILogComponent* last_component = new LogMessage();
 
-    // Puts each of the log elements into the last_component
+	// Puts each of the log elements into the last_component
 	for (int i = 1; i <= max_value; ++i) {
 		if (i == test_pass_result_order) {
 			last_component = LoadDecorator<LogStatusDecorator>(last_component);
@@ -35,12 +35,12 @@ ILogger* LoggerFactory::create(int test_pass_result_order, int test_message_orde
 		}
 	}
 
-    // Cretes new logger
+	// Cretes new logger
 	ILogger* logger = new MyLogger();
 
-    // Add last component to logger
+	// Add last component to logger
 	logger->setLogComponent(last_component);
 
-    // return logger
+	// return logger
 	return logger;
 }

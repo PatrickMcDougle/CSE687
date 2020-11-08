@@ -25,12 +25,20 @@ string logger::LogData::getMessage()
 // Return current date and time
 string logger::LogData::getDateTime()
 {
+#if defined (_WIN64)
+	// Windows stuff
+	char buffer[80];
+	ctime_s(buffer, sizeof(buffer), &timestamp_);
+	string timestring(buffer);
+	return timestring.substr(0, timestring.length() - 1); // remove the \n from string and return the rest.
+#else
+	// The followin ctime function will throw a compiler error on Windows for it is a deprecated function.
 	time_t rawtime;
-    time (&rawtime);
-    char *t = ctime(&rawtime);
-    if (t[strlen(t)-1] == '\n') t[strlen(t)-1] = '\0';
-    
-    return t;
+	time(&rawtime);
+	char* t = ctime(&rawtime);
+	if (t[strlen(t) - 1] == '\n') t[strlen(t) - 1] = '\0';
+	return t;
+#endif
 }
 
 // Constructor

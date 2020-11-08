@@ -13,7 +13,7 @@
 
 // Namespace for Test
 namespace test {
-    // Class for ClassofTests
+	// Class for ClassofTests
 	class ClassOfTests
 	{
 	public:

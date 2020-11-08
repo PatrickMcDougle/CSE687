@@ -10,7 +10,7 @@ using namespace logger;
 
 // Constructor
 ALogDecorator::ALogDecorator(ILogComponent* component)
-    :log_component_(component)
+	:log_component_(component)
 {
 }
 
