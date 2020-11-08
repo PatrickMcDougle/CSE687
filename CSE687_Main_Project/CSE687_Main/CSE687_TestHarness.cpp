@@ -6,23 +6,28 @@
 // Description: Contains the main function
 
 #include <iostream>
+#include <list>
+#include <vector>
+
+#include "ClassOfTests.h"
 #include "ILogData.h"
+#include "ITest.h"
 #include "LogData.h"
+#include "LoggerFactory.h"
 #include "LogMessage.h"
 #include "LogMessageDecorator.h"
 #include "LogStatusDecorator.h"
 #include "LogTimestampDecorator.h"
-#include "LoggerFactory.h"
-#include "ITest.h"
 #include "TestDriver.h"
-#include "ClassOfTests.h"
-#include <vector>
-#include <list>
-using namespace test;
+
 using namespace logger;
+using namespace test;
+using std::string;
+using std::ostream;
+using std::cout;
 
 // Method creating a 4 Log Data objects and test functionality
-void TestingDevelopmentOfLogData(std::ostream& out_stream) {
+void TestingDevelopmentOfLogData(ostream& out_stream) {
 	out_stream << "\n\n|| =====< Testing LogData functionality >===== ||\n";
 
 	string string1("message one");
@@ -46,7 +51,7 @@ void TestingDevelopmentOfLogData(std::ostream& out_stream) {
 }
 
 // Method creating a 4 Log Decorator objects and test functionality
-void TestingDevelopmentOfLogMessage(std::ostream& out_stream) {
+void TestingDevelopmentOfLogMessage(ostream& out_stream) {
 	out_stream << "\n\n|| =====< Testing Logging of Messages >===== ||\n";
 
 	string string1("message one");
@@ -80,7 +85,7 @@ void TestingDevelopmentOfLogMessage(std::ostream& out_stream) {
 }
 
 // Method creating a 6 Log Factory objects and test functionality
-void TestingDevelopmentOfLogFactory(std::ostream& out_stream) {
+void TestingDevelopmentOfLogFactory(ostream& out_stream) {
 	out_stream << "\n\n|| =====< Testing the Log Factory >===== ||\n";
 
 	string string1("message one");
@@ -126,7 +131,7 @@ void TestingDevelopmentOfLogFactory(std::ostream& out_stream) {
 }
 
 // Method creating a 3 Test Driver objects and test functionality
-void TestingDevelopmentOfTestDriver(std::ostream& out_stream) {
+void TestingDevelopmentOfTestDriver(ostream& out_stream) {
 	out_stream << "\n\n|| =====< Testing the Test Driver >===== ||\n";
 
 	auto test_this = new TestDriver<ClassOfTests>();
@@ -157,10 +162,10 @@ void TestingDevelopmentOfTestDriver(std::ostream& out_stream) {
 
 	out_stream << "Test 3 : " << test_this->testLogResults() << endl;
 
-	//std::list<ITest> list_of_tests;
 	TestDriver<ClassOfTests> first_test_class;
 
-	//list_of_tests.push_back(first_test_class);
+	//std::list<ITest> list_of_tests;             // setup of list of ITests
+	//list_of_tests.push_back(first_test_class);  // add first test class to the list.
 
 	delete test_this;
 }
@@ -169,7 +174,7 @@ void TestingDevelopmentOfTestDriver(std::ostream& out_stream) {
 int main()
 {
 	// Initialize out_stream
-	std::ostream& out_stream = std::cout;
+	ostream& out_stream = cout;
 
 	// Alert User of Program Start
 	out_stream << "|| =====< Start of Program >===== ||\n";
