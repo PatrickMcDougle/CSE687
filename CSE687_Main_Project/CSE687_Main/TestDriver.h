@@ -1,3 +1,9 @@
+// Creators - Team #5: Patrick McDougle, Edgardo Navarro, William Scott
+// Class: CSE 687 OOD
+// School: Syracuse University
+// Project Name: Test Harness
+// Create Date: 2020-10-11
+// Description: Header File For Test Driver
 #pragma once
 #ifndef __I_TEST_DRIVER_H__
 #define __I_TEST_DRIVER_H__
@@ -7,19 +13,23 @@
 #include "ITest.h"
 #include "ILogger.h"
 
+using std::string;
+
+// Namespace for Test
 namespace test {
+// Class for Test Driver
 	template<typename T>
 	class TestDriver : public ITest
 	{
 	private:
-		T* the_class_;
-		bool(T::* the_method_)();
-		logger::ILogger* the_logger_;
-		std::string& the_message_;
-		std::string the_log_results_;
+		T* the_class_;                  // Current Test Class
+		bool(T::* the_method_)();       // Current Test Method
+		logger::ILogger* the_logger_;   // The Logger
+		string& the_message_;      // Current Message
+		string the_log_results_;   // Log Results
 
 	public:
-		TestDriver() :
+		TestDriver() : // Default Constructor All Elements Set to NullPTR
 			the_message_(*new std::string()),
 			the_class_(nullptr),
 			the_method_(nullptr),
@@ -28,43 +38,43 @@ namespace test {
 			// no other initializations needed at this time.
 		}
 
-		~TestDriver() {}
+		~TestDriver() {} // Destructor
 
-		bool test()
+		bool test() // Runs the test based on the the items that have been set
 		{
-			bool result = false;
+			bool result = false; // Default Result to False
 			try {
-				result = (the_class_->*the_method_)();
-				the_log_results_ = the_logger_->logInfo(result, the_message_);
+				result = (the_class_->*the_method_)(); // Executes the Class and Method
+				the_log_results_ = the_logger_->logInfo(result, the_message_); // Log the Results
 			}
 			catch (...) {
-				result = false;
-				the_log_results_ = the_logger_->logInfo(result, " [Exception Thrown] " + the_message_);
+				result = false; // Any issues with class and method, sets results to false
+				the_log_results_ = the_logger_->logInfo(result, " [Exception Thrown] " + the_message_); // Sends error message to logger
 			}
 
-			return result;
+			return result; // Returns final value of result
 		}
 
-		virtual std::string testLogResults() {
+		virtual string testLogResults() {  // Returns the current log results
 			return the_log_results_;
 		}
 
-		TestDriver* loadClass(T* the_class) {
+		TestDriver* loadClass(T* the_class) { // Updates the value of the_class_ with provided class
 			this->the_class_ = the_class;
 			return this;
 		}
 
-		TestDriver* loadMethod(bool(T::* the_method)()) {
+		TestDriver* loadMethod(bool(T::* the_method)()) { // Update the pointer for the_method_ provided method
 			this->the_method_ = the_method;
 			return this;
 		}
 
-		virtual ITest* loadLogger(logger::ILogger* logger) {
+        virtual ITest* loadLogger(logger::ILogger* logger) { // Update the logger
 			this->the_logger_ = logger;
 			return this;
 		}
 
-		virtual ITest* loadMessage(const std::string& message) {
+		virtual ITest* loadMessage(const std::string& message) { // Update the message 
 			this->the_message_ = message;
 			return this;
 		}

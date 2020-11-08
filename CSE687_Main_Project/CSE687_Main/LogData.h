@@ -1,3 +1,10 @@
+// Creators - Team #5: Patrick McDougle, Edgardo Navarro, William Scott
+// Class: CSE 687 OOD
+// School: Syracuse University
+// Project Name: Test Harness
+// Create Date: 2020-10-11
+// Description: Header File For LogData
+
 #pragma once
 #ifndef __LOG_DATA_H__
 #define __LOG_DATA_H__
@@ -11,23 +18,23 @@ using std::ostream;
 using std::cout;
 using std::endl;
 
+// Namespace for Logger
 namespace logger {
+    // Class for LogData
 	class LogData : public ILogData {
 	public:
-		virtual ~LogData() {}
-		virtual bool isPassed();
+        LogData(bool, const string&); // Constructor
+		virtual ~LogData() {} // Destructor
+		virtual bool isPassed(); // 
 		virtual string getMessage();
 		virtual string getDateTime();
-
-		LogData(bool, const string&);
-
 	private:
-		bool passed_;
-		string message_;
-		time_t timestamp_;
+		bool passed_; // Log result
+		string message_; // Log message
+		time_t timestamp_; // Time stamp of when log was created
 	};
 
-	ostream& operator<<(ostream& out, ILogData& logData);
+	ostream& operator<<(ostream& out, ILogData& logData);  // Return all element of a Log Data
 }
 
 #endif // !__LOG_DATA_H__

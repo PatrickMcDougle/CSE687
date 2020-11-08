@@ -1,3 +1,10 @@
+// Creators - Team #5: Patrick McDougle, Edgardo Navarro, William Scott
+// Class: CSE 687 OOD
+// School: Syracuse University
+// Project Name: Test Harness
+// Create Date: 2020-10-11
+// Description: Header File For LoggerFactory
+
 #pragma once
 #ifndef __LOGGER_FACTORY_H__
 #define __LOGGER_FACTORY_H__
@@ -12,7 +19,9 @@
 
 using std::string;
 
+// Namespace for Logger
 namespace logger {
+    // Class for LoggerFactory
 	class LoggerFactory
 	{
 	public:
@@ -28,6 +37,7 @@ namespace logger {
 
 	private:
 
+        // LoadDecorator Inline Function
 		template<typename T>
 		inline T* LoadDecorator(ILogComponent* aTemplate)
 		{
