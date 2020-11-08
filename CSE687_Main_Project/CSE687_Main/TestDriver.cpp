@@ -1,22 +1,10 @@
+// Creators - Team #5: Patrick McDougle, Edgardo Navarro, William Scott
+// Class: CSE 687 OOD
+// School: Syracuse University
+// Project Name: Test Harness
+// Create Date: 2020-10-11
+// Description: CPP File For Test Driver
+
 #include "TestDriver.h"
 
-template<typename T>
-bool test::TestDriver<T>::test()
-{
-	return false;
-}
-
-
-//template<typename T>
-//bool test::TestDriver<T>::runTest()
-//{
-//	bool result = false;
-//	try {
-//		result = (the_class_->*the_method_)();
-//	}
-//	catch (...) {
-//		std::cout << "\n  exception thrown";
-//		result = false;
-//	}
-//	return result;
-//}
+// Nothing here because the class is a template class
