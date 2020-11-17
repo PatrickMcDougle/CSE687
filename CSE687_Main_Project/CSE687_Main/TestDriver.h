@@ -23,10 +23,10 @@ namespace test {
 	{
 	private:
 		T* the_class_;                  // Current Test Class
-		bool(T::* the_method_)();       // Current Test Method
-		logger::ILogger* the_logger_;   // The Logger
-		string& the_message_;      // Current Message
-		string the_log_results_;   // Log Results
+		bool(T::* the_method_)();		// Current Test Method
+		logger::ILogger* the_logger_;	// The Logger
+		string& the_message_;			// Current Message
+		string the_log_results_;		// Log Results
 
 	public:
 		TestDriver() : // Default Constructor All Elements Set to NullPTR

@@ -75,6 +75,12 @@
     <ClCompile Include="ALogDecorator.cpp">
       <Filter>Source Files\Logger\Decorators</Filter>
     </ClCompile>
+    <ClCompile Include="AddressIp4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ILogComponent.h">
@@ -118,6 +124,12 @@
     </ClInclude>
     <ClInclude Include="TestDriver.h">
       <Filter>Header Files\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="AddressIp4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

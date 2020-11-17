@@ -20,6 +20,9 @@
 #include "LogTimestampDecorator.h"
 #include "TestDriver.h"
 
+#include "AddressIp4.h"
+#include "Message.h"
+
 using namespace logger;
 using namespace test;
 using std::string;
@@ -135,6 +138,7 @@ void TestingDevelopmentOfTestDriver(ostream& out_stream) {
 	out_stream << "\n\n|| =====< Testing the Test Driver >===== ||\n";
 
 	auto test_this = new TestDriver<ClassOfTests>();
+
 	ClassOfTests class_of_tests;
 
 	LoggerFactory log_factory;
@@ -148,8 +152,11 @@ void TestingDevelopmentOfTestDriver(ostream& out_stream) {
 
 	out_stream << "Test 1 : " << test_this->testLogResults() << endl;
 
+	test_this = new TestDriver<ClassOfTests>();
 	test_this
+		->loadClass(&class_of_tests)
 		->loadMethod(&ClassOfTests::testFalse)
+		->loadLogger(log_factory.create(30, 50, 10))
 		->loadMessage("Testing if method returns false.")
 		->test();
 
@@ -168,6 +175,92 @@ void TestingDevelopmentOfTestDriver(ostream& out_stream) {
 	//list_of_tests.push_back(first_test_class);  // add first test class to the list.
 
 	delete test_this;
+}
+
+void TestingAddressIp4(ostream& out_stream) {
+	out_stream << "\n\n|| =====< Testing the Address IP4 class >===== ||\n";
+
+	messaging::AddressIp4 ip1;
+
+	ip1.setPort(1337);
+
+	out_stream << "Port [1337] : " << ip1.getPort() << endl;
+
+	ip1.setAddress(1, 2, 3, 4);
+
+	out_stream << "Address     [1.2.3.4]      : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [1.2.3.4:1337] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.setAddress(11, 22, 33, 44);
+
+	out_stream << "Address     [11.22.33.44]      : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [11.22.33.44:1337] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.setAddress(111, 122, 133, 144);
+
+	out_stream << "Address     [111.122.133.144]      : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [111.122.133.144:1337] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.setAddress("9.8.7.6");
+	ip1.setPort(54321);
+
+	out_stream << "Address     [9.8.7.6]       : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [9.8.7.6:54321] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.setAddress("91.82.73.64");
+	ip1.setPort(53210);
+
+	out_stream << "Address     [91.82.73.64]       : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [91.82.73.64:53210] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.setAddress("191.182.173.164");
+	ip1.setPort(52100);
+
+	out_stream << "Address     [191.182.173.164]       : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [191.182.173.164:52100] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.set("5.6.7.8:9");
+
+	out_stream << "Address     [5.6.7.8]   : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [5.6.7.8:9] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.set("55.65.75.85:955");
+
+	out_stream << "Address     [55.65.75.85]     : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [55.65.75.85:955] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.set("155.165.175.185:11955");
+
+	out_stream << "Address     [155.165.175.185]       : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [155.165.175.185:11955] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.set(123, 234, 134, 245, 14725);
+
+	out_stream << "Address     [123.234.134.245]       : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [123.234.134.245:14725] : " << ip1.getAddressAndPort() << endl;
+}
+
+void TestingMessage(ostream& out_stream) {
+	out_stream << "\n\n|| =====< Testing the Message class >===== ||\n";
+
+	messaging::Message the_message;
+
+	messaging::AddressIp4 source;
+	source.setAddress(127, 0, 0, 1);
+	source.setPort(12345);
+	the_message.setSource(source);
+
+	messaging::AddressIp4 destination;
+	destination.setAddress(127, 0, 0, 1);
+	destination.setPort(15432);
+	the_message.setDestination(destination);
+
+	the_message.setAuthor("Mother");
+	the_message.setType("DoTest");
+	the_message.setMessage("<runtest><location>2</location></runtest>");
+
+	out_stream << "The Message from Mother to Child " << endl
+		<< the_message.writeMessage() << endl;
 }
 
 // Main Function
@@ -190,6 +283,9 @@ int main()
 
 	// Run Method Testing the Test Driver Classes
 	TestingDevelopmentOfTestDriver(out_stream);
+
+	TestingAddressIp4(out_stream);
+	TestingMessage(out_stream);
 
 	// Alert User of Program End
 	out_stream << "\n\n|| =====< Done With Program >===== ||\n\n\n";

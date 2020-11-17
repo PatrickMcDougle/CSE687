@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddressIp4.cpp" />
     <ClCompile Include="ALogDecorator.cpp" />
     <ClCompile Include="ClassOfTests.cpp" />
     <ClCompile Include="CSE687_TestHarness.cpp" />
@@ -28,10 +29,12 @@
     <ClCompile Include="LogMessageDecorator.cpp" />
     <ClCompile Include="LogStatusDecorator.cpp" />
     <ClCompile Include="LogTimestampDecorator.cpp" />
+    <ClCompile Include="Message.cpp" />
     <ClCompile Include="MyLogger.cpp" />
     <ClCompile Include="TestDriver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddressIp4.h" />
     <ClInclude Include="ALogDecorator.h" />
     <ClInclude Include="ClassOfTests.h" />
     <ClInclude Include="ILogComponent.h" />
@@ -44,6 +47,7 @@
     <ClInclude Include="LogMessageDecorator.h" />
     <ClInclude Include="LogStatusDecorator.h" />
     <ClInclude Include="LogTimestampDecorator.h" />
+    <ClInclude Include="Message.h" />
     <ClInclude Include="MyLogger.h" />
     <ClInclude Include="TestDriver.h" />
   </ItemGroup>
