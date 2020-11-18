@@ -24,7 +24,7 @@ string messaging::AddressIp4::getAddress()
 	return address_string;
 }
 
-int messaging::AddressIp4::getPort()
+size_t messaging::AddressIp4::getPort()
 {
 	return this->ip_port;
 }
@@ -108,7 +108,7 @@ bool messaging::AddressIp4::setAddress(const string& address)
 	return true;
 }
 
-bool messaging::AddressIp4::setPort(int port)
+bool messaging::AddressIp4::setPort(size_t port)
 {
 	if (port < 0 || port > 65353) {
 		this->ip_port = 0;
@@ -119,7 +119,7 @@ bool messaging::AddressIp4::setPort(int port)
 	return true;
 }
 
-bool messaging::AddressIp4::set(int p1, int p2, int p3, int p4, int port)
+bool messaging::AddressIp4::set(int p1, int p2, int p3, int p4, size_t port)
 {
 	return
 		setAddress(p1, p2, p3, p4) &&

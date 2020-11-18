@@ -31,11 +31,17 @@
     <ClCompile Include="LogTimestampDecorator.cpp" />
     <ClCompile Include="Message.cpp" />
     <ClCompile Include="MyLogger.cpp" />
+    <ClCompile Include="Receiver.cpp" />
+    <ClCompile Include="Sender.cpp" />
+    <ClCompile Include="Socket.cpp" />
+    <ClCompile Include="SocketConnecter.cpp" />
+    <ClCompile Include="SocketListener.cpp" />
     <ClCompile Include="TestDriver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddressIp4.h" />
     <ClInclude Include="ALogDecorator.h" />
+    <ClInclude Include="BlockingQueue.h" />
     <ClInclude Include="ClassOfTests.h" />
     <ClInclude Include="ILogComponent.h" />
     <ClInclude Include="ILogData.h" />
@@ -49,6 +55,11 @@
     <ClInclude Include="LogTimestampDecorator.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="MyLogger.h" />
+    <ClInclude Include="Receiver.h" />
+    <ClInclude Include="Sender.h" />
+    <ClInclude Include="Socket.h" />
+    <ClInclude Include="SocketConnecter.h" />
+    <ClInclude Include="SocketListener.h" />
     <ClInclude Include="TestDriver.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -11,19 +11,19 @@ namespace messaging {
 	{
 	private:
 		unsigned int ip4_address;
-		int ip_port;
+		size_t ip_port;
 
 	public:
 		string getAddress();
-		int getPort();
+		size_t getPort();
 		string getAddressAndPort();
 
 		bool setAddress(unsigned int);
 		bool setAddress(int, int, int, int);
 		bool setAddress(const string&);
-		bool setPort(int);
+		bool setPort(size_t);
 
-		bool set(int, int, int, int, int);
+		bool set(int, int, int, int, size_t);
 		bool set(const string&);
 	};
 }

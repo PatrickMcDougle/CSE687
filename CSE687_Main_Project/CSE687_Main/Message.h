@@ -26,6 +26,9 @@ namespace messaging {
 		bool setAuthor(const string&);
 		bool setMessage(const string&);
 
+		string getType() const { return type; }
+		AddressIp4 getDestination() const { return destination_address; }
+
 		string writeMessage();
 		bool readMessage(const string&);
 	};

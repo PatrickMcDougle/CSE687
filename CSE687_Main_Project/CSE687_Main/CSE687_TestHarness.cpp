@@ -22,6 +22,7 @@
 
 #include "AddressIp4.h"
 #include "Message.h"
+#include "BlockingQueue.h"
 
 using namespace logger;
 using namespace test;
@@ -261,6 +262,10 @@ void TestingMessage(ostream& out_stream) {
 
 	out_stream << "The Message from Mother to Child " << endl
 		<< the_message.writeMessage() << endl;
+
+	queue::BlockingQueue<int> bq;
+
+	bq.enqueue(1);
 }
 
 // Main Function
