@@ -24,7 +24,15 @@ namespace messaging {
 	public:
 		Receiver(AddressIp4 address, const std::string& name = "Receiver");
 		template<typename CallableObject>
-		void start(CallableObject& co);
+		void start(CallableObject& callable_object) {
+			socket_listener_.start(callable_object);
+		};
+
+		template<typename T>
+		void start(T* the_class, bool(T::* the_method)()) {
+			socket_listener_.start(the_class, the_method);
+		};
+
 		void stop();
 		Message getMessage();
 		BlockingQueue<Message>* queue();

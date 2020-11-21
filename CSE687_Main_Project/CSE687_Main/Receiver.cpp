@@ -5,26 +5,16 @@ messaging::Receiver::Receiver(AddressIp4 address, const std::string& name) : soc
 {
 	//StaticLogger<1>::write("\n  -- starting Receiver"); // TODO
 }
-//----< returns reference to receive queue >-------------------------
 
 BlockingQueue<Message>* messaging::Receiver::queue()
 {
 	return &receiver_queue_;
 }
-//----< starts listener thread running callable object >-------------
-
-template<typename CallableObject>
-void messaging::Receiver::start(CallableObject& co)
-{
-	socket_listener_.start(co);
-}
-//----< stops listener thread >--------------------------------------
 
 void messaging::Receiver::stop()
 {
 	socket_listener_.stop();
 }
-//----< retrieves received message >---------------------------------
 
 Message messaging::Receiver::getMessage()
 {

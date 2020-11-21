@@ -21,7 +21,10 @@
   <ItemGroup>
     <ClCompile Include="AddressIp4.cpp" />
     <ClCompile Include="ALogDecorator.cpp" />
+    <ClCompile Include="ChildTester.cpp" />
     <ClCompile Include="ClassOfTests.cpp" />
+    <ClCompile Include="ClientHandler.cpp" />
+    <ClCompile Include="Communications.cpp" />
     <ClCompile Include="CSE687_TestHarness.cpp" />
     <ClCompile Include="LogData.cpp" />
     <ClCompile Include="LoggerFactory.cpp" />
@@ -42,7 +45,10 @@
     <ClInclude Include="AddressIp4.h" />
     <ClInclude Include="ALogDecorator.h" />
     <ClInclude Include="BlockingQueue.h" />
+    <ClInclude Include="ChildTester.h" />
     <ClInclude Include="ClassOfTests.h" />
+    <ClInclude Include="ClientHandler.h" />
+    <ClInclude Include="Communications.h" />
     <ClInclude Include="ILogComponent.h" />
     <ClInclude Include="ILogData.h" />
     <ClInclude Include="ILogger.h" />

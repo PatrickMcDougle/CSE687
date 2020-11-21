@@ -20,6 +20,10 @@ namespace messaging {
 		size_t body_size;
 
 	public:
+
+		Message() {}
+		~Message() {}
+
 		bool setSource(AddressIp4);
 		bool setDestination(AddressIp4);
 		bool setType(const string&);

@@ -11,7 +11,7 @@ messaging::SocketListener::SocketListener(size_t port) : Socket(), port_(port)
 	hints.ai_flags = AI_PASSIVE;
 }
 
-messaging::SocketListener::SocketListener(SocketListener&& s) : Socket()
+messaging::SocketListener::SocketListener(SocketListener&& s) noexcept : Socket()
 {
 	socket_ = s.socket_;
 	s.socket_ = INVALID_SOCKET;
@@ -121,3 +121,4 @@ void messaging::SocketListener::stop()
 	stop_.exchange(true);
 	sendString("Stop!");
 }
+
