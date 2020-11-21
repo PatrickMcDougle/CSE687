@@ -23,6 +23,8 @@
 #include "AddressIp4.h"
 #include "Message.h"
 #include "BlockingQueue.h"
+#include "Communications.h"
+#include "ChildTester.h"
 
 using namespace logger;
 using namespace test;
@@ -268,6 +270,60 @@ void TestingMessage(ostream& out_stream) {
 	bq.enqueue(1);
 }
 
+
+void TestingChildThreads(ostream& out_stream) {
+	messaging::AddressIp4 mother_address;
+	messaging::AddressIp4 child1_address;
+	messaging::AddressIp4 child2_address;
+
+	mother_address.set(127, 0, 0, 1, 12000);
+	child1_address.set(127, 0, 0, 1, 12010);
+	child2_address.set(127, 0, 0, 1, 12020);
+
+	threading::ChildTester child1_tester(child1_address, mother_address, "Boy");
+	threading::ChildTester child2_tester(child2_address, mother_address, "Girl");
+
+	threading::Communications mother_communications(mother_address, "Mother");
+	mother_communications.start();
+
+	std::thread child1_thread(&threading::ChildTester::run, child1_tester);
+	child1_thread.detach();
+
+	std::thread child2_thread(&threading::ChildTester::run, child2_tester);
+	child2_thread.detach();
+
+
+	Message message;
+	Message reply;
+	size_t count = 0;
+
+	while (true) {
+		message = mother_communications.getMessage();
+		out_stream 
+			<< std::endl
+			<< " "
+			<< mother_communications.getName() 
+			<< " received message: " 
+			<< message.getAuthor();
+
+		reply.setDestination(message.getSource());
+		reply.setSource(mother_address);
+		reply.setAuthor("Mother");
+		reply.setType("TEST");
+		reply.setMessage("Another test to do");
+
+		mother_communications.sendMessage(reply);
+
+		if (message.getType() == "STOP") {
+			break;
+		}
+	}
+
+	mother_communications.stop();
+}
+
+
+
 // Main Function
 int main()
 {
@@ -291,6 +347,8 @@ int main()
 
 	TestingAddressIp4(out_stream);
 	TestingMessage(out_stream);
+
+	TestingChildThreads(out_stream);
 
 	// Alert User of Program End
 	out_stream << "\n\n|| =====< Done With Program >===== ||\n\n\n";

@@ -6,6 +6,7 @@
 
 #include "AddressIp4.h"
 #include "Message.h"
+#include "Communications.h"
 
 using std::string;
 using messaging::AddressIp4;
@@ -21,7 +22,7 @@ namespace threading {
 
 	public:
 
-		ChildTester(const string& childs_name, messaging::AddressIp4 child_address, messaging::AddressIp4 mother_address)
+		ChildTester(messaging::AddressIp4 child_address, messaging::AddressIp4 mother_address, const string& childs_name)
 			: child_address_(child_address), mother_address_(mother_address), childs_name_(childs_name)
 		{
 			// nothing at this time.

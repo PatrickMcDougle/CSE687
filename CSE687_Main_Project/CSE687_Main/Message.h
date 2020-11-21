@@ -31,7 +31,10 @@ namespace messaging {
 		bool setMessage(const string&);
 
 		string getType() const { return type; }
+		string getAuthor() const { return author; }
 		AddressIp4 getDestination() const { return destination_address; }
+		AddressIp4 getSource() const { return source_address; }
+
 
 		string writeMessage();
 		bool readMessage(const string&);
