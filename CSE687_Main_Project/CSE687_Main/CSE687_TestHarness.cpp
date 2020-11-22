@@ -9,7 +9,11 @@
 #include <list>
 #include <vector>
 
+#include "AddressIp4.h"
+#include "BlockingQueue.h"
+#include "ChildTester.h"
 #include "ClassOfTests.h"
+#include "Communications.h"
 #include "ILogData.h"
 #include "ITest.h"
 #include "LogData.h"
@@ -18,14 +22,9 @@
 #include "LogMessageDecorator.h"
 #include "LogStatusDecorator.h"
 #include "LogTimestampDecorator.h"
-#include "TestDriver.h"
-
-#include "AddressIp4.h"
 #include "Message.h"
-#include "BlockingQueue.h"
-#include "Communications.h"
-#include "ChildTester.h"
 #include "SocketSystem.h"
+#include "TestDriver.h"
 
 using namespace logger;
 using namespace test;
@@ -274,22 +273,54 @@ void TestingMessage(ostream& out_stream) {
 void TestingChildThreads(ostream& out_stream) {
 	out_stream << "\n\n|| =====< Testing the Children Threads >===== ||\n";
 
+	// TODO
+	LoggerFactory log_factory;
+	ILogger* logger = log_factory.create(30, 50, 10);
+
+	//std::mutex print_mutex;
+
 	// socket system will setup the sockets and tears them down when the
 	// class is destroyed.
 	messaging::SocketSystem socket_system_setup;
 
-	messaging::AddressIp4 mother_address;
-	messaging::AddressIp4 child1_address;
-	messaging::AddressIp4 child2_address;
+	auto blocking_queue_of_test_drivers = new BlockingQueue<ITest*>();
 
-	mother_address.set(127, 0, 0, 1, 12000);
-	child1_address.set(127, 0, 0, 1, 12010);
-	child2_address.set(127, 0, 0, 1, 12020);
+	ClassOfTests class_of_tests;
 
-	threading::ChildTester child1_tester(child1_address, mother_address, "Boy");
-	threading::ChildTester child2_tester(child2_address, mother_address, "Girl");
+	auto test_this = new TestDriver<ClassOfTests>();
 
-	threading::Communications mother_communications(mother_address, "Mother");
+	test_this
+		->loadClass(&class_of_tests)
+		->loadMethod(&ClassOfTests::testTrue)
+		->loadLogger(logger)
+		->loadMessage("Testing if method returns true.");
+
+	blocking_queue_of_test_drivers->enqueue(test_this);
+
+	test_this = new TestDriver<ClassOfTests>();
+	test_this
+		->loadClass(&class_of_tests)
+		->loadMethod(&ClassOfTests::testFalse)
+		->loadLogger(logger)
+		->loadMessage("Testing if method returns false.");
+
+	blocking_queue_of_test_drivers->enqueue(test_this);
+
+	messaging::AddressIp4 address_mother;
+	messaging::AddressIp4 address_child1;
+	messaging::AddressIp4 address_child2;
+
+	address_mother.set(127, 0, 0, 1, 12000);
+	address_child1.set(127, 0, 0, 1, 12010);
+	address_child2.set(127, 0, 0, 1, 12020);
+
+	threading::ChildTester child1_tester(address_child1, address_mother, "Boy");
+	threading::ChildTester child2_tester(address_child2, address_mother, "Girl");
+
+	child1_tester.setup(blocking_queue_of_test_drivers, logger);
+	child2_tester.setup(blocking_queue_of_test_drivers, logger);
+
+	threading::Communications mother_communications(address_mother, "Mother");
 	mother_communications.start();
 
 	std::thread child1_thread(&threading::ChildTester::run, child1_tester);
@@ -303,29 +334,48 @@ void TestingChildThreads(ostream& out_stream) {
 	size_t count = 0;
 
 	while (true) {
+		// Wait for Children to respond when ready.
 		message = mother_communications.getMessage();
+
+		print_mutex.lock();
 		out_stream
 			<< std::endl
 			<< " =====< "
 			<< mother_communications.getName()
 			<< " received message: "
 			<< message.getAuthor()
-			<< " >=====";
-
-		reply.setDestination(message.getSource());
-		reply.setSource(mother_address);
-		reply.setAuthor("Mother");
-		reply.setType("TEST");
-		reply.setMessage("Another test to do");
-
-		mother_communications.sendMessage(reply);
+			<< " ["
+			<< message.getMessage()
+			<< "] >=====";
+		print_mutex.unlock();
 
 		if (message.getType() == "STOP") {
-			break;
+			// The child is done.
+			continue;
 		}
+
+		if (message.getType() == "READY" || message.getType() == "TEST_RESULTS") {
+			reply.setDestination(message.getSource());
+			reply.setSource(address_mother);
+			reply.setAuthor("Mother");
+
+			if (blocking_queue_of_test_drivers->size() > 0) {
+				reply.setType("TEST_REQUEST");
+				reply.setMessage("Do the next test.");
+			}
+			else {
+				reply.setType("QUIT");
+				reply.setMessage("You are done.");
+			}
+		}
+
+		mother_communications.sendMessage(reply);
 	}
 
 	mother_communications.stop();
+
+	delete blocking_queue_of_test_drivers;
+	delete logger;
 }
 
 // Main Function
