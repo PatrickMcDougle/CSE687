@@ -55,7 +55,7 @@ void threading::ChildTester::run() const
 			Message message;
 			message.setSource(child_address_);
 			message.setDestination(mother_address_);
-			message.setType("TEST");
+			message.setType("TEST_RESULTS");
 			message.setAuthor(childs_name_);
 			message.setMessage("<test><results>" + std::to_string(results) + "</results><log>" + itest->testLogResults() + "</log></test>");
 
@@ -73,6 +73,8 @@ void threading::ChildTester::run() const
 	message_done.setType("STOP");
 	message_done.setAuthor(childs_name_);
 	message_done.setMessage("All Done Mother!");
+
+	communications.sendMessage(message_done);
 
 	print_mutex.lock();
 	std::cout << std::endl << "DONE: [" << childs_name_ << "]#";

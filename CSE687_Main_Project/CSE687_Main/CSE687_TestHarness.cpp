@@ -331,7 +331,8 @@ void TestingChildThreads(ostream& out_stream) {
 
 	Message message;
 	Message reply;
-	size_t count = 0;
+	size_t number_of_tests = blocking_queue_of_test_drivers->size();
+	size_t number_of_children = 2;
 
 	while (true) {
 		// Wait for Children to respond when ready.
@@ -350,6 +351,10 @@ void TestingChildThreads(ostream& out_stream) {
 		print_mutex.unlock();
 
 		if (message.getType() == "STOP") {
+			if (--number_of_children == 0)
+			{
+				break;
+			}
 			// The child is done.
 			continue;
 		}
@@ -359,9 +364,10 @@ void TestingChildThreads(ostream& out_stream) {
 			reply.setSource(address_mother);
 			reply.setAuthor("Mother");
 
-			if (blocking_queue_of_test_drivers->size() > 0) {
+			if (number_of_tests > 0) {
 				reply.setType("TEST_REQUEST");
-				reply.setMessage("Do the next test.");
+				reply.setMessage("Do test number [" + std::to_string(number_of_tests) + "]");
+				--number_of_tests;
 			}
 			else {
 				reply.setType("QUIT");

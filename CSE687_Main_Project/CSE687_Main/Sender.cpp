@@ -18,7 +18,7 @@ void messaging::Sender::start()
 		{
 			Message message = sender_queue_.dequeue();
 
-			if (message.getType() == "quit")
+			if (message.getType() == "QUIT_NOT")
 			{
 				//StaticLogger<1>::write("\n  -- send thread shutting down"); // TODO
 				return;
