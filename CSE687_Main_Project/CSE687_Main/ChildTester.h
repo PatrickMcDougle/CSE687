@@ -3,10 +3,12 @@
 #define __CHILD_TESTER_H__
 
 #include <string>
+#include <iostream>
 
 #include "AddressIp4.h"
 #include "Message.h"
 #include "Communications.h"
+#include "SocketSystem.h"
 
 using std::string;
 using messaging::AddressIp4;

@@ -10,12 +10,13 @@ namespace messaging {
 	class AddressIp4
 	{
 	private:
+		// ip4_address : 127.0.0.1 = 2130706433
 		unsigned int ip4_address;
 		size_t ip_port;
 
 	public:
-		string getAddress();
-		size_t getPort();
+		string getAddress() const;
+		size_t getPort() const;
 		string getAddressAndPort();
 
 		bool setAddress(unsigned int);

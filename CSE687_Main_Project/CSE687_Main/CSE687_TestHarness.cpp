@@ -25,6 +25,7 @@
 #include "BlockingQueue.h"
 #include "Communications.h"
 #include "ChildTester.h"
+#include "SocketSystem.h"
 
 using namespace logger;
 using namespace test;
@@ -270,8 +271,13 @@ void TestingMessage(ostream& out_stream) {
 	bq.enqueue(1);
 }
 
-
 void TestingChildThreads(ostream& out_stream) {
+	out_stream << "\n\n|| =====< Testing the Children Threads >===== ||\n";
+
+	// socket system will setup the sockets and tears them down when the
+	// class is destroyed.
+	messaging::SocketSystem socket_system_setup;
+
 	messaging::AddressIp4 mother_address;
 	messaging::AddressIp4 child1_address;
 	messaging::AddressIp4 child2_address;
@@ -292,19 +298,19 @@ void TestingChildThreads(ostream& out_stream) {
 	std::thread child2_thread(&threading::ChildTester::run, child2_tester);
 	child2_thread.detach();
 
-
 	Message message;
 	Message reply;
 	size_t count = 0;
 
 	while (true) {
 		message = mother_communications.getMessage();
-		out_stream 
+		out_stream
 			<< std::endl
-			<< " "
-			<< mother_communications.getName() 
-			<< " received message: " 
-			<< message.getAuthor();
+			<< " =====< "
+			<< mother_communications.getName()
+			<< " received message: "
+			<< message.getAuthor()
+			<< " >=====";
 
 		reply.setDestination(message.getSource());
 		reply.setSource(mother_address);
@@ -322,8 +328,6 @@ void TestingChildThreads(ostream& out_stream) {
 	mother_communications.stop();
 }
 
-
-
 // Main Function
 int main()
 {
@@ -333,20 +337,20 @@ int main()
 	// Alert User of Program Start
 	out_stream << "|| =====< Start of Program >===== ||\n";
 
-	// Run Method Testing the Log Data Classes
-	TestingDevelopmentOfLogData(out_stream);
+	//// Run Method Testing the Log Data Classes
+	//TestingDevelopmentOfLogData(out_stream);
 
-	// Run Method Tesing the Log Message Classes
-	TestingDevelopmentOfLogMessage(out_stream);
+	//// Run Method Tesing the Log Message Classes
+	//TestingDevelopmentOfLogMessage(out_stream);
 
-	// Run Method Testing the Log Factory
-	TestingDevelopmentOfLogFactory(out_stream);
+	//// Run Method Testing the Log Factory
+	//TestingDevelopmentOfLogFactory(out_stream);
 
-	// Run Method Testing the Test Driver Classes
-	TestingDevelopmentOfTestDriver(out_stream);
+	//// Run Method Testing the Test Driver Classes
+	//TestingDevelopmentOfTestDriver(out_stream);
 
-	TestingAddressIp4(out_stream);
-	TestingMessage(out_stream);
+	//TestingAddressIp4(out_stream);
+	//TestingMessage(out_stream);
 
 	TestingChildThreads(out_stream);
 

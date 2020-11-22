@@ -1,4 +1,5 @@
 #include "SocketConnecter.h"
+#include <iostream>
 
 messaging::SocketConnecter::SocketConnecter() : Socket()
 {
@@ -29,17 +30,18 @@ messaging::SocketConnecter::~SocketConnecter()
 {
 }
 
-bool messaging::SocketConnecter::connect(const std::string& ip, size_t port)
+bool messaging::SocketConnecter::connect(const std::string& ip_address, size_t ip_port)
 {
-	size_t uport = htons((u_short)port);
+	size_t uport = htons((u_short)ip_port);
 	string port_string = std::to_string(uport);
 
 	// Resolve the server address and port
-	const char* p_temp_ip = ip.c_str();
+	const char* ip_address_temp = ip_address.c_str();
 
-	iResult = getaddrinfo(p_temp_ip, port_string.c_str(), &hints, &result);
+	iResult = getaddrinfo(ip_address_temp, port_string.c_str(), &hints, &result);
 	if (iResult != 0) {
 		//Show::write("\n  -- getaddrinfo failed with error: " + std::to_string(iResult)); // TODO
+		std::cout << "\n  -- getaddrinfo failed with error: " + std::to_string(iResult);
 		return false;
 	}
 

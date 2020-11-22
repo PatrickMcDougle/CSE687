@@ -39,6 +39,8 @@
     <ClCompile Include="Socket.cpp" />
     <ClCompile Include="SocketConnecter.cpp" />
     <ClCompile Include="SocketListener.cpp" />
+    <ClCompile Include="SocketSystem.cpp" />
+    <ClCompile Include="StringHelper.cpp" />
     <ClCompile Include="TestDriver.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +68,8 @@
     <ClInclude Include="Socket.h" />
     <ClInclude Include="SocketConnecter.h" />
     <ClInclude Include="SocketListener.h" />
+    <ClInclude Include="SocketSystem.h" />
+    <ClInclude Include="StringHelper.h" />
     <ClInclude Include="TestDriver.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

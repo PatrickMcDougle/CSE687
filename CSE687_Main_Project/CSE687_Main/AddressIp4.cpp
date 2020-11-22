@@ -1,6 +1,6 @@
 #include "AddressIp4.h"
 
-string messaging::AddressIp4::getAddress()
+string messaging::AddressIp4::getAddress() const
 {
 	int p1 = 0;
 	int p2 = 0;
@@ -24,7 +24,7 @@ string messaging::AddressIp4::getAddress()
 	return address_string;
 }
 
-size_t messaging::AddressIp4::getPort()
+size_t messaging::AddressIp4::getPort() const
 {
 	return this->ip_port;
 }

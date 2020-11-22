@@ -62,11 +62,11 @@ namespace queue {
 			return temp;
 		}
 
+		// ip 127.0.0.1 = 2130706433
+
 		void enqueue(const T& t) {
-			{
-				std::unique_lock<std::mutex> l(mutex_);
-				queue_.push(t);
-			}
+			std::unique_lock<std::mutex> l(mutex_);
+			queue_.push(t);
 			condition_variable_.notify_one();
 		};
 
