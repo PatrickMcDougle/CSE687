@@ -6,6 +6,7 @@
 #include <vector>
 
 #include "AddressIp4.h"
+#include "IAddressIp.h"
 #include "StringHelper.h"
 
 using std::string;
@@ -15,37 +16,42 @@ namespace messaging {
 	class Message
 	{
 	private:
-		AddressIp4 source_address_;
-		AddressIp4 destination_address_;
-		time_t timestamp_;
+		time_t timestamp_ = 0;
+
+		IAddressIp* source_address_;
+		IAddressIp* destination_address_;
+
 		string type_;
 		string author_;
-		string body_message_;
-		size_t content_length_;
 
-		void read(AddressIp4& address, vector<string> strings) const;
-		void read(string& attribute, vector<string> strings) const;
-		void read(rsize_t& attribute, vector<string> strings) const;
+		string body_message_;
+		size_t content_length_ = 0;
+
+		static	void read(IAddressIp* address, vector<string>& strings);
+		static	void read(string& attribute, vector<string>& strings);
+		static	void read(rsize_t& attribute, vector<string>& strings);
 
 	public:
 
-		Message() {}
+		Message(IAddressIp* address_source, IAddressIp* address_destination)
+			: source_address_(address_source), destination_address_(address_destination)
+		{
+			// do nothing else at this time.
+		}
 		~Message() {}
 
-		bool setSource(AddressIp4);
-		bool setDestination(AddressIp4);
 		bool setType(const string&);
 		bool setAuthor(const string&);
 		bool setMessage(const string&);
 
 		string getType() const { return type_; }
 		string getAuthor() const { return author_; }
-		AddressIp4 getDestination() const { return destination_address_; }
-		AddressIp4 getSource() const { return source_address_; }
+		IAddressIp* getDestination() const { return destination_address_; }
+		IAddressIp* getSource() const { return source_address_; }
 		string getMessage() const { return body_message_; }
 
 		string writeMessage();
-		bool readMessage(const string&);
+		static	Message readMessage(const string&);
 	};
 }
 

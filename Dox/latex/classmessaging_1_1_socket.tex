@@ -1,0 +1,391 @@
+\hypertarget{classmessaging_1_1_socket}{}\doxysection{messaging\+::Socket Class Reference}
+\label{classmessaging_1_1_socket}\index{messaging::Socket@{messaging::Socket}}
+
+
+{\ttfamily \#include $<$Socket.\+h$>$}
+
+
+
+Inheritance diagram for messaging\+::Socket\+:
+% FIG 0
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{byte}} = char
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmessaging_1_1_socket_ac7bcde5c9608a351bb0143ea06ac0afe}{Socket}} (const \mbox{\hyperlink{classmessaging_1_1_socket}{Socket}} \&s)=delete
+\item 
+\mbox{\hyperlink{classmessaging_1_1_socket}{Socket}} \& \mbox{\hyperlink{classmessaging_1_1_socket_ac41bfacdc88210e560c8782dddf72fe4}{operator=}} (const \mbox{\hyperlink{classmessaging_1_1_socket}{Socket}} \&s)=delete
+\item 
+\mbox{\hyperlink{classmessaging_1_1_socket_a6503a190e4cde21ddb3f3b34a5ed923d}{Socket}} ()
+\item 
+\mbox{\hyperlink{classmessaging_1_1_socket_a1c9e21c9bfb3acf472366c90dfce142b}{Socket}} (\+::S\+O\+C\+K\+ET)
+\item 
+\mbox{\hyperlink{classmessaging_1_1_socket_a3234b71d2dd068b25eabb46e636fb07c}{Socket}} (\mbox{\hyperlink{classmessaging_1_1_socket}{Socket}} \&\&s)
+\item 
+\mbox{\hyperlink{classmessaging_1_1_socket_a28c4facac75ea7a33c6cd6e9c10d71c5}{operator\+::\+S\+O\+C\+K\+ET}} ()
+\item 
+\mbox{\hyperlink{classmessaging_1_1_socket}{Socket}} \& \mbox{\hyperlink{classmessaging_1_1_socket_acc48ad4ab11ca68e1e2fa770644eddb7}{operator=}} (\mbox{\hyperlink{classmessaging_1_1_socket}{Socket}} \&\&s)
+\item 
+virtual \mbox{\hyperlink{classmessaging_1_1_socket_ab6e4d18554a8e056915974242099ba09}{$\sim$\+Socket}} ()
+\item 
+bool \mbox{\hyperlink{classmessaging_1_1_socket_ab3d30e2e281ba14baee598cb066a8b77}{send}} (size\+\_\+t bytes, \mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{byte}} $\ast$buffer)
+\item 
+bool \mbox{\hyperlink{classmessaging_1_1_socket_ac1d5d4f6384f7567475e59bb758e79d6}{recv}} (size\+\_\+t bytes, \mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{byte}} $\ast$buffer)
+\item 
+size\+\_\+t \mbox{\hyperlink{classmessaging_1_1_socket_a7af4220c99eb7e6ca78b38d6bd6357c8}{send\+Stream}} (size\+\_\+t bytes, \mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{byte}} $\ast$buffer) const
+\item 
+size\+\_\+t \mbox{\hyperlink{classmessaging_1_1_socket_a350edca389279b6ec9bff45c1b960ad7}{recv\+Stream}} (size\+\_\+t bytes, \mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{byte}} $\ast$buffer) const
+\item 
+bool \mbox{\hyperlink{classmessaging_1_1_socket_aa7bf9ee9161ae342c9c873d3dfa839f5}{send\+String}} (const string \&str, \mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{byte}} terminator=\textquotesingle{}\textbackslash{}0\textquotesingle{})
+\item 
+string \mbox{\hyperlink{classmessaging_1_1_socket_afe9fd5caa0adc74de17c6fcb0a3c1ca3}{recv\+String}} (\mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{byte}} terminator=\textquotesingle{}\textbackslash{}0\textquotesingle{})
+\item 
+size\+\_\+t \mbox{\hyperlink{classmessaging_1_1_socket_a253fb17959bc20c62d67b63c1a1afd97}{bytes\+Waiting}} ()
+\item 
+bool \mbox{\hyperlink{classmessaging_1_1_socket_aea971f58bde075b484d6c1a4ac67d48e}{wait\+For\+Data}} (size\+\_\+t time\+To\+Wait, size\+\_\+t time\+To\+Check)
+\item 
+bool \mbox{\hyperlink{classmessaging_1_1_socket_ab5c89edfd4bb224fae1ec6849471f941}{shut\+Down\+Send}} () const
+\item 
+bool \mbox{\hyperlink{classmessaging_1_1_socket_a2080abe584add701788bb5201d750d97}{shut\+Down\+Recv}} () const
+\item 
+bool \mbox{\hyperlink{classmessaging_1_1_socket_afd91563340dfb070ffc9aa0f03db54fb}{shut\+Down}} () const
+\item 
+void \mbox{\hyperlink{classmessaging_1_1_socket_a1abf6e0c8a3ded8ba5895a14f465cb0f}{close}} () const
+\item 
+bool \mbox{\hyperlink{classmessaging_1_1_socket_aae184f74fc6f9c693fc3a3394d3c0036}{valid\+State}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{classmessaging_1_1_socket_a9904a9b871c2561b3eb250a01d100ae4}{remove\+Terminator}} (const string \&src)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+W\+S\+A\+D\+A\+TA \mbox{\hyperlink{classmessaging_1_1_socket_a3bcafc61cf54b8d603f57855defc18ea}{wsa\+Data}}
+\item 
+S\+O\+C\+K\+ET \mbox{\hyperlink{classmessaging_1_1_socket_ae8f3f1fe24c5915a30be0c5779ac9468}{socket\+\_\+}}
+\item 
+struct addrinfo $\ast$ \mbox{\hyperlink{classmessaging_1_1_socket_a97807f9602fa379f22d40acb6b776888}{result}} = N\+U\+LL
+\item 
+struct addrinfo $\ast$ \mbox{\hyperlink{classmessaging_1_1_socket_ae28db32ab945e9ea7b892237602c769d}{ptr}} = N\+U\+LL
+\item 
+struct addrinfo \mbox{\hyperlink{classmessaging_1_1_socket_afed4d17a010fe9d1575f6b4929a53844}{hints}}
+\item 
+int \mbox{\hyperlink{classmessaging_1_1_socket_a48acf5ff1102067a9e22055513d79248}{i\+Result}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 13 of file Socket.\+h.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}\label{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}} 
+\index{messaging::Socket@{messaging::Socket}!byte@{byte}}
+\index{byte@{byte}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{byte}{byte}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{messaging\+::\+Socket\+::byte}} =  char}
+
+
+
+Definition at line 16 of file Socket.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmessaging_1_1_socket_ac7bcde5c9608a351bb0143ea06ac0afe}\label{classmessaging_1_1_socket_ac7bcde5c9608a351bb0143ea06ac0afe}} 
+\index{messaging::Socket@{messaging::Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily messaging\+::\+Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmessaging_1_1_socket}{Socket}} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_a6503a190e4cde21ddb3f3b34a5ed923d}\label{classmessaging_1_1_socket_a6503a190e4cde21ddb3f3b34a5ed923d}} 
+\index{messaging::Socket@{messaging::Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily messaging\+::\+Socket\+::\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_a1c9e21c9bfb3acf472366c90dfce142b}\label{classmessaging_1_1_socket_a1c9e21c9bfb3acf472366c90dfce142b}} 
+\index{messaging::Socket@{messaging::Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily messaging\+::\+Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{\+::S\+O\+C\+K\+ET}]{sock }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_a3234b71d2dd068b25eabb46e636fb07c}\label{classmessaging_1_1_socket_a3234b71d2dd068b25eabb46e636fb07c}} 
+\index{messaging::Socket@{messaging::Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily messaging\+::\+Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmessaging_1_1_socket}{Socket}} \&\&}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_ab6e4d18554a8e056915974242099ba09}\label{classmessaging_1_1_socket_ab6e4d18554a8e056915974242099ba09}} 
+\index{messaging::Socket@{messaging::Socket}!````~Socket@{$\sim$Socket}}
+\index{````~Socket@{$\sim$Socket}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{$\sim$Socket()}{~Socket()}}
+{\footnotesize\ttfamily messaging\+::\+Socket\+::$\sim$\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 70 of file Socket.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmessaging_1_1_socket_a253fb17959bc20c62d67b63c1a1afd97}\label{classmessaging_1_1_socket_a253fb17959bc20c62d67b63c1a1afd97}} 
+\index{messaging::Socket@{messaging::Socket}!bytesWaiting@{bytesWaiting}}
+\index{bytesWaiting@{bytesWaiting}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{bytesWaiting()}{bytesWaiting()}}
+{\footnotesize\ttfamily size\+\_\+t messaging\+::\+Socket\+::bytes\+Waiting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 162 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_a1abf6e0c8a3ded8ba5895a14f465cb0f}\label{classmessaging_1_1_socket_a1abf6e0c8a3ded8ba5895a14f465cb0f}} 
+\index{messaging::Socket@{messaging::Socket}!close@{close}}
+\index{close@{close}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void messaging\+::\+Socket\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 40 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_a28c4facac75ea7a33c6cd6e9c10d71c5}\label{classmessaging_1_1_socket_a28c4facac75ea7a33c6cd6e9c10d71c5}} 
+\index{messaging::Socket@{messaging::Socket}!operator::SOCKET@{operator::SOCKET}}
+\index{operator::SOCKET@{operator::SOCKET}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{operator::SOCKET()}{operator::SOCKET()}}
+{\footnotesize\ttfamily messaging\+::\+Socket\+::operator\+::\+S\+O\+C\+K\+ET (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 25 of file Socket.\+h.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_ac41bfacdc88210e560c8782dddf72fe4}\label{classmessaging_1_1_socket_ac41bfacdc88210e560c8782dddf72fe4}} 
+\index{messaging::Socket@{messaging::Socket}!operator=@{operator=}}
+\index{operator=@{operator=}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmessaging_1_1_socket}{Socket}}\& messaging\+::\+Socket\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmessaging_1_1_socket}{Socket}} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_acc48ad4ab11ca68e1e2fa770644eddb7}\label{classmessaging_1_1_socket_acc48ad4ab11ca68e1e2fa770644eddb7}} 
+\index{messaging::Socket@{messaging::Socket}!operator=@{operator=}}
+\index{operator=@{operator=}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmessaging_1_1_socket}{messaging\+::\+Socket}} \& messaging\+::\+Socket\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmessaging_1_1_socket}{messaging\+::\+Socket}} \&\&}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_ac1d5d4f6384f7567475e59bb758e79d6}\label{classmessaging_1_1_socket_ac1d5d4f6384f7567475e59bb758e79d6}} 
+\index{messaging::Socket@{messaging::Socket}!recv@{recv}}
+\index{recv@{recv}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{recv()}{recv()}}
+{\footnotesize\ttfamily bool messaging\+::\+Socket\+::recv (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{bytes,  }\item[{\mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{byte}} $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 90 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_a350edca389279b6ec9bff45c1b960ad7}\label{classmessaging_1_1_socket_a350edca389279b6ec9bff45c1b960ad7}} 
+\index{messaging::Socket@{messaging::Socket}!recvStream@{recvStream}}
+\index{recvStream@{recvStream}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{recvStream()}{recvStream()}}
+{\footnotesize\ttfamily size\+\_\+t messaging\+::\+Socket\+::recv\+Stream (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{bytes,  }\item[{\mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{byte}} $\ast$}]{buffer }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 156 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_afe9fd5caa0adc74de17c6fcb0a3c1ca3}\label{classmessaging_1_1_socket_afe9fd5caa0adc74de17c6fcb0a3c1ca3}} 
+\index{messaging::Socket@{messaging::Socket}!recvString@{recvString}}
+\index{recvString@{recvString}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{recvString()}{recvString()}}
+{\footnotesize\ttfamily std\+::string messaging\+::\+Socket\+::recv\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{byte}}}]{terminator = {\ttfamily \textquotesingle{}\textbackslash{}0\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 121 of file Socket.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classmessaging_1_1_socket_a9904a9b871c2561b3eb250a01d100ae4}\label{classmessaging_1_1_socket_a9904a9b871c2561b3eb250a01d100ae4}} 
+\index{messaging::Socket@{messaging::Socket}!removeTerminator@{removeTerminator}}
+\index{removeTerminator@{removeTerminator}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{removeTerminator()}{removeTerminator()}}
+{\footnotesize\ttfamily std\+::string messaging\+::\+Socket\+::remove\+Terminator (\begin{DoxyParamCaption}\item[{const string \&}]{src }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 146 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_ab3d30e2e281ba14baee598cb066a8b77}\label{classmessaging_1_1_socket_ab3d30e2e281ba14baee598cb066a8b77}} 
+\index{messaging::Socket@{messaging::Socket}!send@{send}}
+\index{send@{send}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily bool messaging\+::\+Socket\+::send (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{bytes,  }\item[{\mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{byte}} $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 75 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_a7af4220c99eb7e6ca78b38d6bd6357c8}\label{classmessaging_1_1_socket_a7af4220c99eb7e6ca78b38d6bd6357c8}} 
+\index{messaging::Socket@{messaging::Socket}!sendStream@{sendStream}}
+\index{sendStream@{sendStream}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{sendStream()}{sendStream()}}
+{\footnotesize\ttfamily size\+\_\+t messaging\+::\+Socket\+::send\+Stream (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{bytes,  }\item[{\mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{byte}} $\ast$}]{buffer }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 151 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_aa7bf9ee9161ae342c9c873d3dfa839f5}\label{classmessaging_1_1_socket_aa7bf9ee9161ae342c9c873d3dfa839f5}} 
+\index{messaging::Socket@{messaging::Socket}!sendString@{sendString}}
+\index{sendString@{sendString}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{sendString()}{sendString()}}
+{\footnotesize\ttfamily bool messaging\+::\+Socket\+::send\+String (\begin{DoxyParamCaption}\item[{const string \&}]{str,  }\item[{\mbox{\hyperlink{classmessaging_1_1_socket_afda93997d778641f52e017cbb094938e}{byte}}}]{terminator = {\ttfamily \textquotesingle{}\textbackslash{}0\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 105 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_afd91563340dfb070ffc9aa0f03db54fb}\label{classmessaging_1_1_socket_afd91563340dfb070ffc9aa0f03db54fb}} 
+\index{messaging::Socket@{messaging::Socket}!shutDown@{shutDown}}
+\index{shutDown@{shutDown}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{shutDown()}{shutDown()}}
+{\footnotesize\ttfamily bool messaging\+::\+Socket\+::shut\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 62 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_a2080abe584add701788bb5201d750d97}\label{classmessaging_1_1_socket_a2080abe584add701788bb5201d750d97}} 
+\index{messaging::Socket@{messaging::Socket}!shutDownRecv@{shutDownRecv}}
+\index{shutDownRecv@{shutDownRecv}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{shutDownRecv()}{shutDownRecv()}}
+{\footnotesize\ttfamily bool messaging\+::\+Socket\+::shut\+Down\+Recv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 54 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_ab5c89edfd4bb224fae1ec6849471f941}\label{classmessaging_1_1_socket_ab5c89edfd4bb224fae1ec6849471f941}} 
+\index{messaging::Socket@{messaging::Socket}!shutDownSend@{shutDownSend}}
+\index{shutDownSend@{shutDownSend}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{shutDownSend()}{shutDownSend()}}
+{\footnotesize\ttfamily bool messaging\+::\+Socket\+::shut\+Down\+Send (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 46 of file Socket.\+cpp.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_aae184f74fc6f9c693fc3a3394d3c0036}\label{classmessaging_1_1_socket_aae184f74fc6f9c693fc3a3394d3c0036}} 
+\index{messaging::Socket@{messaging::Socket}!validState@{validState}}
+\index{validState@{validState}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{validState()}{validState()}}
+{\footnotesize\ttfamily bool messaging\+::\+Socket\+::valid\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 43 of file Socket.\+h.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classmessaging_1_1_socket_aea971f58bde075b484d6c1a4ac67d48e}\label{classmessaging_1_1_socket_aea971f58bde075b484d6c1a4ac67d48e}} 
+\index{messaging::Socket@{messaging::Socket}!waitForData@{waitForData}}
+\index{waitForData@{waitForData}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{waitForData()}{waitForData()}}
+{\footnotesize\ttfamily bool messaging\+::\+Socket\+::wait\+For\+Data (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{time\+To\+Wait,  }\item[{size\+\_\+t}]{time\+To\+Check }\end{DoxyParamCaption})}
+
+
+
+Definition at line 171 of file Socket.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmessaging_1_1_socket_afed4d17a010fe9d1575f6b4929a53844}\label{classmessaging_1_1_socket_afed4d17a010fe9d1575f6b4929a53844}} 
+\index{messaging::Socket@{messaging::Socket}!hints@{hints}}
+\index{hints@{hints}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{hints}{hints}}
+{\footnotesize\ttfamily struct addrinfo messaging\+::\+Socket\+::hints\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file Socket.\+h.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_a48acf5ff1102067a9e22055513d79248}\label{classmessaging_1_1_socket_a48acf5ff1102067a9e22055513d79248}} 
+\index{messaging::Socket@{messaging::Socket}!iResult@{iResult}}
+\index{iResult@{iResult}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{iResult}{iResult}}
+{\footnotesize\ttfamily int messaging\+::\+Socket\+::i\+Result\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file Socket.\+h.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_ae28db32ab945e9ea7b892237602c769d}\label{classmessaging_1_1_socket_ae28db32ab945e9ea7b892237602c769d}} 
+\index{messaging::Socket@{messaging::Socket}!ptr@{ptr}}
+\index{ptr@{ptr}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{ptr}{ptr}}
+{\footnotesize\ttfamily struct addrinfo $\ast$ messaging\+::\+Socket\+::ptr = N\+U\+LL\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file Socket.\+h.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_a97807f9602fa379f22d40acb6b776888}\label{classmessaging_1_1_socket_a97807f9602fa379f22d40acb6b776888}} 
+\index{messaging::Socket@{messaging::Socket}!result@{result}}
+\index{result@{result}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{result}{result}}
+{\footnotesize\ttfamily struct addrinfo$\ast$ messaging\+::\+Socket\+::result = N\+U\+LL\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file Socket.\+h.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_ae8f3f1fe24c5915a30be0c5779ac9468}\label{classmessaging_1_1_socket_ae8f3f1fe24c5915a30be0c5779ac9468}} 
+\index{messaging::Socket@{messaging::Socket}!socket\_@{socket\_}}
+\index{socket\_@{socket\_}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{socket\_}{socket\_}}
+{\footnotesize\ttfamily S\+O\+C\+K\+ET messaging\+::\+Socket\+::socket\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file Socket.\+h.
+
+\mbox{\Hypertarget{classmessaging_1_1_socket_a3bcafc61cf54b8d603f57855defc18ea}\label{classmessaging_1_1_socket_a3bcafc61cf54b8d603f57855defc18ea}} 
+\index{messaging::Socket@{messaging::Socket}!wsaData@{wsaData}}
+\index{wsaData@{wsaData}!messaging::Socket@{messaging::Socket}}
+\doxysubsubsection{\texorpdfstring{wsaData}{wsaData}}
+{\footnotesize\ttfamily W\+S\+A\+D\+A\+TA messaging\+::\+Socket\+::wsa\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file Socket.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_socket_8h}{Socket.\+h}}\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_socket_8cpp}{Socket.\+cpp}}\end{DoxyCompactItemize}

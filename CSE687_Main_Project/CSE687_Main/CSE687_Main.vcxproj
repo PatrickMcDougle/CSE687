@@ -33,6 +33,7 @@
     <ClCompile Include="LogStatusDecorator.cpp" />
     <ClCompile Include="LogTimestampDecorator.cpp" />
     <ClCompile Include="Message.cpp" />
+    <ClCompile Include="MotherController.cpp" />
     <ClCompile Include="MyLogger.cpp" />
     <ClCompile Include="Receiver.cpp" />
     <ClCompile Include="Sender.cpp" />
@@ -51,6 +52,7 @@
     <ClInclude Include="ClassOfTests.h" />
     <ClInclude Include="ClientHandler.h" />
     <ClInclude Include="Communications.h" />
+    <ClInclude Include="IAddressIp.h" />
     <ClInclude Include="ILogComponent.h" />
     <ClInclude Include="ILogData.h" />
     <ClInclude Include="ILogger.h" />
@@ -62,6 +64,7 @@
     <ClInclude Include="LogStatusDecorator.h" />
     <ClInclude Include="LogTimestampDecorator.h" />
     <ClInclude Include="Message.h" />
+    <ClInclude Include="MotherController.h" />
     <ClInclude Include="MyLogger.h" />
     <ClInclude Include="Receiver.h" />
     <ClInclude Include="Sender.h" />
@@ -71,6 +74,11 @@
     <ClInclude Include="SocketSystem.h" />
     <ClInclude Include="StringHelper.h" />
     <ClInclude Include="TestDriver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagramLogger.cd" />
+    <None Include="ClassDiagramAndAssociations.cd" />
+    <None Include="ClassDiagramMessaging.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

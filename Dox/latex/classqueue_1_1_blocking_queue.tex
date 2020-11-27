@@ -1,0 +1,169 @@
+\hypertarget{classqueue_1_1_blocking_queue}{}\doxysection{queue\+::Blocking\+Queue$<$ T $>$ Class Template Reference}
+\label{classqueue_1_1_blocking_queue}\index{queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Blocking\+Queue.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqueue_1_1_blocking_queue_a529827bbc7ea2219ab17f520d05844cf}{Blocking\+Queue}} ()
+\item 
+\mbox{\hyperlink{classqueue_1_1_blocking_queue_ae4cccce3774f52bee1f0352eaad1c02c}{$\sim$\+Blocking\+Queue}} ()
+\item 
+\mbox{\hyperlink{classqueue_1_1_blocking_queue_aad35732b8080587bcf52faee1a5a99ab}{Blocking\+Queue}} (\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ T $>$ \&\&bq) noexcept
+\item 
+\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ T $>$ \& \mbox{\hyperlink{classqueue_1_1_blocking_queue_a94b9c25b4d54c5490b39a1dcf1a77859}{operator=}} (\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ T $>$ \&\&bq) noexcept
+\item 
+\mbox{\hyperlink{classqueue_1_1_blocking_queue_aaaf89c1bacd7d5a0427ef27e02dde2c0}{Blocking\+Queue}} (const \mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ T $>$ \&)=delete
+\item 
+\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ T $>$ \& \mbox{\hyperlink{classqueue_1_1_blocking_queue_ac3811c304aaf976b2cf8f8c0a6c8e17a}{operator=}} (const \mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ T $>$ \&)=delete
+\item 
+T \mbox{\hyperlink{classqueue_1_1_blocking_queue_a7eadc2275af93de7f332765e0acf50b8}{dequeue}} ()
+\item 
+void \mbox{\hyperlink{classqueue_1_1_blocking_queue_a2eb44dc399712def45f92d50afab3a9a}{enqueue}} (const T \&t)
+\item 
+T \& \mbox{\hyperlink{classqueue_1_1_blocking_queue_ab43d04b6e3084ca5679604b8285ce071}{front}} ()
+\item 
+void \mbox{\hyperlink{classqueue_1_1_blocking_queue_a422e74e017ca23083c0beb433b6d4f2c}{clear}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{classqueue_1_1_blocking_queue_ab0e38f917fb8dca6eea32ebc6caa424a}{size}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class queue\+::\+Blocking\+Queue$<$ T $>$}
+
+
+
+Definition at line 16 of file Blocking\+Queue.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqueue_1_1_blocking_queue_a529827bbc7ea2219ab17f520d05844cf}\label{classqueue_1_1_blocking_queue_a529827bbc7ea2219ab17f520d05844cf}} 
+\index{queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}!BlockingQueue@{BlockingQueue}}
+\index{BlockingQueue@{BlockingQueue}!queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BlockingQueue()}{BlockingQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classqueue_1_1_blocking_queue}{queue\+::\+Blocking\+Queue}}$<$ T $>$\+::\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18 of file Blocking\+Queue.\+h.
+
+\mbox{\Hypertarget{classqueue_1_1_blocking_queue_ae4cccce3774f52bee1f0352eaad1c02c}\label{classqueue_1_1_blocking_queue_ae4cccce3774f52bee1f0352eaad1c02c}} 
+\index{queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}!````~BlockingQueue@{$\sim$BlockingQueue}}
+\index{````~BlockingQueue@{$\sim$BlockingQueue}!queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$BlockingQueue()}{~BlockingQueue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classqueue_1_1_blocking_queue}{queue\+::\+Blocking\+Queue}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 20 of file Blocking\+Queue.\+h.
+
+\mbox{\Hypertarget{classqueue_1_1_blocking_queue_aad35732b8080587bcf52faee1a5a99ab}\label{classqueue_1_1_blocking_queue_aad35732b8080587bcf52faee1a5a99ab}} 
+\index{queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}!BlockingQueue@{BlockingQueue}}
+\index{BlockingQueue@{BlockingQueue}!queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BlockingQueue()}{BlockingQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classqueue_1_1_blocking_queue}{queue\+::\+Blocking\+Queue}}$<$ T $>$\+::\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ T $>$ \&\&}]{bq }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 25 of file Blocking\+Queue.\+h.
+
+\mbox{\Hypertarget{classqueue_1_1_blocking_queue_aaaf89c1bacd7d5a0427ef27e02dde2c0}\label{classqueue_1_1_blocking_queue_aaaf89c1bacd7d5a0427ef27e02dde2c0}} 
+\index{queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}!BlockingQueue@{BlockingQueue}}
+\index{BlockingQueue@{BlockingQueue}!queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BlockingQueue()}{BlockingQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classqueue_1_1_blocking_queue}{queue\+::\+Blocking\+Queue}}$<$ T $>$\+::\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ T $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqueue_1_1_blocking_queue_a422e74e017ca23083c0beb433b6d4f2c}\label{classqueue_1_1_blocking_queue_a422e74e017ca23083c0beb433b6d4f2c}} 
+\index{queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classqueue_1_1_blocking_queue}{queue\+::\+Blocking\+Queue}}$<$ T $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 81 of file Blocking\+Queue.\+h.
+
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{classqueue_1_1_blocking_queue_a7eadc2275af93de7f332765e0acf50b8}\label{classqueue_1_1_blocking_queue_a7eadc2275af93de7f332765e0acf50b8}} 
+\index{queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{dequeue()}{dequeue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classqueue_1_1_blocking_queue}{queue\+::\+Blocking\+Queue}}$<$ T $>$\+::dequeue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 48 of file Blocking\+Queue.\+h.
+
+\mbox{\Hypertarget{classqueue_1_1_blocking_queue_a2eb44dc399712def45f92d50afab3a9a}\label{classqueue_1_1_blocking_queue_a2eb44dc399712def45f92d50afab3a9a}} 
+\index{queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classqueue_1_1_blocking_queue}{queue\+::\+Blocking\+Queue}}$<$ T $>$\+::enqueue (\begin{DoxyParamCaption}\item[{const T \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 67 of file Blocking\+Queue.\+h.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classqueue_1_1_blocking_queue_ab43d04b6e3084ca5679604b8285ce071}\label{classqueue_1_1_blocking_queue_ab43d04b6e3084ca5679604b8285ce071}} 
+\index{queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}!front@{front}}
+\index{front@{front}!queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T\& \mbox{\hyperlink{classqueue_1_1_blocking_queue}{queue\+::\+Blocking\+Queue}}$<$ T $>$\+::front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 73 of file Blocking\+Queue.\+h.
+
+\mbox{\Hypertarget{classqueue_1_1_blocking_queue_a94b9c25b4d54c5490b39a1dcf1a77859}\label{classqueue_1_1_blocking_queue_a94b9c25b4d54c5490b39a1dcf1a77859}} 
+\index{queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$T$>$\& \mbox{\hyperlink{classqueue_1_1_blocking_queue}{queue\+::\+Blocking\+Queue}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ T $>$ \&\&}]{bq }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 34 of file Blocking\+Queue.\+h.
+
+\mbox{\Hypertarget{classqueue_1_1_blocking_queue_ac3811c304aaf976b2cf8f8c0a6c8e17a}\label{classqueue_1_1_blocking_queue_ac3811c304aaf976b2cf8f8c0a6c8e17a}} 
+\index{queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$T$>$\& \mbox{\hyperlink{classqueue_1_1_blocking_queue}{queue\+::\+Blocking\+Queue}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ T $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classqueue_1_1_blocking_queue_ab0e38f917fb8dca6eea32ebc6caa424a}\label{classqueue_1_1_blocking_queue_ab0e38f917fb8dca6eea32ebc6caa424a}} 
+\index{queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}!size@{size}}
+\index{size@{size}!queue::BlockingQueue$<$ T $>$@{queue::BlockingQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classqueue_1_1_blocking_queue}{queue\+::\+Blocking\+Queue}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 88 of file Blocking\+Queue.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_blocking_queue_8h}{Blocking\+Queue.\+h}}\end{DoxyCompactItemize}

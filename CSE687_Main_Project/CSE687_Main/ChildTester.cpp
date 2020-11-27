@@ -1,8 +1,7 @@
 #include "ChildTester.h"
 
-void threading::ChildTester::setup(BlockingQueue<ITest*>* blocking_queue_of_test_drivers, ILogger* logger)
+void threading::ChildTester::setup(ILogger* logger)
 {
-	this->blocking_queue_of_test_drivers_ = blocking_queue_of_test_drivers;
 	this->logger_ = logger;
 }
 
@@ -18,9 +17,7 @@ void threading::ChildTester::run() const
 
 	communications.start();
 
-	Message message_ready;
-	message_ready.setSource(child_address_);
-	message_ready.setDestination(mother_address_);
+	Message message_ready(child_address_, mother_address_);
 	message_ready.setType("READY");
 	message_ready.setAuthor(childs_name_);
 	message_ready.setMessage("Ready To Go Mother!");
@@ -48,13 +45,11 @@ void threading::ChildTester::run() const
 			break;
 		}
 		if (response.getType() == "TEST_REQUEST") {
-			ITest* itest = this->blocking_queue_of_test_drivers_->dequeue();
+			ITest* itest = this->blocking_queue_of_test_drivers_.dequeue();
 
 			bool results = itest->test();
 
-			Message message;
-			message.setSource(child_address_);
-			message.setDestination(mother_address_);
+			Message message(child_address_, mother_address_);
 			message.setType("TEST_RESULTS");
 			message.setAuthor(childs_name_);
 			message.setMessage("<test><results>" + std::to_string(results) + "</results><log>" + itest->testLogResults() + "</log></test>");
@@ -67,9 +62,7 @@ void threading::ChildTester::run() const
 		::Sleep(sleep_time_milliseconds);
 	}
 
-	Message message_done;
-	message_done.setSource(child_address_);
-	message_done.setDestination(mother_address_);
+	Message message_done(child_address_, mother_address_);
 	message_done.setType("STOP");
 	message_done.setAuthor(childs_name_);
 	message_done.setMessage("All Done Mother!");

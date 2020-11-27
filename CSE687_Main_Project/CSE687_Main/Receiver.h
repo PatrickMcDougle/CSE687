@@ -10,19 +10,30 @@
 #include "BlockingQueue.h"
 #include "SocketConnecter.h"
 #include "SocketListener.h"
+#include "IAddressIp.h"
 
 using std::string;
 using std::thread;
 using messaging::Message;
-using messaging::AddressIp4;
+using messaging::IAddressIp;
 using messaging::SocketConnecter;
 using queue::BlockingQueue;
 
 namespace messaging {
 	class Receiver
 	{
+	private:
+		BlockingQueue<Message> receiver_queue_;
+		SocketListener socket_listener_;
+		std::string receiver_name_;
+
 	public:
-		Receiver(AddressIp4 address, const std::string& name = "Receiver");
+		Receiver(const IAddressIp* address, const std::string& name = "Receiver")
+			: socket_listener_(address->getPort()), receiver_name_(name)
+		{
+			// do nothing at this time.
+		}
+
 		template<typename CallableObject>
 		void start(CallableObject& callable_object) {
 			socket_listener_.start(callable_object);
@@ -36,10 +47,6 @@ namespace messaging {
 		void stop();
 		Message getMessage();
 		BlockingQueue<Message>* queue();
-	private:
-		BlockingQueue<Message> receiver_queue_;
-		SocketListener socket_listener_;
-		std::string receiver_name_;
 	};
 }
 

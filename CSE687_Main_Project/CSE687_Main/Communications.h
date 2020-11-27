@@ -8,9 +8,10 @@
 #include "Receiver.h"
 #include "Message.h"
 #include "ClientHandler.h"
+#include "IAddressIp.h"
 
 using std::string;
-using messaging::AddressIp4;
+using messaging::IAddressIp;
 using messaging::Message;
 using messaging::Sender;
 using messaging::Receiver;
@@ -27,7 +28,11 @@ namespace threading {
 
 	public:
 
-		Communications(AddressIp4 end_point, const string& name);
+		Communications(IAddressIp* end_point, const string& name)
+			: receiver_(end_point, name), sender_(name), name_(name)
+		{
+		}
+
 		~Communications() {};
 
 		void start();

@@ -2,13 +2,13 @@
 
 messaging::Sender::Sender(const std::string& name) : sender_name_(name)
 {
-	last_ip_address_ = AddressIp4();  // used to detect change in destination
 }
 
 messaging::Sender::~Sender()
 {
-	if (sender_thread_.joinable())
+	if (sender_thread_.joinable()) {
 		sender_thread_.join();
+	}
 }
 
 void messaging::Sender::start()
@@ -26,7 +26,7 @@ void messaging::Sender::start()
 			//StaticLogger<1>::write("\n  -- " + sender_name_ + " send thread sending " + msg.name()); // TODO
 			string message_string = message.writeMessage();
 
-			if (message.getDestination().getAddressAndPort() != last_ip_address_.getAddressAndPort())
+			if (message.getDestination()->getAddressAndPort() != last_ip_address_->getAddressAndPort())
 			{
 				socket_connecter_.shutDown();
 
@@ -50,17 +50,14 @@ void messaging::Sender::start()
 
 void messaging::Sender::stop()
 {
-	Message message;
-	message.setAuthor(sender_name_);
-	message.setType("quit");
-	postMessage(message);
+	// did send a quit message, but not anymore.  Just shutdown the socket.
 	socket_connecter_.shutDown();
 }
 
-bool messaging::Sender::connect(AddressIp4 ip_address)
+bool messaging::Sender::connect(IAddressIp* ip_address)
 {
 	last_ip_address_ = ip_address;
-	return socket_connecter_.connect(ip_address.getAddress(), ip_address.getPort());
+	return socket_connecter_.connect(ip_address->getAddress(), ip_address->getPort());
 }
 
 void messaging::Sender::postMessage(Message message)

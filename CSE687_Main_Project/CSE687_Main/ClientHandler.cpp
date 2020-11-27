@@ -30,9 +30,7 @@ void messaging::ClientHandler::operator()(Socket socket)
 			// invalid message
 			break;
 		}
-
-		Message message;
-		message.readMessage(message_string);
+		Message message = Message::readMessage(message_string);
 		blocking_queue_->enqueue(message);
 
 		if (message.getType() == "QUIT") {

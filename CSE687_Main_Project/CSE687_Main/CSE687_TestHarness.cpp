@@ -14,6 +14,7 @@
 #include "ChildTester.h"
 #include "ClassOfTests.h"
 #include "Communications.h"
+#include "IAddressIp.h"
 #include "ILogData.h"
 #include "ITest.h"
 #include "LogData.h"
@@ -23,6 +24,7 @@
 #include "LogStatusDecorator.h"
 #include "LogTimestampDecorator.h"
 #include "Message.h"
+#include "MotherController.h"
 #include "SocketSystem.h"
 #include "TestDriver.h"
 
@@ -246,17 +248,15 @@ void TestingAddressIp4(ostream& out_stream) {
 void TestingMessage(ostream& out_stream) {
 	out_stream << "\n\n|| =====< Testing the Message class >===== ||\n";
 
-	messaging::Message the_message;
-
 	messaging::AddressIp4 source;
 	source.setAddress(127, 0, 0, 1);
 	source.setPort(12345);
-	the_message.setSource(source);
 
 	messaging::AddressIp4 destination;
 	destination.setAddress(127, 0, 0, 1);
 	destination.setPort(15432);
-	the_message.setDestination(destination);
+
+	messaging::Message the_message(&source, &destination);
 
 	the_message.setAuthor("Mother");
 	the_message.setType("DoTest");
@@ -270,6 +270,10 @@ void TestingMessage(ostream& out_stream) {
 	bq.enqueue(1);
 }
 
+/// <summary>
+/// This is the best method, I mean function in the world.
+/// </summary>
+/// <param name="out_stream">Need an out.</param>
 void TestingChildThreads(ostream& out_stream) {
 	out_stream << "\n\n|| =====< Testing the Children Threads >===== ||\n";
 
@@ -283,7 +287,7 @@ void TestingChildThreads(ostream& out_stream) {
 	// class is destroyed.
 	messaging::SocketSystem socket_system_setup;
 
-	auto blocking_queue_of_test_drivers = new BlockingQueue<ITest*>();
+	BlockingQueue<ITest*> blocking_queue_of_test_drivers;
 
 	ClassOfTests class_of_tests;
 
@@ -295,7 +299,7 @@ void TestingChildThreads(ostream& out_stream) {
 		->loadLogger(logger)
 		->loadMessage("Testing if method returns true.");
 
-	blocking_queue_of_test_drivers->enqueue(test_this);
+	blocking_queue_of_test_drivers.enqueue(test_this);
 
 	test_this = new TestDriver<ClassOfTests>();
 	test_this
@@ -304,83 +308,39 @@ void TestingChildThreads(ostream& out_stream) {
 		->loadLogger(logger)
 		->loadMessage("Testing if method returns false.");
 
-	blocking_queue_of_test_drivers->enqueue(test_this);
+	blocking_queue_of_test_drivers.enqueue(test_this);
 
 	messaging::AddressIp4 address_mother;
-	messaging::AddressIp4 address_child1;
-	messaging::AddressIp4 address_child2;
 
 	address_mother.set(127, 0, 0, 1, 12000);
-	address_child1.set(127, 0, 0, 1, 12010);
-	address_child2.set(127, 0, 0, 1, 12020);
 
-	threading::ChildTester child1_tester(address_child1, address_mother, "Boy");
-	threading::ChildTester child2_tester(address_child2, address_mother, "Girl");
+	vector<messaging::IAddressIp*> children_addresses;
 
-	child1_tester.setup(blocking_queue_of_test_drivers, logger);
-	child2_tester.setup(blocking_queue_of_test_drivers, logger);
+	int child_port = 12010;
+	for (int i = 0; i < 1; ++i) {
+		messaging::IAddressIp* address_child = new messaging::AddressIp4();
 
-	threading::Communications mother_communications(address_mother, "Mother");
-	mother_communications.start();
+		address_child->set(127, 0, 0, 1, child_port);
 
-	std::thread child1_thread(&threading::ChildTester::run, child1_tester);
-	child1_thread.detach();
+		children_addresses.push_back(address_child);
 
-	std::thread child2_thread(&threading::ChildTester::run, child2_tester);
-	child2_thread.detach();
-
-	Message message;
-	Message reply;
-	size_t number_of_tests = blocking_queue_of_test_drivers->size();
-	size_t number_of_children = 2;
-
-	while (true) {
-		// Wait for Children to respond when ready.
-		message = mother_communications.getMessage();
-
-		print_mutex.lock();
-		out_stream
-			<< std::endl
-			<< " =====< "
-			<< mother_communications.getName()
-			<< " received message: "
-			<< message.getAuthor()
-			<< " ["
-			<< message.getMessage()
-			<< "] >=====";
-		print_mutex.unlock();
-
-		if (message.getType() == "STOP") {
-			if (--number_of_children == 0)
-			{
-				break;
-			}
-			// The child is done.
-			continue;
-		}
-
-		if (message.getType() == "READY" || message.getType() == "TEST_RESULTS") {
-			reply.setDestination(message.getSource());
-			reply.setSource(address_mother);
-			reply.setAuthor("Mother");
-
-			if (number_of_tests > 0) {
-				reply.setType("TEST_REQUEST");
-				reply.setMessage("Do test number [" + std::to_string(number_of_tests) + "]");
-				--number_of_tests;
-			}
-			else {
-				reply.setType("QUIT");
-				reply.setMessage("You are done.");
-			}
-		}
-
-		mother_communications.sendMessage(reply);
+		child_port += 10;
 	}
 
-	mother_communications.stop();
+	threading::MotherController mother(&address_mother, children_addresses, blocking_queue_of_test_drivers, "Mother");
+	mother.setup(logger);
 
-	delete blocking_queue_of_test_drivers;
+	mother.run();
+
+	// Throws an error durring compulation.  Not sure why.
+	//std::thread mother_thread(&threading::MotherController::run, mother);
+	//mother_thread.detach();
+
+	// sleep main thread.
+	while (!mother.isDone()) {
+		::Sleep(100);
+	}
+
 	delete logger;
 }
 

@@ -1,10 +1,5 @@
 #include "Communications.h"
 
-threading::Communications::Communications(AddressIp4 end_point, const string& name)
-	: receiver_(end_point, name), sender_(name), name_(name)
-{
-}
-
 void threading::Communications::start()
 {
 	BlockingQueue<Message>* blocking_queue = receiver_.queue();

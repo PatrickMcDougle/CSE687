@@ -4,10 +4,12 @@
 
 #include <string>
 
+#include "IAddressIp.h"
+
 using std::string;
 
 namespace messaging {
-	class AddressIp4
+	class AddressIp4 : public IAddressIp
 	{
 	private:
 		// ip4_address : 127.0.0.1 = 2130706433

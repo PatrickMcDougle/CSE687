@@ -6,14 +6,15 @@
 #include <thread>
 #include <functional>
 
-#include "Message.h"
 #include "BlockingQueue.h"
+#include "IAddressIp.h"
+#include "Message.h"
 #include "SocketConnecter.h"
 
 using std::string;
 using std::thread;
 using messaging::Message;
-using messaging::AddressIp4;
+using messaging::IAddressIp;
 using messaging::SocketConnecter;
 using queue::BlockingQueue;
 
@@ -25,13 +26,13 @@ namespace messaging {
 		~Sender();
 		void start();
 		void stop();
-		bool connect(AddressIp4 ip_address);
+		bool connect(IAddressIp* ip_address);
 		void postMessage(Message message);
 	private:
 		BlockingQueue<Message> sender_queue_;
 		SocketConnecter socket_connecter_;
+		IAddressIp* last_ip_address_ = new AddressIp4();
 		thread sender_thread_;
-		AddressIp4 last_ip_address_;
 		string sender_name_;
 	};
 }

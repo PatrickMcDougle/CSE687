@@ -120,6 +120,9 @@
     <ClCompile Include="StringHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MotherController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ILogComponent.h">
@@ -203,5 +206,16 @@
     <ClInclude Include="StringHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="IAddressIp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MotherController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagramAndAssociations.cd" />
+    <None Include="ClassDiagramLogger.cd" />
+    <None Include="ClassDiagramMessaging.cd" />
   </ItemGroup>
 </Project>

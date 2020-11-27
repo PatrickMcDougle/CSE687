@@ -5,42 +5,44 @@
 #include <string>
 #include <iostream>
 
-#include "AddressIp4.h"
 #include "BlockingQueue.h"
 #include "Communications.h"
+#include "IAddressIp.h"
 #include "ILogger.h"
 #include "ITest.h"
 #include "Message.h"
 #include "SocketSystem.h"
 
 using std::string;
-using messaging::AddressIp4;
+using messaging::IAddressIp;
 using messaging::Message;
 using test::ITest;
 using logger::ILogger;
 
+// used to print out better.
 static std::mutex print_mutex;
 
 namespace threading {
 	class ChildTester
 	{
 	private:
-		AddressIp4 child_address_;
-		AddressIp4 mother_address_;
-		string childs_name_;
-		BlockingQueue<ITest*>* blocking_queue_of_test_drivers_ = nullptr;
+		IAddressIp* child_address_;
+		IAddressIp* mother_address_;
+		BlockingQueue<ITest*>& blocking_queue_of_test_drivers_;
 		ILogger* logger_ = nullptr;
+		string childs_name_;
 
 	public:
 
-		ChildTester(messaging::AddressIp4 child_address, messaging::AddressIp4 mother_address, const string& childs_name)
-			: child_address_(child_address), mother_address_(mother_address), childs_name_(childs_name)
+		ChildTester(IAddressIp* child_address, IAddressIp* mother_address, BlockingQueue<ITest*>& blocking_queue_of_test_drivers, const string& childs_name)
+			: child_address_(child_address), mother_address_(mother_address),
+			blocking_queue_of_test_drivers_(blocking_queue_of_test_drivers), childs_name_(childs_name)
 		{
 			// nothing to do in the body of the constructor.
 		};
 		~ChildTester() {};
 
-		void setup(BlockingQueue<ITest*>* blocking_queue_of_test_drivers, ILogger* logger);
+		void setup(ILogger* logger);
 		void run() const;
 	};
 }
