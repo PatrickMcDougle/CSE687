@@ -30,6 +30,7 @@ namespace threading {
 		ILogger* logger_ = nullptr;
 		string mothers_name_;
 
+		int children_counter = 0;
 		bool done_ = false;
 
 		Communications mother_communications_;

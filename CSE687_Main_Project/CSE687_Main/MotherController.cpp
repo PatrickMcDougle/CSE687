@@ -6,11 +6,11 @@ void threading::MotherController::setup(ILogger* logger)
 
 	mother_communications_.start();
 
-	int child_count = 1;
+	children_counter = 0;
 
 	for (IAddressIp* address : children_addresses_) {
 		string child_name("Girl");
-		child_name.append(std::to_string(child_count));
+		child_name.append(std::to_string(children_counter));
 
 		ChildTester child_tester(address, address_mother_, blocking_queue_of_test_drivers_, child_name);
 		child_tester.setup(logger);
@@ -18,14 +18,14 @@ void threading::MotherController::setup(ILogger* logger)
 		std::thread child_thread(&threading::ChildTester::run, child_tester);
 		child_thread.detach();
 
-		++child_count;
+		++children_counter;
 	}
 }
 
 void threading::MotherController::run()
 {
 	size_t number_of_tests = blocking_queue_of_test_drivers_.size();
-	size_t number_of_children = 2;
+	size_t number_of_children = children_counter;
 
 	done_ = false;
 
@@ -73,6 +73,10 @@ void threading::MotherController::run()
 	}
 
 	mother_communications_.stop();
+
+	print_mutex.lock();
+	std::cout << std::endl << "DONE: [" << mothers_name_ << "]#";
+	print_mutex.unlock();
 
 	done_ = true;
 }
