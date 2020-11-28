@@ -77,7 +77,8 @@ bool messaging::SocketConnecter::connect(const std::string& ip_address, size_t i
 		iResult = ::connect(socket_, ptr->ai_addr, (int)ptr->ai_addrlen);
 		if (iResult == SOCKET_ERROR) {
 			socket_ = INVALID_SOCKET;
-			int error = WSAGetLastError();
+			//int error =
+			WSAGetLastError();
 			//Show::write("\n  -- WSAGetLastError returned " + std::to_string(error)); // TODO
 			continue;
 		}
