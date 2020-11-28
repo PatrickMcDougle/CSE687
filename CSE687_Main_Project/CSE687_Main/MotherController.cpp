@@ -18,7 +18,7 @@ void threading::MotherController::setup(ILogger* logger)
 		child_tester.setup(logger);
 
 		std::thread child_thread(&threading::ChildTester::run, child_tester);
-		child_thread.join();
+		child_thread.detach();
 
 		++children_counter;
 	}

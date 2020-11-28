@@ -297,6 +297,7 @@ void TestingChildThreads(ostream& out_stream) {
 	if (number_of_children_threads < 3) {
 		number_of_children_threads *= 3;
 	}
+	out_stream << "Number of children:" << number_of_children_threads << "\n";
 
 	for (int i = 0; i < number_of_children_threads * 5; ++i) {
 		auto test_this = new TestDriver<ClassOfTests>();
@@ -356,7 +357,7 @@ void TestingChildThreads(ostream& out_stream) {
 
 	//auto member_method = static_cast<void (threading::MotherController::*)()>(&threading::MotherController::run); // another way
 	//std::thread mother_thread(member_method, mother); // but this also does not work.
-	//mother_thread.join(); // must join with thread.
+	//mother_thread.detach(); // must join with thread.
 
 	//// sleep main thread.
 	// while (!mother.isDone()) { // if the thread does finish we need to stick around
