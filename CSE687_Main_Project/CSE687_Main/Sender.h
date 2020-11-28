@@ -22,7 +22,7 @@ namespace messaging {
 	class Sender
 	{
 	public:
-		Sender(const std::string& name = "Sender");
+		explicit Sender(const std::string& name = "Sender");
 		~Sender();
 		void start();
 		void stop();

@@ -13,8 +13,8 @@ namespace messaging {
 	{
 	private:
 		// ip4_address : 127.0.0.1 = 2130706433
-		unsigned int ip4_address;
-		size_t ip_port;
+		unsigned int ip4_address = 2130706433;
+		size_t ip_port = 50000;
 
 	public:
 		string getAddress() const;

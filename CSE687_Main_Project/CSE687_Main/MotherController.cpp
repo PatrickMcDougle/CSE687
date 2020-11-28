@@ -4,19 +4,21 @@ void threading::MotherController::setup(ILogger* logger)
 {
 	this->logger_ = logger;
 
+	std::array<string, 5> children_names = { "Boy", "Girl", "Child", "Person", "Heiress" };
+
 	mother_communications_.start();
 
 	children_counter = 0;
 
 	for (IAddressIp* address : children_addresses_) {
-		string child_name("Girl");
-		child_name.append(std::to_string(children_counter));
+		string child_name(children_names[children_counter % children_names.size()]);
+		child_name.append("-" + std::to_string(children_counter));
 
 		ChildTester child_tester(address, address_mother_, blocking_queue_of_test_drivers_, child_name);
 		child_tester.setup(logger);
 
 		std::thread child_thread(&threading::ChildTester::run, child_tester);
-		child_thread.detach();
+		child_thread.join();
 
 		++children_counter;
 	}

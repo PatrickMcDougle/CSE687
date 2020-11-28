@@ -1,6 +1,5 @@
 #include "SocketListener.h"
 
-
 messaging::SocketListener::SocketListener(size_t port) : Socket(), port_(port)
 {
 	socket_ = INVALID_SOCKET;
@@ -121,4 +120,3 @@ void messaging::SocketListener::stop()
 	stop_.exchange(true);
 	sendString("Stop!");
 }
-

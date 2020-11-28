@@ -26,6 +26,8 @@ namespace threading {
 		Receiver receiver_;
 		string name_;
 
+		ClientHandler* client_handler = nullptr;
+
 	public:
 
 		Communications(IAddressIp* end_point, const string& name)
@@ -37,7 +39,7 @@ namespace threading {
 
 		void start();
 		void stop();
-		void sendMessage(Message message);
+		void sendMessage(Message& message);
 		Message getMessage();
 		string getName() const;
 	};

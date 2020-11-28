@@ -2,15 +2,15 @@
 #ifndef __RECEOVER_H__
 #define __RECEOVER_H__
 
+#include <functional>
 #include <string>
 #include <thread>
-#include <functional>
 
-#include "Message.h"
 #include "BlockingQueue.h"
+#include "IAddressIp.h"
+#include "Message.h"
 #include "SocketConnecter.h"
 #include "SocketListener.h"
-#include "IAddressIp.h"
 
 using std::string;
 using std::thread;

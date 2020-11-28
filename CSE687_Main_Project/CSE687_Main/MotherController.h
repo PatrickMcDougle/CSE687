@@ -2,8 +2,9 @@
 #ifndef __MOTHER_CONTROLLER_H__
 #define __MOTHER_CONTROLLER_H__
 
-#include <string>
+#include <array>
 #include <iostream>
+#include <string>
 #include <vector>
 
 #include "BlockingQueue.h"
@@ -16,6 +17,7 @@
 #include "SocketSystem.h"
 
 using std::string;
+using std::to_string;
 using messaging::IAddressIp;
 using messaging::Message;
 using test::ITest;
@@ -50,7 +52,7 @@ namespace threading {
 		void setup(ILogger* logger);
 		void run();
 
-		bool isDone() const { return done_; }
+		bool isDone() const { return done_; };
 	};
 }
 

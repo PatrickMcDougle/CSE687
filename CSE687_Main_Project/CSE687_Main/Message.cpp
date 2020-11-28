@@ -103,7 +103,7 @@ messaging::Message messaging::Message::readMessage(const string& message)
 		}
 	}
 
-	Message* the_message = new Message(source_address, destination_address);
+	auto the_message = new Message(source_address, destination_address);
 	the_message->setAuthor(author);
 	the_message->setType(type);
 	the_message->setMessage(body);

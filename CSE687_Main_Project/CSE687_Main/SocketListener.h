@@ -2,7 +2,6 @@
 #ifndef __SOCKET_LISTENER_H__
 #define __SOCKET_LISTENER_H__
 
-
 #include <WS2tcpip.h>     // support for IPv6 and other things
 #include <iphlpapi.h>     // ip helpers
 
@@ -36,7 +35,7 @@ namespace messaging {
 		Socket accept();
 
 		std::atomic<bool> stop_ = false;
-		size_t port_;
+		size_t port_ = 60000;
 		bool accept_failed_ = false;
 	};
 

@@ -5,17 +5,19 @@ void threading::ChildTester::setup(ILogger* logger)
 	this->logger_ = logger;
 }
 
-void threading::ChildTester::run() const
+void threading::ChildTester::run()
 {
 	// socket system will setup the sockets and tears them down when the
 	// class is destroyed.
 	messaging::SocketSystem socket_system_setup;
 
-	DWORD sleep_time_milliseconds = 1000 + ((DWORD)childs_name_.size() * 100);
+	DWORD sleep_time_milliseconds = 500 + ((DWORD)childs_name_.size() * 200);
 
 	Communications communications(child_address_, childs_name_);
 
 	communications.start();
+
+	::Sleep(sleep_time_milliseconds);
 
 	Message message_ready(child_address_, mother_address_);
 	message_ready.setType("READY");
@@ -23,6 +25,8 @@ void threading::ChildTester::run() const
 	message_ready.setMessage("Ready To Go Mother!");
 
 	communications.sendMessage(message_ready);
+
+	::Sleep(sleep_time_milliseconds);
 
 	while (true) {
 		// Wait for Mother to respond back.
@@ -47,6 +51,7 @@ void threading::ChildTester::run() const
 		if (response.getType() == "TEST_REQUEST") {
 			ITest* itest = this->blocking_queue_of_test_drivers_.dequeue();
 
+			++test_performed;
 			bool results = itest->test();
 
 			Message message(child_address_, mother_address_);
@@ -69,7 +74,11 @@ void threading::ChildTester::run() const
 
 	communications.sendMessage(message_done);
 
+	::Sleep(sleep_time_milliseconds);
+
+	communications.stop();
+
 	print_mutex.lock();
-	std::cout << std::endl << "DONE: [" << childs_name_ << "]#";
+	std::cout << std::endl << "DONE: [" << childs_name_ << "," << test_performed << "]#";
 	print_mutex.unlock();
 }

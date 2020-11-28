@@ -32,6 +32,8 @@ namespace threading {
 		ILogger* logger_ = nullptr;
 		string childs_name_;
 
+		int test_performed = 0;
+
 	public:
 
 		ChildTester(IAddressIp* child_address, IAddressIp* mother_address, BlockingQueue<ITest*>& blocking_queue_of_test_drivers, const string& childs_name)
@@ -43,7 +45,7 @@ namespace threading {
 		~ChildTester() {};
 
 		void setup(ILogger* logger);
-		void run() const;
+		void run();
 	};
 }
 

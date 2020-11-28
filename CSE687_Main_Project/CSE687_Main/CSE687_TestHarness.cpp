@@ -5,8 +5,10 @@
 // Create Date: 2020-10-11
 // Description: Contains the main function
 
+#include <array>
 #include <iostream>
 #include <list>
+#include <string>
 #include <vector>
 
 #include "AddressIp4.h"
@@ -275,13 +277,12 @@ void TestingMessage(ostream& out_stream) {
 /// </summary>
 /// <param name="out_stream">Need an out.</param>
 void TestingChildThreads(ostream& out_stream) {
-	out_stream << "\n\n|| =====< Testing the Children Threads >===== ||\n";
+	out_stream << "\n\n|| =====< Testing the Children Threads - START >===== ||\n";
+	out_stream << "Number of Hardware Threads:" << thread::hardware_concurrency() << "\n";
 
 	// TODO
 	LoggerFactory log_factory;
 	ILogger* logger = log_factory.create(30, 50, 10);
-
-	//std::mutex print_mutex;
 
 	// socket system will setup the sockets and tears them down when the
 	// class is destroyed.
@@ -291,33 +292,50 @@ void TestingChildThreads(ostream& out_stream) {
 
 	ClassOfTests class_of_tests;
 
-	auto test_this = new TestDriver<ClassOfTests>();
+	int number_of_children_threads = thread::hardware_concurrency() / 6;
 
-	test_this
-		->loadClass(&class_of_tests)
-		->loadMethod(&ClassOfTests::testTrue)
-		->loadLogger(logger)
-		->loadMessage("Testing if method returns true.");
+	if (number_of_children_threads < 3) {
+		number_of_children_threads *= 3;
+	}
 
-	blocking_queue_of_test_drivers.enqueue(test_this);
+	for (int i = 0; i < number_of_children_threads * 5; ++i) {
+		auto test_this = new TestDriver<ClassOfTests>();
 
-	test_this = new TestDriver<ClassOfTests>();
-	test_this
-		->loadClass(&class_of_tests)
-		->loadMethod(&ClassOfTests::testFalse)
-		->loadLogger(logger)
-		->loadMessage("Testing if method returns false.");
+		test_this
+			->loadClass(&class_of_tests)
+			->loadMethod(&ClassOfTests::testTrue)
+			->loadLogger(logger)
+			->loadMessage("Testing if method returns true.");
 
-	blocking_queue_of_test_drivers.enqueue(test_this);
+		blocking_queue_of_test_drivers.enqueue(test_this);
+
+		test_this = new TestDriver<ClassOfTests>();
+		test_this
+			->loadClass(&class_of_tests)
+			->loadMethod(&ClassOfTests::testFalse)
+			->loadLogger(logger)
+			->loadMessage("Testing if method returns false.");
+
+		blocking_queue_of_test_drivers.enqueue(test_this);
+
+		test_this = new TestDriver<ClassOfTests>();
+		test_this
+			->loadClass(&class_of_tests)
+			->loadMethod(&ClassOfTests::testException)
+			->loadLogger(logger)
+			->loadMessage("Testing if method returns an exception.");
+
+		blocking_queue_of_test_drivers.enqueue(test_this);
+	}
 
 	messaging::AddressIp4 address_mother;
 
-	address_mother.set(127, 0, 0, 1, 12000);
+	address_mother.set(127, 0, 0, 1, 51000);
 
 	vector<messaging::IAddressIp*> children_addresses;
 
-	int child_port = 12010;
-	for (int i = 0; i < 1; ++i) {
+	int child_port = 52010;
+	for (int i = 0; i < number_of_children_threads; ++i) {
 		messaging::IAddressIp* address_child = new messaging::AddressIp4();
 
 		address_child->set(127, 0, 0, 1, child_port);
@@ -333,15 +351,21 @@ void TestingChildThreads(ostream& out_stream) {
 	mother.run();
 
 	// Throws an error durring compulation.  Not sure why.
-	//std::thread mother_thread(&threading::MotherController::run, mother);
-	//mother_thread.detach();
+	//void (threading::MotherController:: * threadProc)() = &threading::MotherController::run;  // one way to get this working
+	//std::thread mother_thread(threadProc, mother);  // but it does not work
 
-	// sleep main thread.
-	while (!mother.isDone()) {
-		::Sleep(100);
-	}
+	//auto member_method = static_cast<void (threading::MotherController::*)()>(&threading::MotherController::run); // another way
+	//std::thread mother_thread(member_method, mother); // but this also does not work.
+	//mother_thread.join(); // must join with thread.
+
+	//// sleep main thread.
+	// while (!mother.isDone()) { // if the thread does finish we need to stick around
+	// 	::Sleep(100); // sleep for a tenth of a second.
+	// }
 
 	delete logger;
+
+	out_stream << "\n\n|| =====< Testing the Children Threads - DONE >===== ||\n";
 }
 
 // Main Function
@@ -354,19 +378,19 @@ int main()
 	out_stream << "|| =====< Start of Program >===== ||\n";
 
 	//// Run Method Testing the Log Data Classes
-	//TestingDevelopmentOfLogData(out_stream);
+	//TestingDevelopmentOfLogData(out_stream); // don't need to run at this time.
 
 	//// Run Method Tesing the Log Message Classes
-	//TestingDevelopmentOfLogMessage(out_stream);
+	//TestingDevelopmentOfLogMessage(out_stream); // don't need to run at this time.
 
 	//// Run Method Testing the Log Factory
-	//TestingDevelopmentOfLogFactory(out_stream);
+	//TestingDevelopmentOfLogFactory(out_stream); // don't need to run at this time.
 
 	//// Run Method Testing the Test Driver Classes
-	//TestingDevelopmentOfTestDriver(out_stream);
+	//TestingDevelopmentOfTestDriver(out_stream); // don't need to run at this time.
 
-	//TestingAddressIp4(out_stream);
-	//TestingMessage(out_stream);
+	//TestingAddressIp4(out_stream); // don't need to run at this time.
+	//TestingMessage(out_stream); // don't need to run at this time.
 
 	TestingChildThreads(out_stream);
 
