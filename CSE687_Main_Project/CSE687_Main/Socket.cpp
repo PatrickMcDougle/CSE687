@@ -19,7 +19,7 @@ messaging::Socket::Socket(::SOCKET sock) : socket_(sock)
 messaging::Socket::Socket(Socket&& s) : socket_(s.socket_)
 {
 	s.socket_ = INVALID_SOCKET;
-	
+
 	ZeroMemory(&hints, sizeof(hints));
 	hints.ai_family = s.hints.ai_family;
 	hints.ai_socktype = s.hints.ai_socktype;
@@ -158,15 +158,13 @@ size_t messaging::Socket::recvStream(size_t bytes, byte* pBuf) const
 	return ::recv(socket_, pBuf, bytes, 0);
 }
 
-
 size_t messaging::Socket::bytesWaiting()
 {
 	unsigned long int ret;
-	
+
 	ioctlsocket(socket_, FIONREAD, &ret);
 	return (size_t)ret;
 }
-
 
 bool messaging::Socket::waitForData(size_t time_to_wait, size_t time_to_check)
 {

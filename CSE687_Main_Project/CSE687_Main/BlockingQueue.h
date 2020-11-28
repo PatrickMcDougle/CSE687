@@ -95,7 +95,6 @@ namespace queue {
 		std::mutex mutex_;
 		std::condition_variable condition_variable_;
 	};
-
 }
 
 #endif //!__BLOCKING_QUEUE_H__

@@ -23,12 +23,10 @@ namespace messaging {
 
 		void operator()(Socket socket);
 
-			
 	private:
 		BlockingQueue<Message>* blocking_queue_;
 		string name_;
 	};
-
 }
 
 #endif // !__CLIENT_HANDLER_H__
