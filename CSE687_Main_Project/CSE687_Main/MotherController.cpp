@@ -18,8 +18,8 @@ void threading::MotherController::setup(ILogger* logger)
 		child_tester->setup(logger);
 		child_testers_.push_back(child_tester);
 
-		std::thread child_thread(&threading::ChildTester::run, std::move(child_tester));
-		child_thread.detach();
+		child_threads_.push_back(std::thread(&threading::ChildTester::run, std::move(child_tester)));
+		//child_thread.detach();  // this will cause the thread to continue to run even though the scope is over.
 
 		++children_counter;
 	}
@@ -53,9 +53,10 @@ void threading::MotherController::run()
 		if (message.getType() == "STOP") {
 			if (--number_of_children == 0)
 			{
+				// all children are done.
 				break;
 			}
-			// The child is done.
+			// a child is done.
 			continue;
 		}
 
@@ -80,6 +81,14 @@ void threading::MotherController::run()
 	}
 
 	//::Sleep(sleep_time_milliseconds);  // mother needs no sleep time
+
+	for (auto& t : child_threads_) {
+		while (t.joinable()) {
+			//t.join();
+			//t.detach();
+			std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		}
+	}
 
 	done_ = true;
 }

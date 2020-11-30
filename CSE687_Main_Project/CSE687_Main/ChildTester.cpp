@@ -17,7 +17,8 @@ void threading::ChildTester::run()
 
 	communications.start();
 
-	::Sleep(sleep_time_milliseconds);
+	std::this_thread::sleep_for(std::chrono::milliseconds(sleep_time_milliseconds));
+	//::Sleep(sleep_time_milliseconds);
 
 	Message message_ready(child_address_, mother_address_);
 	message_ready.setType("READY");
@@ -25,8 +26,6 @@ void threading::ChildTester::run()
 	message_ready.setMessage("Ready To Go Mother!");
 
 	communications.sendMessage(message_ready);
-
-	::Sleep(sleep_time_milliseconds);
 
 	while (true) {
 		// Wait for Mother to respond back.
@@ -63,8 +62,6 @@ void threading::ChildTester::run()
 
 			communications.sendMessage(message);
 		}
-
-		::Sleep(sleep_time_milliseconds);
 	}
 
 	Message message_done(child_address_, mother_address_);
@@ -74,7 +71,16 @@ void threading::ChildTester::run()
 
 	communications.sendMessage(message_done);
 
-	::Sleep(sleep_time_milliseconds);
+	std::this_thread::sleep_for(std::chrono::milliseconds(sleep_time_milliseconds));
 
 	communications.stop();
+
+	print_mutex.lock();
+	std::cout
+		<< std::endl
+		<< " #####< "
+		<< childs_name_
+		<< " RUN DONE "
+		<< " >#####";
+	print_mutex.unlock();
 }

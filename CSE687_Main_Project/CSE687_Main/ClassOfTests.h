@@ -10,6 +10,9 @@
 #define __I_CLASS_OF_TESTS_H__
 
 #include <exception>
+#include <stdexcept>
+#include <chrono>
+#include <thread>
 
 // Namespace for Test
 namespace test {
@@ -21,6 +24,10 @@ namespace test {
 		bool testTrue(); // Method to always return true
 		bool testFalse(); // Method to always return false
 		bool testException(); // Method to always return true but has exception first
+		bool testSecond();
+		bool testMilliSeconds();
+		bool test10MilliSeconds();
+		bool test100MilliSeconds();
 	};
 }
 

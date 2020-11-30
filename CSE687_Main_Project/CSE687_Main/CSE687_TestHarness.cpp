@@ -330,6 +330,42 @@ void TestingChildThreads(ostream& out_stream) {
 			->loadMessage("Testing if method returns an exception.");
 
 		blocking_queue_of_test_drivers.enqueue(test_this);
+
+		test_this = new TestDriver<ClassOfTests>();
+		test_this
+			->loadClass(&class_of_tests)
+			->loadMethod(&ClassOfTests::testSecond)
+			->loadLogger(logger)
+			->loadMessage("Testing if method returns after one second.");
+
+		blocking_queue_of_test_drivers.enqueue(test_this);
+
+		test_this = new TestDriver<ClassOfTests>();
+		test_this
+			->loadClass(&class_of_tests)
+			->loadMethod(&ClassOfTests::testMilliSeconds)
+			->loadLogger(logger)
+			->loadMessage("Testing if method returns after one millisecond.");
+
+		blocking_queue_of_test_drivers.enqueue(test_this);
+
+		test_this = new TestDriver<ClassOfTests>();
+		test_this
+			->loadClass(&class_of_tests)
+			->loadMethod(&ClassOfTests::test10MilliSeconds)
+			->loadLogger(logger)
+			->loadMessage("Testing if method returns after ten millisecond.");
+
+		blocking_queue_of_test_drivers.enqueue(test_this);
+
+		test_this = new TestDriver<ClassOfTests>();
+		test_this
+			->loadClass(&class_of_tests)
+			->loadMethod(&ClassOfTests::test100MilliSeconds)
+			->loadLogger(logger)
+			->loadMessage("Testing if method returns after hundred millisecond.");
+
+		blocking_queue_of_test_drivers.enqueue(test_this);
 	}
 
 	out_stream << "Number of tests to run:" << blocking_queue_of_test_drivers.size() << "\n";

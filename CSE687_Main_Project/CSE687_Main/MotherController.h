@@ -39,7 +39,7 @@ namespace threading {
 		BlockingQueue<ITest*>& blocking_queue_of_test_drivers_;
 
 		vector<ChildTester*> child_testers_;
-		vector<thread*> child_threads_;
+		vector<thread> child_threads_;
 
 	public:
 
