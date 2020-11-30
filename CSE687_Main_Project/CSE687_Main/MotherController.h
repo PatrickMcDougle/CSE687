@@ -28,26 +28,45 @@ namespace threading {
 	{
 	private:
 		vector<IAddressIp*>& children_addresses_;
-		IAddressIp* address_mother_;
+		IAddressIp* address_mother_ = nullptr;
 		ILogger* logger_ = nullptr;
 		string mothers_name_;
 
 		int children_counter = 0;
 		bool done_ = false;
 
-		Communications mother_communications_;
+		Communications* mother_communications_;
 		BlockingQueue<ITest*>& blocking_queue_of_test_drivers_;
+
+		vector<ChildTester*> child_testers_;
+		vector<thread*> child_threads_;
 
 	public:
 
 		MotherController(IAddressIp* address_mother, vector<IAddressIp*>& children_addresses, BlockingQueue<ITest*>& blocking_queue_of_test_drivers, string const& mothers_name)
 			: address_mother_(address_mother), children_addresses_(children_addresses),
-			blocking_queue_of_test_drivers_(blocking_queue_of_test_drivers), mothers_name_(mothers_name),
-			mother_communications_(address_mother, mothers_name)
+			blocking_queue_of_test_drivers_(blocking_queue_of_test_drivers), mothers_name_(mothers_name)
 		{
-			// nothing to do in the body of the constructor.
+			print_mutex.lock();
+			std::cout << std::endl << "Hello! My name is " << mothers_name_ << "!";
+			print_mutex.unlock();
+			mother_communications_ = new Communications(address_mother_, mothers_name_);
 		};
-		~MotherController() {};
+		~MotherController() {
+			if (done_) {
+				mother_communications_->stop();
+
+				print_mutex.lock();
+				std::cout << std::endl << "DONE: [..." << mothers_name_ << "...]#";
+				print_mutex.unlock();
+
+				// terminate all the child testers for they should all be done.
+				for (ChildTester* ct : child_testers_) {
+					delete ct;
+					ct = nullptr;
+				}
+			}
+		};
 
 		void setup(ILogger* logger);
 		void run();

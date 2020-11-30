@@ -1,34 +1,32 @@
 #include "Communications.h"
 
-void threading::Communications::start()
+void messaging::Communications::start()
 {
 	BlockingQueue<Message>* blocking_queue = receiver_.queue();
 
-	client_handler = new ClientHandler(blocking_queue, name_);
+	client_handler_ = new ClientHandler(blocking_queue, name_);
 
-	receiver_.start(*client_handler);
+	receiver_.start(*client_handler_);
 	sender_.start();
 }
 
-void threading::Communications::stop()
+void messaging::Communications::stop()
 {
-	receiver_.stop();
 	sender_.stop();
-
-	delete client_handler;
+	receiver_.stop();
 }
 
-void threading::Communications::sendMessage(Message& message)
+void messaging::Communications::sendMessage(Message& message)
 {
 	sender_.postMessage(message);
 }
 
-Message threading::Communications::getMessage()
+Message messaging::Communications::getMessage()
 {
 	return receiver_.getMessage();
 }
 
-string threading::Communications::getName() const
+string messaging::Communications::getName() const
 {
 	return name_;
 }

@@ -6,7 +6,7 @@ void threading::MotherController::setup(ILogger* logger)
 
 	std::array<string, 5> children_names = { "Boy", "Girl", "Child", "Person", "Heiress" };
 
-	mother_communications_.start();
+	mother_communications_->start();
 
 	children_counter = 0;
 
@@ -14,10 +14,11 @@ void threading::MotherController::setup(ILogger* logger)
 		string child_name(children_names[children_counter % children_names.size()]);
 		child_name.append("-" + std::to_string(children_counter));
 
-		ChildTester child_tester(address, address_mother_, blocking_queue_of_test_drivers_, child_name);
-		child_tester.setup(logger);
+		auto child_tester = new ChildTester(address, address_mother_, blocking_queue_of_test_drivers_, child_name);
+		child_tester->setup(logger);
+		child_testers_.push_back(child_tester);
 
-		std::thread child_thread(&threading::ChildTester::run, child_tester);
+		std::thread child_thread(&threading::ChildTester::run, std::move(child_tester));
 		child_thread.detach();
 
 		++children_counter;
@@ -31,15 +32,17 @@ void threading::MotherController::run()
 
 	done_ = false;
 
+	//DWORD sleep_time_milliseconds = ((DWORD)mothers_name_.size() * 20);  // mother needs no sleep time
+
 	while (true) {
 		// Wait for Children to respond when ready.
-		Message message = mother_communications_.getMessage();
+		Message message = mother_communications_->getMessage();
 
 		print_mutex.lock();
 		std::cout
 			<< std::endl
 			<< " =====< "
-			<< mother_communications_.getName()
+			<< mother_communications_->getName()
 			<< " received message: "
 			<< message.getAuthor()
 			<< " ["
@@ -70,15 +73,13 @@ void threading::MotherController::run()
 				reply.setMessage("You are done.");
 			}
 
-			mother_communications_.sendMessage(reply);
+			mother_communications_->sendMessage(reply);
 		}
+
+		//::Sleep(sleep_time_milliseconds);  // mother needs no sleep time
 	}
 
-	mother_communications_.stop();
-
-	print_mutex.lock();
-	std::cout << std::endl << "DONE: [" << mothers_name_ << "]#";
-	print_mutex.unlock();
+	//::Sleep(sleep_time_milliseconds);  // mother needs no sleep time
 
 	done_ = true;
 }

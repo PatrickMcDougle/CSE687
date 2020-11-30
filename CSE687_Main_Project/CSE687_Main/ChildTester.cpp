@@ -77,8 +77,4 @@ void threading::ChildTester::run()
 	::Sleep(sleep_time_milliseconds);
 
 	communications.stop();
-
-	print_mutex.lock();
-	std::cout << std::endl << "DONE: [" << childs_name_ << "," << test_performed << "]#";
-	print_mutex.unlock();
 }

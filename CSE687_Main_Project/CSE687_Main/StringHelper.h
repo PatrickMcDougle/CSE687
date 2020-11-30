@@ -14,6 +14,10 @@ namespace utility {
 	{
 	public:
 		static vector<string> split(const string& src, char splitter = '\n');
+
+	private:
+		// make constructor private so that no one tries to instantiate this class.
+		StringHelper() {}
 	};
 }
 

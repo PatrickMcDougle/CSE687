@@ -118,5 +118,5 @@ messaging::Socket messaging::SocketListener::accept()
 void messaging::SocketListener::stop()
 {
 	stop_.exchange(true);
-	sendString("Stop!");
+	sendString("Stop!"); // bug in system???
 }

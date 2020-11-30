@@ -11,7 +11,6 @@ using std::string;
 using queue::BlockingQueue;
 
 namespace messaging {
-	// Class for LogData
 	class ClientHandler {
 	public:
 		ClientHandler(BlockingQueue<Message>* blocking_queue, const string& name)
@@ -19,13 +18,14 @@ namespace messaging {
 		~ClientHandler() {};
 
 		void setQueue(BlockingQueue<Message>* blocking_queue);
-		string readMessage(Socket& socket) const;
 
 		void operator()(Socket socket);
 
 	private:
-		BlockingQueue<Message>* blocking_queue_;
+		BlockingQueue<Message>* blocking_queue_ = nullptr;
 		string name_;
+
+		string readMessage(Socket& socket) const;
 	};
 }
 

@@ -11,13 +11,8 @@
 #include "IAddressIp.h"
 
 using std::string;
-using messaging::IAddressIp;
-using messaging::Message;
-using messaging::Sender;
-using messaging::Receiver;
-using messaging::ClientHandler;
 
-namespace threading {
+namespace messaging {
 	class Communications
 	{
 	private:
@@ -26,7 +21,7 @@ namespace threading {
 		Receiver receiver_;
 		string name_;
 
-		ClientHandler* client_handler = nullptr;
+		ClientHandler* client_handler_ = nullptr;
 
 	public:
 
@@ -35,7 +30,12 @@ namespace threading {
 		{
 		}
 
-		~Communications() {};
+		~Communications() {
+			if (client_handler_ != nullptr) {
+				delete client_handler_;
+				client_handler_ = nullptr;
+			}
+		};
 
 		void start();
 		void stop();

@@ -297,9 +297,12 @@ void TestingChildThreads(ostream& out_stream) {
 	if (number_of_children_threads < 3) {
 		number_of_children_threads *= 3;
 	}
+
+	//number_of_children_threads = 1;
+
 	out_stream << "Number of children:" << number_of_children_threads << "\n";
 
-	for (int i = 0; i < number_of_children_threads * 5; ++i) {
+	for (int i = 0; i < number_of_children_threads * 1; ++i) {
 		auto test_this = new TestDriver<ClassOfTests>();
 
 		test_this
@@ -329,6 +332,8 @@ void TestingChildThreads(ostream& out_stream) {
 		blocking_queue_of_test_drivers.enqueue(test_this);
 	}
 
+	out_stream << "Number of tests to run:" << blocking_queue_of_test_drivers.size() << "\n";
+
 	messaging::AddressIp4 address_mother;
 
 	address_mother.set(127, 0, 0, 1, 51000);
@@ -349,21 +354,14 @@ void TestingChildThreads(ostream& out_stream) {
 	threading::MotherController mother(&address_mother, children_addresses, blocking_queue_of_test_drivers, "Mother");
 	mother.setup(logger);
 
-	mother.run();
+	//mother.run(); // when threads don't work, we can just call the run method.
 
-	// Throws an error durring compulation.  Not sure why.
-	//void (threading::MotherController:: * threadProc)() = &threading::MotherController::run;  // one way to get this working
-	//std::thread mother_thread(threadProc, mother);  // but it does not work
+	std::thread mother_thread(&threading::MotherController::run, std::ref(mother));
 
-	//auto member_method = static_cast<void (threading::MotherController::*)()>(&threading::MotherController::run); // another way
-	//std::thread mother_thread(member_method, mother); // but this also does not work.
-	//mother_thread.detach(); // must join with thread.
+	// wait here until the mother_thread is done processing information.
+	mother_thread.join(); // must join with thread.
 
-	//// sleep main thread.
-	// while (!mother.isDone()) { // if the thread does finish we need to stick around
-	// 	::Sleep(100); // sleep for a tenth of a second.
-	// }
-
+	logger = nullptr;
 	delete logger;
 
 	out_stream << "\n\n|| =====< Testing the Children Threads - DONE >===== ||\n";
