@@ -297,6 +297,9 @@ void TestingChildThreads(ostream& out_stream) {
 	if (number_of_children_threads < 3) {
 		number_of_children_threads *= 3;
 	}
+	if (number_of_children_threads == 0) {
+		number_of_children_threads = 3;
+	}
 
 	//number_of_children_threads = 1;
 
