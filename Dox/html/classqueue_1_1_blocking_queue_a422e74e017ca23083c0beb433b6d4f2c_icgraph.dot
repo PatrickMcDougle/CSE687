@@ -1,0 +1,10 @@
+digraph "queue::BlockingQueue::clear"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="queue::BlockingQueue\l::clear",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="queue::BlockingQueue\l\< messaging::Message\l \>::~BlockingQueue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classqueue_1_1_blocking_queue.html#ae4cccce3774f52bee1f0352eaad1c02c",tooltip=" "];
+}

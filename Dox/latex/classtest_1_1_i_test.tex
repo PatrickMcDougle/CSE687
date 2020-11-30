@@ -1,0 +1,87 @@
+\hypertarget{classtest_1_1_i_test}{}\doxysection{test\+::I\+Test Class Reference}
+\label{classtest_1_1_i_test}\index{test::ITest@{test::ITest}}
+
+
+{\ttfamily \#include $<$I\+Test.\+h$>$}
+
+
+
+Inheritance diagram for test\+::I\+Test\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtest_1_1_i_test_a725b5d04df0cd5ed68958360400c2a00}{$\sim$\+I\+Test}} ()
+\item 
+virtual bool \mbox{\hyperlink{classtest_1_1_i_test_a0bbe875771775775d8907c224a4dc741}{test}} ()=0
+\item 
+virtual string \mbox{\hyperlink{classtest_1_1_i_test_a233de36a9999591336533d01e068a5df}{test\+Log\+Results}} ()=0
+\item 
+virtual \mbox{\hyperlink{classtest_1_1_i_test}{I\+Test}} $\ast$ \mbox{\hyperlink{classtest_1_1_i_test_aa1221063d6ac2deee27236fd201da204}{load\+Logger}} (\mbox{\hyperlink{classlogger_1_1_i_logger}{I\+Logger}} $\ast$logger)=0
+\item 
+virtual \mbox{\hyperlink{classtest_1_1_i_test}{I\+Test}} $\ast$ \mbox{\hyperlink{classtest_1_1_i_test_a2aa3dde65dfe0a8187c514be29eb1428}{load\+Message}} (const string \&message)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 20 of file I\+Test.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtest_1_1_i_test_a725b5d04df0cd5ed68958360400c2a00}\label{classtest_1_1_i_test_a725b5d04df0cd5ed68958360400c2a00}} 
+\index{test::ITest@{test::ITest}!````~ITest@{$\sim$ITest}}
+\index{````~ITest@{$\sim$ITest}!test::ITest@{test::ITest}}
+\doxysubsubsection{\texorpdfstring{$\sim$ITest()}{~ITest()}}
+{\footnotesize\ttfamily virtual test\+::\+I\+Test\+::$\sim$\+I\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 23 of file I\+Test.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtest_1_1_i_test_aa1221063d6ac2deee27236fd201da204}\label{classtest_1_1_i_test_aa1221063d6ac2deee27236fd201da204}} 
+\index{test::ITest@{test::ITest}!loadLogger@{loadLogger}}
+\index{loadLogger@{loadLogger}!test::ITest@{test::ITest}}
+\doxysubsubsection{\texorpdfstring{loadLogger()}{loadLogger()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtest_1_1_i_test}{I\+Test}}$\ast$ test\+::\+I\+Test\+::load\+Logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlogger_1_1_i_logger}{I\+Logger}} $\ast$}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classtest_1_1_test_driver_a18b5ead5477ff3e9eec46daa954c25a2}{test\+::\+Test\+Driver$<$ T $>$}}.
+
+\mbox{\Hypertarget{classtest_1_1_i_test_a2aa3dde65dfe0a8187c514be29eb1428}\label{classtest_1_1_i_test_a2aa3dde65dfe0a8187c514be29eb1428}} 
+\index{test::ITest@{test::ITest}!loadMessage@{loadMessage}}
+\index{loadMessage@{loadMessage}!test::ITest@{test::ITest}}
+\doxysubsubsection{\texorpdfstring{loadMessage()}{loadMessage()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtest_1_1_i_test}{I\+Test}}$\ast$ test\+::\+I\+Test\+::load\+Message (\begin{DoxyParamCaption}\item[{const string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classtest_1_1_i_test_a0bbe875771775775d8907c224a4dc741}\label{classtest_1_1_i_test_a0bbe875771775775d8907c224a4dc741}} 
+\index{test::ITest@{test::ITest}!test@{test}}
+\index{test@{test}!test::ITest@{test::ITest}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily virtual bool test\+::\+I\+Test\+::test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classtest_1_1_test_driver_a91c88f978d95c422dfd65ed1eb341334}{test\+::\+Test\+Driver$<$ T $>$}}.
+
+\mbox{\Hypertarget{classtest_1_1_i_test_a233de36a9999591336533d01e068a5df}\label{classtest_1_1_i_test_a233de36a9999591336533d01e068a5df}} 
+\index{test::ITest@{test::ITest}!testLogResults@{testLogResults}}
+\index{testLogResults@{testLogResults}!test::ITest@{test::ITest}}
+\doxysubsubsection{\texorpdfstring{testLogResults()}{testLogResults()}}
+{\footnotesize\ttfamily virtual string test\+::\+I\+Test\+::test\+Log\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classtest_1_1_test_driver_a0c3d036d8d26479ac0a3c69ef6d2cf87}{test\+::\+Test\+Driver$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_i_test_8h}{I\+Test.\+h}}\end{DoxyCompactItemize}

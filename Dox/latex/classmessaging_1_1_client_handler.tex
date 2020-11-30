@@ -1,0 +1,92 @@
+\hypertarget{classmessaging_1_1_client_handler}{}\doxysection{messaging\+::Client\+Handler Class Reference}
+\label{classmessaging_1_1_client_handler}\index{messaging::ClientHandler@{messaging::ClientHandler}}
+
+
+{\ttfamily \#include $<$Client\+Handler.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmessaging_1_1_client_handler_abdf40e2376e7d7e6dbe82ed8bf9d94fe}{Client\+Handler}} (\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ \mbox{\hyperlink{classmessaging_1_1_message}{Message}} $>$ $\ast$blocking\+\_\+queue, const string \&name)
+\item 
+\mbox{\hyperlink{classmessaging_1_1_client_handler_a899afc52e2359a37ba67b1fd507dff9f}{$\sim$\+Client\+Handler}} ()
+\item 
+void \mbox{\hyperlink{classmessaging_1_1_client_handler_a109099ef09c9c438f2d8845790dbf7cd}{set\+Queue}} (\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ \mbox{\hyperlink{classmessaging_1_1_message}{Message}} $>$ $\ast$blocking\+\_\+queue)
+\item 
+string \mbox{\hyperlink{classmessaging_1_1_client_handler_ac8bab4c29db0d7a9b166832707f555a0}{read\+Message}} (\mbox{\hyperlink{classmessaging_1_1_socket}{Socket}} \&socket) const
+\item 
+void \mbox{\hyperlink{classmessaging_1_1_client_handler_a5bd0e35edbf31af326419353fd391071}{operator()}} (\mbox{\hyperlink{classmessaging_1_1_socket}{Socket}} socket)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 15 of file Client\+Handler.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmessaging_1_1_client_handler_abdf40e2376e7d7e6dbe82ed8bf9d94fe}\label{classmessaging_1_1_client_handler_abdf40e2376e7d7e6dbe82ed8bf9d94fe}} 
+\index{messaging::ClientHandler@{messaging::ClientHandler}!ClientHandler@{ClientHandler}}
+\index{ClientHandler@{ClientHandler}!messaging::ClientHandler@{messaging::ClientHandler}}
+\doxysubsubsection{\texorpdfstring{ClientHandler()}{ClientHandler()}}
+{\footnotesize\ttfamily messaging\+::\+Client\+Handler\+::\+Client\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ \mbox{\hyperlink{classmessaging_1_1_message}{Message}} $>$ $\ast$}]{blocking\+\_\+queue,  }\item[{const string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 17 of file Client\+Handler.\+h.
+
+\mbox{\Hypertarget{classmessaging_1_1_client_handler_a899afc52e2359a37ba67b1fd507dff9f}\label{classmessaging_1_1_client_handler_a899afc52e2359a37ba67b1fd507dff9f}} 
+\index{messaging::ClientHandler@{messaging::ClientHandler}!````~ClientHandler@{$\sim$ClientHandler}}
+\index{````~ClientHandler@{$\sim$ClientHandler}!messaging::ClientHandler@{messaging::ClientHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$ClientHandler()}{~ClientHandler()}}
+{\footnotesize\ttfamily messaging\+::\+Client\+Handler\+::$\sim$\+Client\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19 of file Client\+Handler.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmessaging_1_1_client_handler_a5bd0e35edbf31af326419353fd391071}\label{classmessaging_1_1_client_handler_a5bd0e35edbf31af326419353fd391071}} 
+\index{messaging::ClientHandler@{messaging::ClientHandler}!operator()@{operator()}}
+\index{operator()@{operator()}!messaging::ClientHandler@{messaging::ClientHandler}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily void messaging\+::\+Client\+Handler\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmessaging_1_1_socket}{Socket}}}]{socket }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file Client\+Handler.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{classmessaging_1_1_client_handler_ac8bab4c29db0d7a9b166832707f555a0}\label{classmessaging_1_1_client_handler_ac8bab4c29db0d7a9b166832707f555a0}} 
+\index{messaging::ClientHandler@{messaging::ClientHandler}!readMessage@{readMessage}}
+\index{readMessage@{readMessage}!messaging::ClientHandler@{messaging::ClientHandler}}
+\doxysubsubsection{\texorpdfstring{readMessage()}{readMessage()}}
+{\footnotesize\ttfamily string messaging\+::\+Client\+Handler\+::read\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmessaging_1_1_socket}{Socket}} \&}]{socket }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 8 of file Client\+Handler.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classmessaging_1_1_client_handler_a109099ef09c9c438f2d8845790dbf7cd}\label{classmessaging_1_1_client_handler_a109099ef09c9c438f2d8845790dbf7cd}} 
+\index{messaging::ClientHandler@{messaging::ClientHandler}!setQueue@{setQueue}}
+\index{setQueue@{setQueue}!messaging::ClientHandler@{messaging::ClientHandler}}
+\doxysubsubsection{\texorpdfstring{setQueue()}{setQueue()}}
+{\footnotesize\ttfamily void messaging\+::\+Client\+Handler\+::set\+Queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ \mbox{\hyperlink{classmessaging_1_1_message}{Message}} $>$ $\ast$}]{blocking\+\_\+queue }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Client\+Handler.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_client_handler_8h}{Client\+Handler.\+h}}\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_client_handler_8cpp}{Client\+Handler.\+cpp}}\end{DoxyCompactItemize}

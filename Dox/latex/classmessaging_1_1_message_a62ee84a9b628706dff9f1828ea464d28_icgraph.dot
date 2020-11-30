@@ -1,0 +1,18 @@
+digraph "messaging::Message::setType"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="messaging::Message\l::setType",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="threading::ChildTester::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classthreading_1_1_child_tester.html#a2386c985f1d24cb6f143b658f4376ba5",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="TestingChildThreads",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_c_s_e687___test_harness_8cpp.html#a91539862d89171fdca0918d2153c0fe4",tooltip="This is the best method, I mean function in the world."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_c_s_e687___test_harness_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="messaging::Sender::stop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_sender.html#a76a019b03b6ba7afe8b3a18d2c4ac5fb",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="TestingMessage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_c_s_e687___test_harness_8cpp.html#a970db8d18bc03536666ee945338e8cdf",tooltip=" "];
+}

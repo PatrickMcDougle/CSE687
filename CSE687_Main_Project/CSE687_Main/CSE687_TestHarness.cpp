@@ -5,11 +5,18 @@
 // Create Date: 2020-10-11
 // Description: Contains the main function
 
+#include <array>
 #include <iostream>
 #include <list>
+#include <string>
 #include <vector>
 
+#include "AddressIp4.h"
+#include "BlockingQueue.h"
+#include "ChildTester.h"
 #include "ClassOfTests.h"
+#include "Communications.h"
+#include "IAddressIp.h"
 #include "ILogData.h"
 #include "ITest.h"
 #include "LogData.h"
@@ -18,6 +25,9 @@
 #include "LogMessageDecorator.h"
 #include "LogStatusDecorator.h"
 #include "LogTimestampDecorator.h"
+#include "Message.h"
+#include "MotherController.h"
+#include "SocketSystem.h"
 #include "TestDriver.h"
 
 using namespace logger;
@@ -135,6 +145,7 @@ void TestingDevelopmentOfTestDriver(ostream& out_stream) {
 	out_stream << "\n\n|| =====< Testing the Test Driver >===== ||\n";
 
 	auto test_this = new TestDriver<ClassOfTests>();
+
 	ClassOfTests class_of_tests;
 
 	LoggerFactory log_factory;
@@ -148,8 +159,11 @@ void TestingDevelopmentOfTestDriver(ostream& out_stream) {
 
 	out_stream << "Test 1 : " << test_this->testLogResults() << endl;
 
+	test_this = new TestDriver<ClassOfTests>();
 	test_this
+		->loadClass(&class_of_tests)
 		->loadMethod(&ClassOfTests::testFalse)
+		->loadLogger(log_factory.create(30, 50, 10))
 		->loadMessage("Testing if method returns false.")
 		->test();
 
@@ -170,6 +184,189 @@ void TestingDevelopmentOfTestDriver(ostream& out_stream) {
 	delete test_this;
 }
 
+void TestingAddressIp4(ostream& out_stream) {
+	out_stream << "\n\n|| =====< Testing the Address IP4 class >===== ||\n";
+
+	messaging::AddressIp4 ip1;
+
+	ip1.setPort(1337);
+
+	out_stream << "Port [1337] : " << ip1.getPort() << endl;
+
+	ip1.setAddress(1, 2, 3, 4);
+
+	out_stream << "Address     [1.2.3.4]      : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [1.2.3.4:1337] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.setAddress(11, 22, 33, 44);
+
+	out_stream << "Address     [11.22.33.44]      : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [11.22.33.44:1337] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.setAddress(111, 122, 133, 144);
+
+	out_stream << "Address     [111.122.133.144]      : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [111.122.133.144:1337] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.setAddress("9.8.7.6");
+	ip1.setPort(54321);
+
+	out_stream << "Address     [9.8.7.6]       : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [9.8.7.6:54321] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.setAddress("91.82.73.64");
+	ip1.setPort(53210);
+
+	out_stream << "Address     [91.82.73.64]       : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [91.82.73.64:53210] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.setAddress("191.182.173.164");
+	ip1.setPort(52100);
+
+	out_stream << "Address     [191.182.173.164]       : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [191.182.173.164:52100] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.set("5.6.7.8:9");
+
+	out_stream << "Address     [5.6.7.8]   : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [5.6.7.8:9] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.set("55.65.75.85:955");
+
+	out_stream << "Address     [55.65.75.85]     : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [55.65.75.85:955] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.set("155.165.175.185:11955");
+
+	out_stream << "Address     [155.165.175.185]       : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [155.165.175.185:11955] : " << ip1.getAddressAndPort() << endl;
+
+	ip1.set(123, 234, 134, 245, 14725);
+
+	out_stream << "Address     [123.234.134.245]       : " << ip1.getAddress() << endl;
+	out_stream << "AddressPort [123.234.134.245:14725] : " << ip1.getAddressAndPort() << endl;
+}
+
+void TestingMessage(ostream& out_stream) {
+	out_stream << "\n\n|| =====< Testing the Message class >===== ||\n";
+
+	messaging::AddressIp4 source;
+	source.setAddress(127, 0, 0, 1);
+	source.setPort(12345);
+
+	messaging::AddressIp4 destination;
+	destination.setAddress(127, 0, 0, 1);
+	destination.setPort(15432);
+
+	messaging::Message the_message(&source, &destination);
+
+	the_message.setAuthor("Mother");
+	the_message.setType("DoTest");
+	the_message.setMessage("<runtest><location>2</location></runtest>");
+
+	out_stream << "The Message from Mother to Child " << endl
+		<< the_message.writeMessage() << endl;
+
+	queue::BlockingQueue<int> bq;
+
+	bq.enqueue(1);
+}
+
+/// <summary>
+/// This is the best method, I mean function in the world.
+/// </summary>
+/// <param name="out_stream">Need an out.</param>
+void TestingChildThreads(ostream& out_stream) {
+	out_stream << "\n\n|| =====< Testing the Children Threads - START >===== ||\n";
+	out_stream << "Number of Hardware Threads:" << thread::hardware_concurrency() << "\n";
+
+	// TODO
+	LoggerFactory log_factory;
+	ILogger* logger = log_factory.create(30, 50, 10);
+
+	// socket system will setup the sockets and tears them down when the
+	// class is destroyed.
+	messaging::SocketSystem socket_system_setup;
+
+	BlockingQueue<ITest*> blocking_queue_of_test_drivers;
+
+	ClassOfTests class_of_tests;
+
+	int number_of_children_threads = thread::hardware_concurrency() / 6;
+
+	if (number_of_children_threads < 3) {
+		number_of_children_threads *= 3;
+	}
+
+	//number_of_children_threads = 1;
+
+	out_stream << "Number of children:" << number_of_children_threads << "\n";
+
+	for (int i = 0; i < number_of_children_threads * 1; ++i) {
+		auto test_this = new TestDriver<ClassOfTests>();
+
+		test_this
+			->loadClass(&class_of_tests)
+			->loadMethod(&ClassOfTests::testTrue)
+			->loadLogger(logger)
+			->loadMessage("Testing if method returns true.");
+
+		blocking_queue_of_test_drivers.enqueue(test_this);
+
+		test_this = new TestDriver<ClassOfTests>();
+		test_this
+			->loadClass(&class_of_tests)
+			->loadMethod(&ClassOfTests::testFalse)
+			->loadLogger(logger)
+			->loadMessage("Testing if method returns false.");
+
+		blocking_queue_of_test_drivers.enqueue(test_this);
+
+		test_this = new TestDriver<ClassOfTests>();
+		test_this
+			->loadClass(&class_of_tests)
+			->loadMethod(&ClassOfTests::testException)
+			->loadLogger(logger)
+			->loadMessage("Testing if method returns an exception.");
+
+		blocking_queue_of_test_drivers.enqueue(test_this);
+	}
+
+	out_stream << "Number of tests to run:" << blocking_queue_of_test_drivers.size() << "\n";
+
+	messaging::AddressIp4 address_mother;
+
+	address_mother.set(127, 0, 0, 1, 51000);
+
+	vector<messaging::IAddressIp*> children_addresses;
+
+	int child_port = 52010;
+	for (int i = 0; i < number_of_children_threads; ++i) {
+		messaging::IAddressIp* address_child = new messaging::AddressIp4();
+
+		address_child->set(127, 0, 0, 1, child_port);
+
+		children_addresses.push_back(address_child);
+
+		child_port += 10;
+	}
+
+	threading::MotherController mother(&address_mother, children_addresses, blocking_queue_of_test_drivers, "Mother");
+	mother.setup(logger);
+
+	//mother.run(); // when threads don't work, we can just call the run method.
+
+	std::thread mother_thread(&threading::MotherController::run, std::ref(mother));
+
+	// wait here until the mother_thread is done processing information.
+	mother_thread.join(); // must join with thread.
+
+	logger = nullptr;
+	delete logger;
+
+	out_stream << "\n\n|| =====< Testing the Children Threads - DONE >===== ||\n";
+}
+
 // Main Function
 int main()
 {
@@ -179,17 +376,22 @@ int main()
 	// Alert User of Program Start
 	out_stream << "|| =====< Start of Program >===== ||\n";
 
-	// Run Method Testing the Log Data Classes
-	TestingDevelopmentOfLogData(out_stream);
+	//// Run Method Testing the Log Data Classes
+	//TestingDevelopmentOfLogData(out_stream); // don't need to run at this time.
 
-	// Run Method Tesing the Log Message Classes
-	TestingDevelopmentOfLogMessage(out_stream);
+	//// Run Method Tesing the Log Message Classes
+	//TestingDevelopmentOfLogMessage(out_stream); // don't need to run at this time.
 
-	// Run Method Testing the Log Factory
-	TestingDevelopmentOfLogFactory(out_stream);
+	//// Run Method Testing the Log Factory
+	//TestingDevelopmentOfLogFactory(out_stream); // don't need to run at this time.
 
-	// Run Method Testing the Test Driver Classes
-	TestingDevelopmentOfTestDriver(out_stream);
+	//// Run Method Testing the Test Driver Classes
+	//TestingDevelopmentOfTestDriver(out_stream); // don't need to run at this time.
+
+	//TestingAddressIp4(out_stream); // don't need to run at this time.
+	//TestingMessage(out_stream); // don't need to run at this time.
+
+	TestingChildThreads(out_stream);
 
 	// Alert User of Program End
 	out_stream << "\n\n|| =====< Done With Program >===== ||\n\n\n";

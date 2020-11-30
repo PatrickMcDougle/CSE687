@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="messaging::ClientHandler">
+    <Position X="19.5" Y="3.25" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAEAAAAAAEAIAQAAAAAAAQAAAAAAAAAAAIAA=</HashCode>
+      <FileName>ClientHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="messaging::SocketSystem">
+    <Position X="25.25" Y="9.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgBAAAACAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>SocketSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="messaging::AddressIp4">
+    <Position X="15" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAQAAAAgAAAAAQAAAAAAAgAAQiA=</HashCode>
+      <FileName>AddressIp4.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="messaging::Message">
+    <Position X="25.25" Y="3.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>EABAgAAECCAAAAACAiAACAEAARAgYAQQAgBAIAAgAAA=</HashCode>
+      <FileName>Message.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="messaging::Receiver">
+    <Position X="15" Y="9.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAABAAAAAIAAkAAAEAABAAAAgAAA=</HashCode>
+      <FileName>Receiver.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="messaging::Sender">
+    <Position X="19.5" Y="9.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAQABAAAAgggAAAAAEAAAwAAQAAAAAAAAIAAA=</HashCode>
+      <FileName>Sender.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="messaging::Socket">
+    <Position X="7.75" Y="3.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>EBAAAAAAEAAAQEAgBAABgAggAAAgCUEBAIAgAABGACA=</HashCode>
+      <FileName>Socket.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="messaging::SocketConnecter">
+    <Position X="5.5" Y="10.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAgAAAAAAAABAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SocketConnecter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="messaging::SocketListener">
+    <Position X="10.25" Y="10.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>BIAAAACIQIAAAAAgAABAAAAQAAAgAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SocketListener.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
