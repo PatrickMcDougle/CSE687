@@ -74,8 +74,10 @@ messaging::Socket::~Socket() {
 
 bool messaging::Socket::send(size_t bytes, byte* buffer)
 {
-	size_t bytesSent = 0, bytesLeft = bytes;
+	size_t bytesSent = 0;
+	size_t bytesLeft = bytes;
 	byte* pBuf = buffer;
+
 	while (bytesLeft > 0)
 	{
 		bytesSent = ::send(socket_, pBuf, bytesLeft, 0);
@@ -89,8 +91,10 @@ bool messaging::Socket::send(size_t bytes, byte* buffer)
 
 bool messaging::Socket::recv(size_t bytes, byte* buffer)
 {
-	size_t bytesRecvd = 0, bytesLeft = bytes;
+	size_t bytesRecvd = 0;
+	size_t bytesLeft = bytes;
 	byte* pBuf = buffer;
+
 	while (bytesLeft > 0)
 	{
 		bytesRecvd = ::recv(socket_, pBuf, bytesLeft, 0);
@@ -104,7 +108,9 @@ bool messaging::Socket::recv(size_t bytes, byte* buffer)
 
 bool messaging::Socket::sendString(const std::string& str, byte terminator)
 {
-	size_t bytesSent, bytesRemaining = str.size();
+	size_t bytesSent;
+	size_t bytesRemaining = str.size();
+
 	const byte* pBuf = &(*str.begin());
 	while (bytesRemaining > 0)
 	{
@@ -124,6 +130,7 @@ std::string messaging::Socket::recvString(byte terminator)
 	char buffer[1];
 	std::string str;
 	bool first = true;
+
 	while (true)
 	{
 		iResult = ::recv(socket_, buffer, buflen, 0);

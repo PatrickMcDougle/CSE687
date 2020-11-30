@@ -13,11 +13,12 @@
 #include "Message.h"
 #include "SocketSystem.h"
 
-using std::string;
+using logger::ILogger;
+using messaging::Communications;
 using messaging::IAddressIp;
 using messaging::Message;
+using std::string;
 using test::ITest;
-using logger::ILogger;
 
 // used to print out better.
 static std::mutex print_mutex;
@@ -28,11 +29,12 @@ namespace threading {
 	private:
 		IAddressIp* child_address_;
 		IAddressIp* mother_address_;
-		BlockingQueue<ITest*>& blocking_queue_of_test_drivers_;
 		ILogger* logger_ = nullptr;
 		string childs_name_;
 
 		int test_performed = 0;
+
+		BlockingQueue<ITest*>& blocking_queue_of_test_drivers_;
 
 	public:
 
@@ -40,9 +42,15 @@ namespace threading {
 			: child_address_(child_address), mother_address_(mother_address),
 			blocking_queue_of_test_drivers_(blocking_queue_of_test_drivers), childs_name_(childs_name)
 		{
-			// nothing to do in the body of the constructor.
+			print_mutex.lock();
+			std::cout << std::endl << "HI! My name is " << childs_name_ << "!";
+			print_mutex.unlock();
 		};
-		~ChildTester() {};
+		~ChildTester() {
+			print_mutex.lock();
+			std::cout << std::endl << "DONE: [" << childs_name_ << "," << test_performed << "]#";
+			print_mutex.unlock();
+		};
 
 		void setup(ILogger* logger);
 		void run();

@@ -49,6 +49,12 @@
     <Filter Include="Source Files\Messaging">
       <UniqueIdentifier>{96e503f9-dba2-4cd4-adeb-df44ad00c5c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{5119ffdc-0f08-4da7-99e9-d777ba910aec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{8ac7d96d-a1b4-40cf-b4ab-109e95c2f06e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CSE687_TestHarness.cpp">
@@ -108,20 +114,20 @@
     <ClCompile Include="ChildTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Communications.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ClientHandler.cpp">
+    <ClCompile Include="MotherController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SocketSystem.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Messaging</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientHandler.cpp">
+      <Filter>Source Files\Messaging</Filter>
+    </ClCompile>
+    <ClCompile Include="Communications.cpp">
+      <Filter>Source Files\Messaging</Filter>
     </ClCompile>
     <ClCompile Include="StringHelper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MotherController.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Utilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -194,23 +200,23 @@
     <ClInclude Include="ChildTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Communications.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClientHandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SocketSystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StringHelper.h">
+    <ClInclude Include="MotherController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IAddressIp.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="MotherController.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="SocketSystem.h">
+      <Filter>Header Files\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientHandler.h">
+      <Filter>Header Files\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="Communications.h">
+      <Filter>Header Files\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="StringHelper.h">
+      <Filter>Header Files\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
