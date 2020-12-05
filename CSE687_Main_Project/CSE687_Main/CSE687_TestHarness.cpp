@@ -30,6 +30,9 @@
 #include "SocketSystem.h"
 #include "TestDriver.h"
 
+// third party dlls.
+#include "DllForTests.h"
+
 using namespace logger;
 using namespace test;
 using std::string;
@@ -370,6 +373,79 @@ void TestingChildThreads(ostream& out_stream) {
 	out_stream << "\n\n|| =====< Testing the Children Threads - DONE >===== ||\n";
 }
 
+//void TestingUsingDlls(ostream& out_stream) {
+//	// Initialize a Fibonacci relation sequence.
+//	fibonacci_init(1, 1);
+//	// Write out the sequence values until overflow.
+//	do {
+//		out_stream << fibonacci_index() << ": " << fibonacci_current() << std::endl;
+//	} while (fibonacci_next());
+//	// Report count of values written before overflow.
+//	out_stream << fibonacci_index() + 1 << " Fibonacci sequence values fit in an " << "unsigned 64-bit integer." << std::endl;
+//}
+
+typedef void (*funcFibInit)(unsigned long long, unsigned long long);
+typedef bool (*funcFibNext)(void);
+typedef unsigned long long (*funcFibCurr)(void);
+typedef unsigned (*funcFibIndx)(void);
+
+void TestingDllLoading(ostream& out_stream) {
+	HINSTANCE hDLL;
+	funcFibInit Init;
+	funcFibCurr Curr;
+	funcFibIndx Indx;
+	funcFibNext Next;
+
+	const wchar_t* libName = L"DllForTests";
+
+	hDLL = LoadLibraryEx(libName, NULL, NULL);   // Handle to DLL
+
+	if (hDLL != NULL) {
+		Init = (funcFibInit)GetProcAddress(hDLL, "fibonacci_init");
+		Curr = (funcFibCurr)GetProcAddress(hDLL, "fibonacci_current");
+		Indx = (funcFibIndx)GetProcAddress(hDLL, "fibonacci_index");
+		Next = (funcFibNext)GetProcAddress(hDLL, "fibonacci_next");
+		if (Init != NULL) {
+			out_stream << "Loaded fibonacci_init correctly." << std::endl;
+		}
+		else {
+			out_stream << "Did not load fibonacci_init correctly." << std::endl;
+		}
+		if (Curr != NULL) {
+			out_stream << "Loaded fibonacci_current correctly." << std::endl;
+		}
+		else {
+			out_stream << "Did not load fibonacci_current correctly." << std::endl;
+		}
+		if (Indx != NULL) {
+			out_stream << "Loaded fibonacci_index correctly." << std::endl;
+		}
+		else {
+			out_stream << "Did not load fibonacci_index correctly." << std::endl;
+		}
+		if (Next != NULL) {
+			out_stream << "Loaded fibonacci_next correctly." << std::endl;
+		}
+		else {
+			out_stream << "Did not load fibonacci_next correctly." << std::endl;
+		}
+
+		// Initialize a Fibonacci relation sequence.
+		Init(1, 1);
+		// Write out the sequence values until overflow.
+		do {
+			out_stream << Indx() << ": " << Curr() << std::endl;
+		} while (Next());
+		// Report count of values written before overflow.
+		out_stream << Indx() + 1 << " Fibonacci sequence values fit in an " << "unsigned 64-bit integer." << std::endl;
+
+		FreeLibrary(hDLL);
+	}
+	else {
+		out_stream << "Library load failed!" << std::endl;
+	}
+}
+
 // Main Function
 int main()
 {
@@ -394,7 +470,11 @@ int main()
 	//TestingAddressIp4(out_stream); // don't need to run at this time.
 	//TestingMessage(out_stream); // don't need to run at this time.
 
-	TestingChildThreads(out_stream);
+	//TestingChildThreads(out_stream);
+
+	//TestingUsingDlls(out_stream);
+
+	TestingDllLoading(out_stream);
 
 	// Alert User of Program End
 	out_stream << "\n\n|| =====< Done With Program >===== ||\n\n\n";
