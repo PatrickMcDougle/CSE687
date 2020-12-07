@@ -14,7 +14,7 @@
 #include "AddressIp4.h"
 #include "BlockingQueue.h"
 #include "ChildTester.h"
-#include "ClassOfTests.h"
+//#include "ClassOfTests.h" // not good at this time.
 #include "Communications.h"
 #include "IAddressIp.h"
 #include "ILogData.h"
@@ -144,48 +144,48 @@ void TestingDevelopmentOfLogFactory(ostream& out_stream) {
 }
 
 // Method creating a 3 Test Driver objects and test functionality
-void TestingDevelopmentOfTestDriver(ostream& out_stream) {
-	out_stream << "\n\n|| =====< Testing the Test Driver >===== ||\n";
-
-	auto test_this = new TestDriver<ClassOfTests>();
-
-	ClassOfTests class_of_tests;
-
-	LoggerFactory log_factory;
-
-	test_this
-		->loadClass(&class_of_tests)
-		->loadMethod(&ClassOfTests::testTrue)
-		->loadLogger(log_factory.create(30, 50, 10))
-		->loadMessage("Testing if method returns true.")
-		->test();
-
-	out_stream << "Test 1 : " << test_this->testLogResults() << endl;
-
-	test_this = new TestDriver<ClassOfTests>();
-	test_this
-		->loadClass(&class_of_tests)
-		->loadMethod(&ClassOfTests::testFalse)
-		->loadLogger(log_factory.create(30, 50, 10))
-		->loadMessage("Testing if method returns false.")
-		->test();
-
-	out_stream << "Test 2 : " << test_this->testLogResults() << endl;
-
-	test_this
-		->loadMethod(&ClassOfTests::testException)
-		->loadMessage("Testing if method throws an exception.")
-		->test();
-
-	out_stream << "Test 3 : " << test_this->testLogResults() << endl;
-
-	TestDriver<ClassOfTests> first_test_class;
-
-	//std::list<ITest> list_of_tests;             // setup of list of ITests
-	//list_of_tests.push_back(first_test_class);  // add first test class to the list.
-
-	delete test_this;
-}
+//void TestingDevelopmentOfTestDriver(ostream& out_stream) {
+//	out_stream << "\n\n|| =====< Testing the Test Driver >===== ||\n";
+//
+//	auto test_this = new TestDriver<ClassOfTests>();
+//
+//	ClassOfTests class_of_tests;
+//
+//	LoggerFactory log_factory;
+//
+//	test_this
+//		->loadClass(&class_of_tests)
+//		->loadMethod(&ClassOfTests::testTrue)
+//		->loadLogger(log_factory.create(30, 50, 10))
+//		->loadMessage("Testing if method returns true.")
+//		->test();
+//
+//	out_stream << "Test 1 : " << test_this->testLogResults() << endl;
+//
+//	test_this = new TestDriver<ClassOfTests>();
+//	test_this
+//		->loadClass(&class_of_tests)
+//		->loadMethod(&ClassOfTests::testFalse)
+//		->loadLogger(log_factory.create(30, 50, 10))
+//		->loadMessage("Testing if method returns false.")
+//		->test();
+//
+//	out_stream << "Test 2 : " << test_this->testLogResults() << endl;
+//
+//	test_this
+//		->loadMethod(&ClassOfTests::testException)
+//		->loadMessage("Testing if method throws an exception.")
+//		->test();
+//
+//	out_stream << "Test 3 : " << test_this->testLogResults() << endl;
+//
+//	TestDriver<ClassOfTests> first_test_class;
+//
+//	//std::list<ITest> list_of_tests;             // setup of list of ITests
+//	//list_of_tests.push_back(first_test_class);  // add first test class to the list.
+//
+//	delete test_this;
+//}
 
 void TestingAddressIp4(ostream& out_stream) {
 	out_stream << "\n\n|| =====< Testing the Address IP4 class >===== ||\n";
@@ -293,7 +293,7 @@ void TestingChildThreads(ostream& out_stream) {
 
 	BlockingQueue<ITest*> blocking_queue_of_test_drivers;
 
-	ClassOfTests class_of_tests;
+	//ClassOfTests class_of_tests;
 
 	int number_of_children_threads = thread::hardware_concurrency() / 6;
 
@@ -309,33 +309,33 @@ void TestingChildThreads(ostream& out_stream) {
 	out_stream << "Number of children:" << number_of_children_threads << "\n";
 
 	for (int i = 0; i < number_of_children_threads * 1; ++i) {
-		auto test_this = new TestDriver<ClassOfTests>();
+		//auto test_this = new TestDriver<ClassOfTests>();
 
-		test_this
-			->loadClass(&class_of_tests)
-			->loadMethod(&ClassOfTests::testTrue)
-			->loadLogger(logger)
-			->loadMessage("Testing if method returns true.");
+		//test_this
+		//	->loadClass(&class_of_tests)
+		//	->loadMethod(&ClassOfTests::testTrue)
+		//	->loadLogger(logger)
+		//	->loadMessage("Testing if method returns true.");
 
-		blocking_queue_of_test_drivers.enqueue(test_this);
+		//blocking_queue_of_test_drivers.enqueue(test_this);
 
-		test_this = new TestDriver<ClassOfTests>();
-		test_this
-			->loadClass(&class_of_tests)
-			->loadMethod(&ClassOfTests::testFalse)
-			->loadLogger(logger)
-			->loadMessage("Testing if method returns false.");
+		//test_this = new TestDriver<ClassOfTests>();
+		//test_this
+		//	->loadClass(&class_of_tests)
+		//	->loadMethod(&ClassOfTests::testFalse)
+		//	->loadLogger(logger)
+		//	->loadMessage("Testing if method returns false.");
 
-		blocking_queue_of_test_drivers.enqueue(test_this);
+		//blocking_queue_of_test_drivers.enqueue(test_this);
 
-		test_this = new TestDriver<ClassOfTests>();
-		test_this
-			->loadClass(&class_of_tests)
-			->loadMethod(&ClassOfTests::testException)
-			->loadLogger(logger)
-			->loadMessage("Testing if method returns an exception.");
+		//test_this = new TestDriver<ClassOfTests>();
+		//test_this
+		//	->loadClass(&class_of_tests)
+		//	->loadMethod(&ClassOfTests::testException)
+		//	->loadLogger(logger)
+		//	->loadMessage("Testing if method returns an exception.");
 
-		blocking_queue_of_test_drivers.enqueue(test_this);
+		//blocking_queue_of_test_drivers.enqueue(test_this);
 	}
 
 	out_stream << "Number of tests to run:" << blocking_queue_of_test_drivers.size() << "\n";
@@ -384,60 +384,80 @@ void TestingChildThreads(ostream& out_stream) {
 //	out_stream << fibonacci_index() + 1 << " Fibonacci sequence values fit in an " << "unsigned 64-bit integer." << std::endl;
 //}
 
-typedef void (*funcFibInit)(unsigned long long, unsigned long long);
-typedef bool (*funcFibNext)(void);
-typedef unsigned long long (*funcFibCurr)(void);
-typedef unsigned (*funcFibIndx)(void);
+typedef bool (*funcTestbool)(void);
+
+typedef std::string* (*funcListOfFunctions)(void);
+typedef size_t(*funcNumberOfTests)(void);
 
 void TestingDllLoading(ostream& out_stream) {
 	HINSTANCE hDLL;
-	funcFibInit Init;
-	funcFibCurr Curr;
-	funcFibIndx Indx;
-	funcFibNext Next;
+	funcListOfFunctions list_of_functions;
+	funcNumberOfTests number_of_tests;
+	funcTestbool test_bool;
 
-	const wchar_t* libName = L"DllForTests";
+	const wchar_t* libName = L"ClassOfTests";
 
 	hDLL = LoadLibraryEx(libName, NULL, NULL);   // Handle to DLL
 
 	if (hDLL != NULL) {
-		Init = (funcFibInit)GetProcAddress(hDLL, "fibonacci_init");
-		Curr = (funcFibCurr)GetProcAddress(hDLL, "fibonacci_current");
-		Indx = (funcFibIndx)GetProcAddress(hDLL, "fibonacci_index");
-		Next = (funcFibNext)GetProcAddress(hDLL, "fibonacci_next");
-		if (Init != NULL) {
-			out_stream << "Loaded fibonacci_init correctly." << std::endl;
+		list_of_functions = (funcListOfFunctions)GetProcAddress(hDLL, "ListOfFunctions");
+		number_of_tests = (funcNumberOfTests)GetProcAddress(hDLL, "NumberOfTests");
+
+		if (list_of_functions != NULL) {
+			out_stream << "Loaded list_of_functions correctly." << std::endl;
 		}
 		else {
-			out_stream << "Did not load fibonacci_init correctly." << std::endl;
-		}
-		if (Curr != NULL) {
-			out_stream << "Loaded fibonacci_current correctly." << std::endl;
-		}
-		else {
-			out_stream << "Did not load fibonacci_current correctly." << std::endl;
-		}
-		if (Indx != NULL) {
-			out_stream << "Loaded fibonacci_index correctly." << std::endl;
-		}
-		else {
-			out_stream << "Did not load fibonacci_index correctly." << std::endl;
-		}
-		if (Next != NULL) {
-			out_stream << "Loaded fibonacci_next correctly." << std::endl;
-		}
-		else {
-			out_stream << "Did not load fibonacci_next correctly." << std::endl;
+			out_stream << "Did not load list_of_functions correctly." << std::endl;
 		}
 
-		// Initialize a Fibonacci relation sequence.
-		Init(1, 1);
-		// Write out the sequence values until overflow.
-		do {
-			out_stream << Indx() << ": " << Curr() << std::endl;
-		} while (Next());
-		// Report count of values written before overflow.
-		out_stream << Indx() + 1 << " Fibonacci sequence values fit in an " << "unsigned 64-bit integer." << std::endl;
+		if (number_of_tests != NULL) {
+			out_stream << "Loaded number_of_tests correctly." << std::endl;
+		}
+		else {
+			out_stream << "Did not load number_of_tests correctly." << std::endl;
+		}
+
+		std::string* list_functions = list_of_functions();
+		size_t number_tests = number_of_tests();
+
+		for (size_t i = 0; i < number_tests; i++)
+		{
+			out_stream << "Function: " << list_functions[i] << std::endl;
+			LPCSTR function_name = list_functions[i].c_str();
+
+			test_bool = (funcTestbool)GetProcAddress(hDLL, function_name);
+
+			if (test_bool != NULL) {
+				out_stream
+					<< "Loaded test_bool["
+					<< list_functions[i]
+					<< "] correctly."
+					<< std::endl;
+			}
+			else {
+				out_stream
+					<< "Did not load test_bool["
+					<< list_functions[i]
+					<< "] correctly."
+					<< std::endl;
+			}
+
+			out_stream
+				<< "Results for test "
+				<< list_functions[i]
+				<< " = "
+				<< test_bool()
+				<< "."
+				<< std::endl;
+		}
+
+		//{ // pretend to be in child.
+		//		bool theResulsts =	test_bool();
+		//}
+
+		//out_stream << "Test Results: " << iTest->test() << " : " << iTest->() << std::endl;
+		//// Report count of values written before overflow.
+		//out_stream << Indx() + 1 << " Fibonacci sequence values fit in an " << "unsigned 64-bit integer." << std::endl;
 
 		FreeLibrary(hDLL);
 	}

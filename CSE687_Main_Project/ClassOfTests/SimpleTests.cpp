@@ -5,24 +5,24 @@
 // Create Date: 2020-10-11
 // Description: CPP File For ClassofTests: This is dummy class for testing purposes.
 
-#include "ClassOfTests.h"
-#include <stdexcept>
+#include "SimpleTests.h"
+
 using namespace test;
 
 // Always returns true
-bool ClassOfTests::testTrue()
+bool SimpleTests::testTrue()
 {
 	return true;
 }
 
 // Always returns false
-bool ClassOfTests::testFalse()
+bool SimpleTests::testFalse()
 {
 	return false;
 }
 
 // Always returns true, but has exception at the start
-bool ClassOfTests::testException()
+bool SimpleTests::testException()
 {
 	throw std::invalid_argument("Exception Thrown Test");
 	return true;

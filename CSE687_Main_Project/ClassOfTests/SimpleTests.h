@@ -6,22 +6,24 @@
 // Description: Header File For ClassofTests: This is dummy class for testing purposes.
 
 #pragma once
-#ifndef __I_CLASS_OF_TESTS_H__
-#define __I_CLASS_OF_TESTS_H__
+
+#ifndef __SIMPLE_TESTS_H__
+#define __SIMPLE_TESTS_H__
 
 #include <exception>
+#include <stdexcept>
 
 // Namespace for Test
 namespace test {
 	// Class for ClassofTests
-	class ClassOfTests
+	class SimpleTests
 	{
 	public:
-		~ClassOfTests() {} // Destructor
+		~SimpleTests() {} // Destructor
 		bool testTrue(); // Method to always return true
 		bool testFalse(); // Method to always return false
 		bool testException(); // Method to always return true but has exception first
 	};
 }
 
-#endif // !__I_CLASS_OF_TESTS_H__
+#endif // !__SIMPLE_TESTS_H__

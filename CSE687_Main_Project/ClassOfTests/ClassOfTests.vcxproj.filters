@@ -13,20 +13,26 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Interfaces">
-      <UniqueIdentifier>{e240d475-ec41-4d0f-a2c6-3261ae682a39}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TestDriver.h">
+    <ClInclude Include="ClassOfTests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ITest.h">
-      <Filter>Header Files\Interfaces</Filter>
+    <ClInclude Include="..\DllForTests\framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleTests.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TestDriver.cpp">
+    <ClCompile Include="ClassOfTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DllForTests\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
