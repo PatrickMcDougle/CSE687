@@ -24,6 +24,9 @@
     <ClCompile Include="ClientHandler.cpp" />
     <ClCompile Include="Communications.cpp" />
     <ClCompile Include="CSE687_TestHarness.cpp" />
+    <ClCompile Include="DirectoryReader.cpp" />
+    <ClCompile Include="DllClient.cpp" />
+    <ClCompile Include="DllDataStructure.cpp" />
     <ClCompile Include="Message.cpp" />
     <ClCompile Include="MotherController.cpp" />
     <ClCompile Include="Receiver.cpp" />
@@ -40,6 +43,9 @@
     <ClInclude Include="ChildTester.h" />
     <ClInclude Include="ClientHandler.h" />
     <ClInclude Include="Communications.h" />
+    <ClInclude Include="DirectoryReader.h" />
+    <ClInclude Include="DllClient.h" />
+    <ClInclude Include="DllDataStructure.h" />
     <ClInclude Include="IAddressIp.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="MotherController.h" />

@@ -32,6 +32,8 @@
 
 // third party dlls.
 #include "DllForTests.h"
+#include "DirectoryReader.h"
+#include "DllClient.h"
 
 using namespace logger;
 using namespace test;
@@ -373,17 +375,6 @@ void TestingChildThreads(ostream& out_stream) {
 	out_stream << "\n\n|| =====< Testing the Children Threads - DONE >===== ||\n";
 }
 
-//void TestingUsingDlls(ostream& out_stream) {
-//	// Initialize a Fibonacci relation sequence.
-//	fibonacci_init(1, 1);
-//	// Write out the sequence values until overflow.
-//	do {
-//		out_stream << fibonacci_index() << ": " << fibonacci_current() << std::endl;
-//	} while (fibonacci_next());
-//	// Report count of values written before overflow.
-//	out_stream << fibonacci_index() + 1 << " Fibonacci sequence values fit in an " << "unsigned 64-bit integer." << std::endl;
-//}
-
 typedef bool (*funcTestbool)(void);
 
 typedef std::string* (*funcListOfFunctions)(void);
@@ -394,6 +385,10 @@ void TestingDllLoading(ostream& out_stream) {
 	funcListOfFunctions list_of_functions;
 	funcNumberOfTests number_of_tests;
 	funcTestbool test_bool;
+
+	std::string dll_dir("../x64/Debug/");
+
+	DirectoryReader directory_reader(dll_dir);
 
 	const wchar_t* libName = L"ClassOfTests";
 
@@ -466,6 +461,13 @@ void TestingDllLoading(ostream& out_stream) {
 	}
 }
 
+void TestingClientDll(ostream& out_stream) {
+	DllClient client;
+
+	std::string dir_path("../x64/Debug/");
+	client.LoadDll(dir_path);
+}
+
 // Main Function
 int main()
 {
@@ -494,7 +496,9 @@ int main()
 
 	//TestingUsingDlls(out_stream);
 
-	TestingDllLoading(out_stream);
+	//TestingDllLoading(out_stream);
+
+	TestingClientDll(out_stream);
 
 	// Alert User of Program End
 	out_stream << "\n\n|| =====< Done With Program >===== ||\n\n\n";
