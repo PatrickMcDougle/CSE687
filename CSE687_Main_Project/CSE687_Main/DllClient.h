@@ -26,6 +26,8 @@ public:
 	~DllClient();
 
 	void LoadDll(std::string& dir_path);
+
+	std::vector<DllDataStructure*> GetDataList() { return dll_data_list; };
 };
 
 #endif // !__DLL_CLIENT_H__

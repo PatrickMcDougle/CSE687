@@ -34,6 +34,7 @@
 #include "DllForTests.h"
 #include "DirectoryReader.h"
 #include "DllClient.h"
+#include "TestDllFunction.h"
 
 using namespace logger;
 using namespace test;
@@ -390,82 +391,42 @@ void TestingDllLoading(ostream& out_stream) {
 
 	DirectoryReader directory_reader(dll_dir);
 
-	const wchar_t* libName = L"ClassOfTests";
+	DllClient dll_client;
 
-	hDLL = LoadLibraryEx(libName, NULL, NULL);   // Handle to DLL
+	dll_client.LoadDll(dll_dir);
 
-	if (hDLL != NULL) {
-		list_of_functions = (funcListOfFunctions)GetProcAddress(hDLL, "ListOfFunctions");
-		number_of_tests = (funcNumberOfTests)GetProcAddress(hDLL, "NumberOfTests");
+	LoggerFactory log_factory;
+	ILogger* logger = log_factory.create(30, 50, 10);
 
-		if (list_of_functions != NULL) {
-			out_stream << "Loaded list_of_functions correctly." << std::endl;
-		}
-		else {
-			out_stream << "Did not load list_of_functions correctly." << std::endl;
-		}
+	BlockingQueue<ITest*> blocking_queue_of_test_drivers;
 
-		if (number_of_tests != NULL) {
-			out_stream << "Loaded number_of_tests correctly." << std::endl;
-		}
-		else {
-			out_stream << "Did not load number_of_tests correctly." << std::endl;
-		}
-
-		std::string* list_functions = list_of_functions();
-		size_t number_tests = number_of_tests();
-
-		for (size_t i = 0; i < number_tests; i++)
+	for (DllDataStructure* data_struct : dll_client.GetDataList())
+	{
+		for (size_t i = 0; i < data_struct->number_of_functions; i++)
 		{
-			out_stream << "Function: " << list_functions[i] << std::endl;
-			LPCSTR function_name = list_functions[i].c_str();
+			LPCSTR function_name = data_struct->function_list_array[i].c_str();
+			test_bool = (funcTestbool)GetProcAddress(
+				data_struct->dll_instance,
+				function_name
+			);
 
-			test_bool = (funcTestbool)GetProcAddress(hDLL, function_name);
+			auto test_this = new TestDriver<test::TestDllFunction<funcTestbool>>();
 
-			if (test_bool != NULL) {
-				out_stream
-					<< "Loaded test_bool["
-					<< list_functions[i]
-					<< "] correctly."
-					<< std::endl;
-			}
-			else {
-				out_stream
-					<< "Did not load test_bool["
-					<< list_functions[i]
-					<< "] correctly."
-					<< std::endl;
-			}
+			test::TestDllFunction<funcTestbool> test_function;
 
-			out_stream
-				<< "Results for test "
-				<< list_functions[i]
-				<< " = "
-				<< test_bool()
-				<< "."
-				<< std::endl;
+			test_function.SetFunction(test_bool);
+
+			test_this
+				->loadClass(&test_function)
+				->loadMethod(&test::TestDllFunction<funcTestbool>::TestFunction)
+				->loadLogger(logger)
+				->loadMessage("Testing if method returns true.");
+
+			blocking_queue_of_test_drivers.enqueue(test_this);
 		}
-
-		//{ // pretend to be in child.
-		//		bool theResulsts =	test_bool();
-		//}
-
-		//out_stream << "Test Results: " << iTest->test() << " : " << iTest->() << std::endl;
-		//// Report count of values written before overflow.
-		//out_stream << Indx() + 1 << " Fibonacci sequence values fit in an " << "unsigned 64-bit integer." << std::endl;
-
-		FreeLibrary(hDLL);
 	}
-	else {
-		out_stream << "Library load failed!" << std::endl;
-	}
-}
 
-void TestingClientDll(ostream& out_stream) {
-	DllClient client;
-
-	std::string dir_path("../x64/Debug/");
-	client.LoadDll(dir_path);
+	delete logger;
 }
 
 // Main Function
@@ -498,7 +459,8 @@ int main()
 
 	//TestingDllLoading(out_stream);
 
-	TestingClientDll(out_stream);
+	/*TestingClientDll*/(out_stream);
+	TestingDllLoading(out_stream);
 
 	// Alert User of Program End
 	out_stream << "\n\n|| =====< Done With Program >===== ||\n\n\n";

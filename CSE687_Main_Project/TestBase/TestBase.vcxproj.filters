@@ -24,9 +24,15 @@
     <ClInclude Include="ITest.h">
       <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
+    <ClInclude Include="TestDllFunction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestDriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestDllFunction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

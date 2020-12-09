@@ -146,9 +146,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ITest.h" />
+    <ClInclude Include="TestDllFunction.h" />
     <ClInclude Include="TestDriver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="TestDllFunction.cpp" />
     <ClCompile Include="TestDriver.cpp" />
   </ItemGroup>
   <ItemGroup>
