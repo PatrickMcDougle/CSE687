@@ -23,7 +23,7 @@ namespace logger {
 	// Class for LogData
 	class LogData : public ILogData {
 	public:
-		LogData(bool, const string&); // Constructor
+		LogData(bool passed, const string& message); // Constructor
 		virtual ~LogData() {} // Destructor
 		virtual bool isPassed(); //
 		virtual string getMessage();

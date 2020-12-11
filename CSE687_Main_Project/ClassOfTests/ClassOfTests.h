@@ -11,7 +11,6 @@
 #include <TestDriver.h>
 #include <ILogger.h>
 #include <LoggerFactory.h>
-#include <vector>
 
 #include "SimpleTests.h"
 

@@ -382,10 +382,17 @@ typedef std::string* (*funcListOfFunctions)(void);
 typedef size_t(*funcNumberOfTests)(void);
 
 void TestingDllLoading(ostream& out_stream) {
+	out_stream << "\n\n|| =====< Testing DLL - START >===== ||\n";
+	out_stream << "Number of Hardware Threads:" << thread::hardware_concurrency() << "\n";
+
+	// socket system will setup the sockets and tears them down when the
+	// class is destroyed.
+	messaging::SocketSystem socket_system_setup;
+
+	// DLL stuff.
 	HINSTANCE hDLL;
 	funcListOfFunctions list_of_functions;
 	funcNumberOfTests number_of_tests;
-	funcTestbool test_bool;
 
 	std::string dll_dir("../x64/Debug/");
 
@@ -405,19 +412,18 @@ void TestingDllLoading(ostream& out_stream) {
 		for (size_t i = 0; i < data_struct->number_of_functions; i++)
 		{
 			LPCSTR function_name = data_struct->function_list_array[i].c_str();
-			test_bool = (funcTestbool)GetProcAddress(
-				data_struct->dll_instance,
-				function_name
-			);
 
 			auto test_this = new TestDriver<test::TestDllFunction<funcTestbool>>();
 
-			test::TestDllFunction<funcTestbool> test_function;
+			auto test_function = new test::TestDllFunction<funcTestbool>();
 
-			test_function.SetFunction(test_bool);
+			test_function->SetFunction((funcTestbool)GetProcAddress(
+				data_struct->dll_instance,
+				function_name
+			));
 
 			test_this
-				->loadClass(&test_function)
+				->loadClass(test_function)
 				->loadMethod(&test::TestDllFunction<funcTestbool>::TestFunction)
 				->loadLogger(logger)
 				->loadMessage("Testing if method returns true.");
@@ -426,7 +432,52 @@ void TestingDllLoading(ostream& out_stream) {
 		}
 	}
 
+	out_stream << "Number of tests to run:" << blocking_queue_of_test_drivers.size() << "\n";
+
+	int number_of_children_threads = thread::hardware_concurrency() / 6;
+
+	if (number_of_children_threads < 3) {
+		number_of_children_threads *= 3;
+	}
+	if (number_of_children_threads == 0) {
+		number_of_children_threads = 3;
+	}
+
+	//number_of_children_threads = 1;
+
+	out_stream << "Number of children:" << number_of_children_threads << "\n";
+
+	messaging::AddressIp4 address_mother;
+
+	address_mother.set(127, 0, 0, 1, 51000);
+
+	vector<messaging::IAddressIp*> children_addresses;
+
+	int child_port = 52010;
+	for (int i = 0; i < number_of_children_threads; ++i) {
+		messaging::IAddressIp* address_child = new messaging::AddressIp4();
+
+		address_child->set(127, 0, 0, 1, child_port);
+
+		children_addresses.push_back(address_child);
+
+		child_port += 10;
+	}
+
+	threading::MotherController mother(&address_mother, children_addresses, blocking_queue_of_test_drivers, "Mother");
+	mother.setup(logger);
+
+	//mother.run(); // when threads don't work, we can just call the run method.
+
+	std::thread mother_thread(&threading::MotherController::run, std::ref(mother));
+
+	// wait here until the mother_thread is done processing information.
+	mother_thread.join(); // must join with thread.
+
 	delete logger;
+	logger = nullptr;
+
+	out_stream << "\n\n|| =====< Testing DLL - DONE >===== ||\n";
 }
 
 // Main Function
