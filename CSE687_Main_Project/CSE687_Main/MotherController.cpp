@@ -41,13 +41,13 @@ void threading::MotherController::run()
 		print_mutex.lock();
 		std::cout
 			<< std::endl
-			<< " =====< "
+			<< " ==< "
 			<< mother_communications_->getName()
 			<< " received message: "
 			<< message.getAuthor()
 			<< " ["
 			<< message.getMessage()
-			<< "] >=====";
+			<< "] >==";
 		print_mutex.unlock();
 
 		if (message.getType() == "STOP") {

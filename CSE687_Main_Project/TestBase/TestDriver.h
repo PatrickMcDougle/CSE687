@@ -27,6 +27,7 @@ namespace test {
 		logger::ILogger* the_logger_;	// The Logger
 		string& the_message_;			// Current Message
 		string the_log_results_;		// Log Results
+		string the_method_name_;
 
 	public:
 		TestDriver() : // Default Constructor All Elements Set to NullPTR
@@ -57,6 +58,13 @@ namespace test {
 
 		virtual string testLogResults() {  // Returns the current log results
 			return the_log_results_;
+		}
+
+		string methodName() { return this->the_method_name_; }
+
+		TestDriver* methodName(string& method_name) {
+			this->the_method_name_ = method_name;
+			return this;
 		}
 
 		TestDriver* loadClass(T* the_class) { // Updates the value of the_class_ with provided class

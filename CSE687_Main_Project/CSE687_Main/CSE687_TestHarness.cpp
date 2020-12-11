@@ -44,7 +44,7 @@ using std::cout;
 
 // Method creating a 4 Log Data objects and test functionality
 void TestingDevelopmentOfLogData(ostream& out_stream) {
-	out_stream << "\n\n|| =====< Testing LogData functionality >===== ||\n";
+	out_stream << "\n\n|| ####< Testing LogData functionality >#### ||\n";
 
 	string string1("message one");
 	string string2("message two");
@@ -68,7 +68,7 @@ void TestingDevelopmentOfLogData(ostream& out_stream) {
 
 // Method creating a 4 Log Decorator objects and test functionality
 void TestingDevelopmentOfLogMessage(ostream& out_stream) {
-	out_stream << "\n\n|| =====< Testing Logging of Messages >===== ||\n";
+	out_stream << "\n\n|| ####< Testing Logging of Messages >#### ||\n";
 
 	string string1("message one");
 	string string2("message two");
@@ -102,7 +102,7 @@ void TestingDevelopmentOfLogMessage(ostream& out_stream) {
 
 // Method creating a 6 Log Factory objects and test functionality
 void TestingDevelopmentOfLogFactory(ostream& out_stream) {
-	out_stream << "\n\n|| =====< Testing the Log Factory >===== ||\n";
+	out_stream << "\n\n|| ####< Testing the Log Factory >#### ||\n";
 
 	string string1("message one");
 	string string2("message two");
@@ -148,7 +148,7 @@ void TestingDevelopmentOfLogFactory(ostream& out_stream) {
 
 // Method creating a 3 Test Driver objects and test functionality
 //void TestingDevelopmentOfTestDriver(ostream& out_stream) {
-//	out_stream << "\n\n|| =====< Testing the Test Driver >===== ||\n";
+//	out_stream << "\n\n|| ####< Testing the Test Driver >#### ||\n";
 //
 //	auto test_this = new TestDriver<ClassOfTests>();
 //
@@ -191,7 +191,7 @@ void TestingDevelopmentOfLogFactory(ostream& out_stream) {
 //}
 
 void TestingAddressIp4(ostream& out_stream) {
-	out_stream << "\n\n|| =====< Testing the Address IP4 class >===== ||\n";
+	out_stream << "\n\n|| ####< Testing the Address IP4 class >#### ||\n";
 
 	messaging::AddressIp4 ip1;
 
@@ -254,7 +254,7 @@ void TestingAddressIp4(ostream& out_stream) {
 }
 
 void TestingMessage(ostream& out_stream) {
-	out_stream << "\n\n|| =====< Testing the Message class >===== ||\n";
+	out_stream << "\n\n|| ####< Testing the Message class >#### ||\n";
 
 	messaging::AddressIp4 source;
 	source.setAddress(127, 0, 0, 1);
@@ -283,7 +283,7 @@ void TestingMessage(ostream& out_stream) {
 /// </summary>
 /// <param name="out_stream">Need an out.</param>
 void TestingChildThreads(ostream& out_stream) {
-	out_stream << "\n\n|| =====< Testing the Children Threads - START >===== ||\n";
+	out_stream << "\n\n|| ####< Testing the Children Threads - START >#### ||\n";
 	out_stream << "Number of Hardware Threads:" << thread::hardware_concurrency() << "\n";
 
 	// TODO
@@ -373,7 +373,7 @@ void TestingChildThreads(ostream& out_stream) {
 	logger = nullptr;
 	delete logger;
 
-	out_stream << "\n\n|| =====< Testing the Children Threads - DONE >===== ||\n";
+	out_stream << "\n\n|| ####< Testing the Children Threads - DONE >#### ||\n";
 }
 
 typedef bool (*funcTestbool)(void);
@@ -382,7 +382,7 @@ typedef std::string* (*funcListOfFunctions)(void);
 typedef size_t(*funcNumberOfTests)(void);
 
 void TestingDllLoading(ostream& out_stream) {
-	out_stream << "\n\n|| =====< Testing DLL - START >===== ||\n";
+	out_stream << "\n\n|| ####< Testing DLL - START >#### ||\n";
 	out_stream << "Number of Hardware Threads:" << thread::hardware_concurrency() << "\n";
 
 	// socket system will setup the sockets and tears them down when the
@@ -425,6 +425,7 @@ void TestingDllLoading(ostream& out_stream) {
 			test_this
 				->loadClass(test_function)
 				->loadMethod(&test::TestDllFunction<funcTestbool>::TestFunction)
+				->methodName(data_struct->function_list_array[i])
 				->loadLogger(logger)
 				->loadMessage("Testing if method returns true.");
 
@@ -477,7 +478,7 @@ void TestingDllLoading(ostream& out_stream) {
 	delete logger;
 	logger = nullptr;
 
-	out_stream << "\n\n|| =====< Testing DLL - DONE >===== ||\n";
+	out_stream << "\n\n|| ####< Testing DLL - DONE >#### ||\n";
 }
 
 // Main Function
@@ -487,7 +488,7 @@ int main()
 	ostream& out_stream = cout;
 
 	// Alert User of Program Start
-	out_stream << "|| =====< Start of Program >===== ||\n";
+	out_stream << "|| ####< Start of Program >#### ||\n";
 
 	//// Run Method Testing the Log Data Classes
 	//TestingDevelopmentOfLogData(out_stream); // don't need to run at this time.
@@ -514,5 +515,5 @@ int main()
 	TestingDllLoading(out_stream);
 
 	// Alert User of Program End
-	out_stream << "\n\n|| =====< Done With Program >===== ||\n\n\n";
+	out_stream << "\n\n|| ####< Done With Program >#### ||\n\n\n";
 }

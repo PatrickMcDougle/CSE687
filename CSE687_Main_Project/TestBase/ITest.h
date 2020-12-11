@@ -25,6 +25,7 @@ namespace test {
 		virtual string testLogResults() = 0; // Return Log Details
 		virtual ITest* loadLogger(ILogger* logger) = 0; // Load logger
 		virtual ITest* loadMessage(const string& message) = 0; // Load message
+		virtual string methodName() = 0;
 	};
 }
 
