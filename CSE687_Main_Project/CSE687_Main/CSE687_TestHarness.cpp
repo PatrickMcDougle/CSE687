@@ -12,7 +12,11 @@
 using std::ostream;
 using std::cout;
 
-// Main Function
+/// <summary>
+/// This is the main function that start the whole program.
+/// There are no arguments at this time, but the system would support this if needed.
+/// </summary>
+/// <returns></returns>
 int main()
 {
 	// Initialize out_stream
@@ -40,9 +44,15 @@ int main()
 
 	out_stream << "Number of children:" << number_of_children << "\n";
 
+	// setup the test harness.
 	TestHarnessDll test_harness(logger, number_of_children);
 
+	// run the test harness
 	test_harness.Run();
+
+	// clean up.
+	delete logger;
+	logger = nullptr;
 
 	// Alert User of Program End
 	out_stream << "\n\n|| ####< Done With Program >#### ||\n\n\n";

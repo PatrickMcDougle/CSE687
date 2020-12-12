@@ -22,10 +22,13 @@ void TestHarnessDll::Run()
 
 	dll_client.LoadDll(dll_directory_location);
 
+	// create a blocking queue to put all our tests into.
 	BlockingQueue<ITest*> blocking_queue_of_test_drivers;
 
+	// go through the dll(s) that were found and valid.
 	for (DllDataStructure* data_struct : dll_client.GetDataList())
 	{
+		// go through all the functions and load them up for testing.
 		for (size_t i = 0; i < data_struct->number_of_functions; i++)
 		{
 			LPCSTR function_name = data_struct->function_list_array[i].c_str();
@@ -52,10 +55,11 @@ void TestHarnessDll::Run()
 
 	out_stream << "Number of tests to run:" << blocking_queue_of_test_drivers.size() << "\n";
 
+	// setup mother thread network infor.
 	AddressIp4 address_mother;
-
 	address_mother.set(127, 0, 0, 1, 51000);
 
+	// setup children test threads.
 	vector<IAddressIp*> children_addresses;
 
 	int child_port = 52010;
@@ -69,6 +73,7 @@ void TestHarnessDll::Run()
 		child_port += 10;
 	}
 
+	// setup mother code.
 	MotherController mother(
 		&address_mother,
 		children_addresses,
@@ -76,15 +81,11 @@ void TestHarnessDll::Run()
 		"Mother");
 	mother.setup(logger);
 
-	//mother.run(); // when threads don't work, we can just call the run method.
-
+	// set mother on her own thread seperate from the main thread.
 	std::thread mother_thread(&MotherController::run, std::ref(mother));
 
 	// wait here until the mother_thread is done processing information.
 	mother_thread.join(); // must join with thread.
-
-	delete logger;
-	logger = nullptr;
 
 	out_stream << "\n\n|| ####< Testing DLL - DONE >#### ||\n";
 }
