@@ -12,7 +12,7 @@ void threading::MotherController::setup(ILogger* logger)
 
 	for (IAddressIp* address : children_addresses_) {
 		string child_name(children_names[children_counter % children_names.size()]);
-		child_name.append("-" + std::to_string(children_counter));
+		child_name.append("-" + to_string(children_counter));
 
 		auto child_tester = new ChildTester(address, address_mother_, blocking_queue_of_test_drivers_, child_name);
 		child_tester->setup(logger);
@@ -31,8 +31,6 @@ void threading::MotherController::run()
 	size_t number_of_children = children_counter;
 
 	done_ = false;
-
-	//DWORD sleep_time_milliseconds = ((DWORD)mothers_name_.size() * 20);  // mother needs no sleep time
 
 	while (true) {
 		// Wait for Children to respond when ready.
@@ -65,7 +63,7 @@ void threading::MotherController::run()
 
 			if (number_of_tests > 0) {
 				reply.setType("TEST_REQUEST");
-				reply.setMessage("Do test number [" + std::to_string(number_of_tests) + "]");
+				reply.setMessage("Do test number [" + to_string(number_of_tests) + "]");
 				--number_of_tests;
 			}
 			else {
@@ -75,11 +73,7 @@ void threading::MotherController::run()
 
 			mother_communications_->sendMessage(reply);
 		}
-
-		//::Sleep(sleep_time_milliseconds);  // mother needs no sleep time
 	}
-
-	//::Sleep(sleep_time_milliseconds);  // mother needs no sleep time
 
 	done_ = true;
 }

@@ -78,9 +78,6 @@
     <ClCompile Include="DllClient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DllDataStructure.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="DirectoryReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

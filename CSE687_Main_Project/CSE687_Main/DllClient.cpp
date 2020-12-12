@@ -37,14 +37,13 @@ void DllClient::GetDllsFunctionList(DllDataStructure* dll_data_struct)
 DllClient::~DllClient()
 {
 	for (DllDataStructure* data : dll_data_list) {
-		//delete data->function_list_array;
 		FreeLibrary(data->dll_instance);
 	}
 
 	dll_data_list.clear();
 }
 
-void DllClient::LoadDll(std::string& dir_path)
+void DllClient::LoadDll(const string& dir_path)
 {
 	DirectoryReader dir_read(dir_path);
 

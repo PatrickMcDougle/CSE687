@@ -26,7 +26,6 @@
     <ClCompile Include="CSE687_TestHarness.cpp" />
     <ClCompile Include="DirectoryReader.cpp" />
     <ClCompile Include="DllClient.cpp" />
-    <ClCompile Include="DllDataStructure.cpp" />
     <ClCompile Include="Message.cpp" />
     <ClCompile Include="MotherController.cpp" />
     <ClCompile Include="Receiver.cpp" />

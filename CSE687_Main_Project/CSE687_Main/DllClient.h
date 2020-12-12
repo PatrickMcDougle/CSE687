@@ -9,25 +9,45 @@
 #include "DllDataStructure.h"
 #include "DirectoryReader.h"
 
-typedef bool (*funcTestbool)(void);
+using std::vector;
+using std::string;
 
-typedef std::string* (*funcListOfFunctions)(void);
+typedef string* (*funcListOfFunctions)(void);
 typedef size_t(*funcNumberOfTests)(void);
 
+/// <summary>
+/// This class is in charge of loading up the dlls and pulling the tests out.
+/// </summary>
 class DllClient
 {
 private:
-	std::vector<DllDataStructure*> dll_data_list;
+	vector<DllDataStructure*> dll_data_list;
 	bool do_something_ = false;
 
 	void GetDllsFunctionList(DllDataStructure* dll_data_struct);
+
+	DllClient(DllClient&) = delete;
+	DllClient(DllClient&&) = delete;
+
 public:
+	/// <summary>
+	/// The default Constructor
+	/// </summary>
 	DllClient() {	};
 	~DllClient();
 
-	void LoadDll(std::string& dir_path);
+	/// <summary>
+	/// This method will go through all the dlls found in the directory and
+	/// start loading in all the functions found in the dlls.
+	/// </summary>
+	/// <param name="dir_path">The path to where the dll(s) are located.</param>
+	void LoadDll(const string& dir_path);
 
-	std::vector<DllDataStructure*> GetDataList() { return dll_data_list; };
+	/// <summary>
+	/// This method returns the data structure list of the dll(s) that it found.
+	/// </summary>
+	/// <returns></returns>
+	vector<DllDataStructure*> GetDataList() const { return dll_data_list; };
 };
 
 #endif // !__DLL_CLIENT_H__

@@ -77,7 +77,7 @@ void TestHarnessDll::Run()
 	mother.setup(logger);
 
 	// set mother on her own thread seperate from the main thread.
-	std::thread mother_thread(&MotherController::run, std::ref(mother));
+	thread mother_thread(&MotherController::run, std::ref(mother));
 
 	// wait here until the mother_thread is done processing information.
 	mother_thread.join(); // must join with thread.

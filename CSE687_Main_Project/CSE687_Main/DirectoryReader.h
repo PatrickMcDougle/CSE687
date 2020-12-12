@@ -10,18 +10,35 @@
 
 #include "DllDataStructure.h"
 
+using std::string;
+using std::vector;
+
+/// <summary>
+/// This class will read from the directory and pull out all the DLL file information that it can find.
+/// </summary>
 class DirectoryReader
 {
 private:
-	// make default constructor private.
-	DirectoryReader() {};
+	DirectoryReader() = delete;
+	DirectoryReader(DirectoryReader&) = delete;
+	DirectoryReader(DirectoryReader&&) = delete;
 
-	std::vector<DllDataStructure*> dll_file_list;
+	// an array of dll data structures with the dll info.
+	vector<DllDataStructure*> dll_file_list;
 public:
-	explicit DirectoryReader(std::string& dir_path);
+	/// <summary>
+	/// This is the main constructor.  When the constructor is called the folder is immediately serached.
+	/// </summary>
+	/// <param name="dir_path">This is a string to the directory where the dll(s) are located.</param>
+	explicit DirectoryReader(const string& dir_path);
+
 	~DirectoryReader();
 
-	std::vector<DllDataStructure*> GetListOfDlls() const;
+	/// <summary>
+	/// This method is a way for other classes to get access to the dll list.
+	/// </summary>
+	/// <returns>Returns an array (vector) of dll data structures that were found.</returns>
+	vector<DllDataStructure*> GetListOfDlls() const;
 };
 
 #endif // !__DIRECTORY_READER_H__

@@ -1,6 +1,6 @@
 #include "DirectoryReader.h"
 
-DirectoryReader::DirectoryReader(std::string& dir_path)
+DirectoryReader::DirectoryReader(const string& dir_path)
 {
 	if (std::filesystem::exists(dir_path) && std::filesystem::is_directory(dir_path)) {
 		for (const auto& entry : std::filesystem::directory_iterator(dir_path)) {
@@ -22,7 +22,7 @@ DirectoryReader::~DirectoryReader()
 	dll_file_list.clear();
 }
 
-std::vector<DllDataStructure*> DirectoryReader::GetListOfDlls() const
+vector<DllDataStructure*> DirectoryReader::GetListOfDlls() const
 {
 	return dll_file_list;
 }

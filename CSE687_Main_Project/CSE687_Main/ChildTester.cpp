@@ -11,7 +11,7 @@ void threading::ChildTester::run()
 	// class is destroyed.
 	messaging::SocketSystem socket_system_setup;
 
-	DWORD sleep_time_milliseconds = 500 + ((DWORD)childs_name_.size() * 200);
+	DWORD sleep_time_milliseconds = 500 + ((DWORD)childs_name_.size() * 20);
 
 	Communications communications(child_address_, childs_name_);
 
