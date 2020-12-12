@@ -11,7 +11,7 @@ void threading::ChildTester::run()
 	// class is destroyed.
 	messaging::SocketSystem socket_system_setup;
 
-	DWORD sleep_time_milliseconds = 500 + ((DWORD)childs_name_.size() * 200);
+	DWORD sleep_time_milliseconds = 500 + ((DWORD)childs_name_.size() * 20);
 
 	Communications communications(child_address_, childs_name_);
 
@@ -35,13 +35,13 @@ void threading::ChildTester::run()
 		print_mutex.lock();
 		std::cout
 			<< std::endl
-			<< " =====< "
+			<< " --< "
 			<< communications.getName()
 			<< " received message: "
 			<< response.getAuthor()
 			<< " ["
 			<< response.getMessage()
-			<< "] >=====";
+			<< "] >--";
 		print_mutex.unlock();
 
 		if (response.getType() == "QUIT") {
@@ -57,7 +57,20 @@ void threading::ChildTester::run()
 			Message message(child_address_, mother_address_);
 			message.setType("TEST_RESULTS");
 			message.setAuthor(childs_name_);
-			message.setMessage("<test><results>" + std::to_string(results) + "</results><log>" + itest->testLogResults() + "</log></test>");
+
+			std::string message_string = "<test>";
+			message_string.append("<results>");
+			message_string.append(std::to_string(results));
+			message_string.append("</results>");
+			message_string.append("<log>");
+			message_string.append(itest->testLogResults());
+			message_string.append("</log>");
+			message_string.append("<name>");
+			message_string.append(itest->methodName());
+			message_string.append("</name>");
+			message_string.append("</test>");
+
+			message.setMessage(message_string);
 
 			delete itest;
 

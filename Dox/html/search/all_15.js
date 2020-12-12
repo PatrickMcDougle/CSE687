@@ -1,20 +1,7 @@
 var searchData=
 [
-  ['_7eblockingqueue_191',['~BlockingQueue',['../classqueue_1_1_blocking_queue.html#ae4cccce3774f52bee1f0352eaad1c02c',1,'queue::BlockingQueue']]],
-  ['_7echildtester_192',['~ChildTester',['../classthreading_1_1_child_tester.html#ac73a9739607b9b249f38d5ba04506649',1,'threading::ChildTester']]],
-  ['_7eclassoftests_193',['~ClassOfTests',['../classtest_1_1_class_of_tests.html#a8d4c9b60f8b858b0d6335f46eb2258e3',1,'test::ClassOfTests']]],
-  ['_7eclienthandler_194',['~ClientHandler',['../classmessaging_1_1_client_handler.html#a899afc52e2359a37ba67b1fd507dff9f',1,'messaging::ClientHandler']]],
-  ['_7ecommunications_195',['~Communications',['../classthreading_1_1_communications.html#a6f009d9c1800c1d6804138b8052d0c2f',1,'threading::Communications']]],
-  ['_7eilogcomponent_196',['~ILogComponent',['../classlogger_1_1_i_log_component.html#aaf1ebe94a5d9eae90c002dec09e62a55',1,'logger::ILogComponent']]],
-  ['_7eilogdata_197',['~ILogData',['../classlogger_1_1_i_log_data.html#aeee3a850b103d33f4660228779623253',1,'logger::ILogData']]],
-  ['_7eilogger_198',['~ILogger',['../classlogger_1_1_i_logger.html#ad2485dfecabf66e21cf16430ba2834e3',1,'logger::ILogger']]],
-  ['_7eitest_199',['~ITest',['../classtest_1_1_i_test.html#a725b5d04df0cd5ed68958360400c2a00',1,'test::ITest']]],
-  ['_7elogdata_200',['~LogData',['../classlogger_1_1_log_data.html#afb91d0163326577558f4d38bc313ff50',1,'logger::LogData']]],
-  ['_7emessage_201',['~Message',['../classmessaging_1_1_message.html#a8a842221adf1720793a1b27dedad9ad6',1,'messaging::Message']]],
-  ['_7esender_202',['~Sender',['../classmessaging_1_1_sender.html#aa665e51df51367c068e5b02ac3bfe53b',1,'messaging::Sender']]],
-  ['_7esocket_203',['~Socket',['../classmessaging_1_1_socket.html#ab6e4d18554a8e056915974242099ba09',1,'messaging::Socket']]],
-  ['_7esocketconnecter_204',['~SocketConnecter',['../classmessaging_1_1_socket_connecter.html#a28e12e48cdc5d6f065c9ff3b220eafce',1,'messaging::SocketConnecter']]],
-  ['_7esocketlistener_205',['~SocketListener',['../classmessaging_1_1_socket_listener.html#aae2aa694ccddf5d811c655ab753cf771',1,'messaging::SocketListener']]],
-  ['_7esocketsystem_206',['~SocketSystem',['../classmessaging_1_1_socket_system.html#ae4f0b6d1391f21f29c0559770862f784',1,'messaging::SocketSystem']]],
-  ['_7etestdriver_207',['~TestDriver',['../classtest_1_1_test_driver.html#a05bfc822db37ab31ed455b84f51598ae',1,'test::TestDriver']]]
+  ['waitfordata_262',['waitForData',['../classmessaging_1_1_socket.html#aea971f58bde075b484d6c1a4ac67d48e',1,'messaging::Socket']]],
+  ['win32_5flean_5fand_5fmean_263',['WIN32_LEAN_AND_MEAN',['../_dll_for_tests_2framework_8h.html#ac7bef5d85e3dcd73eef56ad39ffc84a9',1,'WIN32_LEAN_AND_MEAN():&#160;framework.h'],['../_test_logger_2framework_8h.html#ac7bef5d85e3dcd73eef56ad39ffc84a9',1,'WIN32_LEAN_AND_MEAN():&#160;framework.h']]],
+  ['writemessage_264',['writeMessage',['../classmessaging_1_1_message.html#a46b1a125113b3e3ea83dbfb5c492455b',1,'messaging::Message']]],
+  ['wsadata_265',['wsaData',['../classmessaging_1_1_socket.html#a3bcafc61cf54b8d603f57855defc18ea',1,'messaging::Socket']]]
 ];

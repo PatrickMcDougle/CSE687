@@ -1,0 +1,166 @@
+\hypertarget{classmessaging_1_1_i_address_ip}{}\doxysection{messaging\+::I\+Address\+Ip Class Reference}
+\label{classmessaging_1_1_i_address_ip}\index{messaging::IAddressIp@{messaging::IAddressIp}}
+
+
+Interface Class to handle IP Addressing.  
+
+
+
+
+{\ttfamily \#include $<$I\+Address\+Ip.\+h$>$}
+
+
+
+Inheritance diagram for messaging\+::I\+Address\+Ip\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classmessaging_1_1_i_address_ip_a1d8f7f4555750cac1feb60c9702424f3}{$\sim$\+I\+Address\+Ip}} ()
+\item 
+virtual string \mbox{\hyperlink{classmessaging_1_1_i_address_ip_aae08a9c9765b584e94743b8dc48263d8}{get\+Address}} () const =0
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classmessaging_1_1_i_address_ip_a7260b285c39b61f0206fee66450259b1}{get\+Port}} () const =0
+\item 
+virtual string \mbox{\hyperlink{classmessaging_1_1_i_address_ip_aca03ee3e47965133ffc3453306dbfb40}{get\+Address\+And\+Port}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classmessaging_1_1_i_address_ip_a7b30dfbad1a49601cc7fa55d4a320e40}{set\+Address}} (unsigned int)=0
+\item 
+virtual bool \mbox{\hyperlink{classmessaging_1_1_i_address_ip_a349e1f833dcd5e85b27326eff3edfc22}{set\+Address}} (int, int, int, int)=0
+\item 
+virtual bool \mbox{\hyperlink{classmessaging_1_1_i_address_ip_a10d52bac252523258aa2e5d78962eeb7}{set\+Address}} (const string \&)=0
+\item 
+virtual bool \mbox{\hyperlink{classmessaging_1_1_i_address_ip_a8e0574d6f6390c33d895b2a1edcd98bd}{set\+Port}} (size\+\_\+t)=0
+\item 
+virtual bool \mbox{\hyperlink{classmessaging_1_1_i_address_ip_ae4d641c03910917460aac23f5e0ca13d}{set}} (int, int, int, int, size\+\_\+t)=0
+\item 
+virtual bool \mbox{\hyperlink{classmessaging_1_1_i_address_ip_a3ba7e4eacff01910c3c31ab0c2d08016}{set}} (const string \&)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface Class to handle IP Addressing. 
+
+
+
+Definition at line 13 of file I\+Address\+Ip.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmessaging_1_1_i_address_ip_a1d8f7f4555750cac1feb60c9702424f3}\label{classmessaging_1_1_i_address_ip_a1d8f7f4555750cac1feb60c9702424f3}} 
+\index{messaging::IAddressIp@{messaging::IAddressIp}!````~IAddressIp@{$\sim$IAddressIp}}
+\index{````~IAddressIp@{$\sim$IAddressIp}!messaging::IAddressIp@{messaging::IAddressIp}}
+\doxysubsubsection{\texorpdfstring{$\sim$IAddressIp()}{~IAddressIp()}}
+{\footnotesize\ttfamily virtual messaging\+::\+I\+Address\+Ip\+::$\sim$\+I\+Address\+Ip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 15 of file I\+Address\+Ip.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmessaging_1_1_i_address_ip_aae08a9c9765b584e94743b8dc48263d8}\label{classmessaging_1_1_i_address_ip_aae08a9c9765b584e94743b8dc48263d8}} 
+\index{messaging::IAddressIp@{messaging::IAddressIp}!getAddress@{getAddress}}
+\index{getAddress@{getAddress}!messaging::IAddressIp@{messaging::IAddressIp}}
+\doxysubsubsection{\texorpdfstring{getAddress()}{getAddress()}}
+{\footnotesize\ttfamily virtual string messaging\+::\+I\+Address\+Ip\+::get\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmessaging_1_1_address_ip4_a310e7579958472f146af70dcaf291496}{messaging\+::\+Address\+Ip4}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classmessaging_1_1_i_address_ip_aca03ee3e47965133ffc3453306dbfb40}\label{classmessaging_1_1_i_address_ip_aca03ee3e47965133ffc3453306dbfb40}} 
+\index{messaging::IAddressIp@{messaging::IAddressIp}!getAddressAndPort@{getAddressAndPort}}
+\index{getAddressAndPort@{getAddressAndPort}!messaging::IAddressIp@{messaging::IAddressIp}}
+\doxysubsubsection{\texorpdfstring{getAddressAndPort()}{getAddressAndPort()}}
+{\footnotesize\ttfamily virtual string messaging\+::\+I\+Address\+Ip\+::get\+Address\+And\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmessaging_1_1_address_ip4_a4483da65316c187c67d7450c9bf10fae}{messaging\+::\+Address\+Ip4}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classmessaging_1_1_i_address_ip_a7260b285c39b61f0206fee66450259b1}\label{classmessaging_1_1_i_address_ip_a7260b285c39b61f0206fee66450259b1}} 
+\index{messaging::IAddressIp@{messaging::IAddressIp}!getPort@{getPort}}
+\index{getPort@{getPort}!messaging::IAddressIp@{messaging::IAddressIp}}
+\doxysubsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily virtual size\+\_\+t messaging\+::\+I\+Address\+Ip\+::get\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmessaging_1_1_address_ip4_ace6c39c8716448f90e4a98ac5f0cb2d5}{messaging\+::\+Address\+Ip4}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classmessaging_1_1_i_address_ip_a3ba7e4eacff01910c3c31ab0c2d08016}\label{classmessaging_1_1_i_address_ip_a3ba7e4eacff01910c3c31ab0c2d08016}} 
+\index{messaging::IAddressIp@{messaging::IAddressIp}!set@{set}}
+\index{set@{set}!messaging::IAddressIp@{messaging::IAddressIp}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool messaging\+::\+I\+Address\+Ip\+::set (\begin{DoxyParamCaption}\item[{const string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmessaging_1_1_address_ip4_a698a6474cebc43423a5bcec35e968fcf}{messaging\+::\+Address\+Ip4}}.
+
+\mbox{\Hypertarget{classmessaging_1_1_i_address_ip_ae4d641c03910917460aac23f5e0ca13d}\label{classmessaging_1_1_i_address_ip_ae4d641c03910917460aac23f5e0ca13d}} 
+\index{messaging::IAddressIp@{messaging::IAddressIp}!set@{set}}
+\index{set@{set}!messaging::IAddressIp@{messaging::IAddressIp}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool messaging\+::\+I\+Address\+Ip\+::set (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{size\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmessaging_1_1_address_ip4_ad08d08fac93c0afb96b4061b6085281b}{messaging\+::\+Address\+Ip4}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classmessaging_1_1_i_address_ip_a10d52bac252523258aa2e5d78962eeb7}\label{classmessaging_1_1_i_address_ip_a10d52bac252523258aa2e5d78962eeb7}} 
+\index{messaging::IAddressIp@{messaging::IAddressIp}!setAddress@{setAddress}}
+\index{setAddress@{setAddress}!messaging::IAddressIp@{messaging::IAddressIp}}
+\doxysubsubsection{\texorpdfstring{setAddress()}{setAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual bool messaging\+::\+I\+Address\+Ip\+::set\+Address (\begin{DoxyParamCaption}\item[{const string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmessaging_1_1_address_ip4_af34655ad106ae63d3889c0545c3e310a}{messaging\+::\+Address\+Ip4}}.
+
+\mbox{\Hypertarget{classmessaging_1_1_i_address_ip_a349e1f833dcd5e85b27326eff3edfc22}\label{classmessaging_1_1_i_address_ip_a349e1f833dcd5e85b27326eff3edfc22}} 
+\index{messaging::IAddressIp@{messaging::IAddressIp}!setAddress@{setAddress}}
+\index{setAddress@{setAddress}!messaging::IAddressIp@{messaging::IAddressIp}}
+\doxysubsubsection{\texorpdfstring{setAddress()}{setAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual bool messaging\+::\+I\+Address\+Ip\+::set\+Address (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmessaging_1_1_address_ip4_a96a96fdc15e6a1e6e5cf8411878a5ec7}{messaging\+::\+Address\+Ip4}}.
+
+\mbox{\Hypertarget{classmessaging_1_1_i_address_ip_a7b30dfbad1a49601cc7fa55d4a320e40}\label{classmessaging_1_1_i_address_ip_a7b30dfbad1a49601cc7fa55d4a320e40}} 
+\index{messaging::IAddressIp@{messaging::IAddressIp}!setAddress@{setAddress}}
+\index{setAddress@{setAddress}!messaging::IAddressIp@{messaging::IAddressIp}}
+\doxysubsubsection{\texorpdfstring{setAddress()}{setAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual bool messaging\+::\+I\+Address\+Ip\+::set\+Address (\begin{DoxyParamCaption}\item[{unsigned int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmessaging_1_1_address_ip4_a032afd6055661bf4e984051e6269fab6}{messaging\+::\+Address\+Ip4}}.
+
+\mbox{\Hypertarget{classmessaging_1_1_i_address_ip_a8e0574d6f6390c33d895b2a1edcd98bd}\label{classmessaging_1_1_i_address_ip_a8e0574d6f6390c33d895b2a1edcd98bd}} 
+\index{messaging::IAddressIp@{messaging::IAddressIp}!setPort@{setPort}}
+\index{setPort@{setPort}!messaging::IAddressIp@{messaging::IAddressIp}}
+\doxysubsubsection{\texorpdfstring{setPort()}{setPort()}}
+{\footnotesize\ttfamily virtual bool messaging\+::\+I\+Address\+Ip\+::set\+Port (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmessaging_1_1_address_ip4_a2a7b29ed3c689a191110943a2aaaa220}{messaging\+::\+Address\+Ip4}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_i_address_ip_8h}{I\+Address\+Ip.\+h}}\end{DoxyCompactItemize}

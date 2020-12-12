@@ -1,0 +1,136 @@
+\hypertarget{classthreading_1_1_mother_controller}{}\doxysection{threading\+::Mother\+Controller Class Reference}
+\label{classthreading_1_1_mother_controller}\index{threading::MotherController@{threading::MotherController}}
+
+
+This class creates the children tester threads and is the main communciations hub for all the testing.  
+
+
+
+
+{\ttfamily \#include $<$Mother\+Controller.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classthreading_1_1_mother_controller_a2bdfe220c4e27a8ea29a344ac0e7a240}{Mother\+Controller}} (\mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$address\+\_\+mother, vector$<$ \mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$ $>$ \&children\+\_\+addresses, \mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ \mbox{\hyperlink{classtest_1_1_i_test}{I\+Test}} $\ast$ $>$ \&blocking\+\_\+queue\+\_\+of\+\_\+test\+\_\+drivers, string const \&mothers\+\_\+name)
+\begin{DoxyCompactList}\small\item\em The main constructor for this class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classthreading_1_1_mother_controller_ae87ede588c11a62dc800fa3dad3aed8b}{$\sim$\+Mother\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em The destructor for this class. Print out that things are done and shut down things. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classthreading_1_1_mother_controller_ac691297c96aff006c3e39d7c2947d755}{setup}} (\mbox{\hyperlink{classlogger_1_1_i_logger}{I\+Logger}} $\ast$logger)
+\begin{DoxyCompactList}\small\item\em The setup method is used to set the logger and other things needed before running. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classthreading_1_1_mother_controller_a52449ec5c73d3e2c36852b5578398448}{run}} ()
+\begin{DoxyCompactList}\small\item\em This method will start running things. Generate child threads and communicate with them. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classthreading_1_1_mother_controller_a106e34a119d75191e25494cd4a6afcf3}{is\+Done}} () const
+\begin{DoxyCompactList}\small\item\em This method is a way for people to know if this class is done. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class creates the children tester threads and is the main communciations hub for all the testing. 
+
+
+
+Definition at line 30 of file Mother\+Controller.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classthreading_1_1_mother_controller_a2bdfe220c4e27a8ea29a344ac0e7a240}\label{classthreading_1_1_mother_controller_a2bdfe220c4e27a8ea29a344ac0e7a240}} 
+\index{threading::MotherController@{threading::MotherController}!MotherController@{MotherController}}
+\index{MotherController@{MotherController}!threading::MotherController@{threading::MotherController}}
+\doxysubsubsection{\texorpdfstring{MotherController()}{MotherController()}}
+{\footnotesize\ttfamily threading\+::\+Mother\+Controller\+::\+Mother\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$}]{address\+\_\+mother,  }\item[{vector$<$ \mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$ $>$ \&}]{children\+\_\+addresses,  }\item[{\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ \mbox{\hyperlink{classtest_1_1_i_test}{I\+Test}} $\ast$ $>$ \&}]{blocking\+\_\+queue\+\_\+of\+\_\+test\+\_\+drivers,  }\item[{string const \&}]{mothers\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The main constructor for this class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address\+\_\+mother} & The address for this class\\
+\hline
+{\em children\+\_\+addresses} & An array (vector) of addresses for all the children processes/threads.\\
+\hline
+{\em blocking\+\_\+queue\+\_\+of\+\_\+test\+\_\+drivers} & The queue where all the tests are located.\\
+\hline
+{\em mothers\+\_\+name} & The name of this class for network and output needs.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file Mother\+Controller.\+h.
+
+\mbox{\Hypertarget{classthreading_1_1_mother_controller_ae87ede588c11a62dc800fa3dad3aed8b}\label{classthreading_1_1_mother_controller_ae87ede588c11a62dc800fa3dad3aed8b}} 
+\index{threading::MotherController@{threading::MotherController}!````~MotherController@{$\sim$MotherController}}
+\index{````~MotherController@{$\sim$MotherController}!threading::MotherController@{threading::MotherController}}
+\doxysubsubsection{\texorpdfstring{$\sim$MotherController()}{~MotherController()}}
+{\footnotesize\ttfamily threading\+::\+Mother\+Controller\+::$\sim$\+Mother\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The destructor for this class. Print out that things are done and shut down things. 
+
+
+
+Definition at line 72 of file Mother\+Controller.\+h.
+
+Here is the call graph for this function\+:
+% FIG 0
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classthreading_1_1_mother_controller_a106e34a119d75191e25494cd4a6afcf3}\label{classthreading_1_1_mother_controller_a106e34a119d75191e25494cd4a6afcf3}} 
+\index{threading::MotherController@{threading::MotherController}!isDone@{isDone}}
+\index{isDone@{isDone}!threading::MotherController@{threading::MotherController}}
+\doxysubsubsection{\texorpdfstring{isDone()}{isDone()}}
+{\footnotesize\ttfamily bool threading\+::\+Mother\+Controller\+::is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method is a way for people to know if this class is done. 
+
+
+
+Definition at line 101 of file Mother\+Controller.\+h.
+
+\mbox{\Hypertarget{classthreading_1_1_mother_controller_a52449ec5c73d3e2c36852b5578398448}\label{classthreading_1_1_mother_controller_a52449ec5c73d3e2c36852b5578398448}} 
+\index{threading::MotherController@{threading::MotherController}!run@{run}}
+\index{run@{run}!threading::MotherController@{threading::MotherController}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void threading\+::\+Mother\+Controller\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method will start running things. Generate child threads and communicate with them. 
+
+
+
+Definition at line 28 of file Mother\+Controller.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classthreading_1_1_mother_controller_ac691297c96aff006c3e39d7c2947d755}\label{classthreading_1_1_mother_controller_ac691297c96aff006c3e39d7c2947d755}} 
+\index{threading::MotherController@{threading::MotherController}!setup@{setup}}
+\index{setup@{setup}!threading::MotherController@{threading::MotherController}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void threading\+::\+Mother\+Controller\+::setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlogger_1_1_i_logger}{I\+Logger}} $\ast$}]{logger }\end{DoxyParamCaption})}
+
+
+
+The setup method is used to set the logger and other things needed before running. 
+
+
+
+Definition at line 3 of file Mother\+Controller.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_mother_controller_8h}{Mother\+Controller.\+h}}\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_mother_controller_8cpp}{Mother\+Controller.\+cpp}}\end{DoxyCompactItemize}

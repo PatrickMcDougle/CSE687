@@ -1,0 +1,14 @@
+digraph "Test_MyLogger_logInfo"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Test_MyLogger_logInfo",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="logger::MyLogger::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_my_logger.html#a8e18fc403ad9edf35c43702dae524187",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="logger::ILogComponent\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_i_log_component.html#a12ab1853b4a5eb25046ada685883271a",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="logger::MyLogger::setLog\lComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_my_logger.html#a6d0c197bcb398e0f1ea178b7bc6344c4",tooltip=" "];
+}

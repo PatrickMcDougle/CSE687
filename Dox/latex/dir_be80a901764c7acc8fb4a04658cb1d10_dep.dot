@@ -1,0 +1,15 @@
+digraph "D:/GitHub/CSE687/CSE687_Main_Project/TestBase" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_e0c9d52a8ab80760700742b6d772e6db {
+    graph [ bgcolor="#ddddee", pencolor="black", label="CSE687_Main_Project" fontname="Helvetica", fontsize="10", URL="dir_e0c9d52a8ab80760700742b6d772e6db.html"]
+  subgraph clusterdir_be80a901764c7acc8fb4a04658cb1d10 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_be80a901764c7acc8fb4a04658cb1d10.html"];
+    dir_be80a901764c7acc8fb4a04658cb1d10 [shape=plaintext label="TestBase"];
+    dir_cfa8caa865ff6ed5e8f6299f2ea13739 [shape=box label="x64" color="red" fillcolor="white" style="filled" URL="dir_cfa8caa865ff6ed5e8f6299f2ea13739.html"];
+  }
+  }
+  dir_5b19f245b9b8b0def5eedd6642d045c2 [shape=box label="Logger" fillcolor="white" style="filled" color="red" URL="dir_5b19f245b9b8b0def5eedd6642d045c2.html"];
+  dir_be80a901764c7acc8fb4a04658cb1d10->dir_5b19f245b9b8b0def5eedd6642d045c2 [headlabel="2", labeldistance=1.5 headhref="dir_000014_000011.html"];
+}

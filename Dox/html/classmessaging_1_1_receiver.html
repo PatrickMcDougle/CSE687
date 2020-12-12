@@ -22,6 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CSE687 Group#5 Project
+   &#160;<span id="projectnumber">HW #4</span>
    </div>
   </td>
  </tr>
@@ -77,8 +78,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a99e64894ca69fc3cd19af5ef000b18b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmessaging_1_1_receiver.html#a99e64894ca69fc3cd19af5ef000b18b5">Receiver</a> (<a class="el" href="classmessaging_1_1_address_ip4.html">AddressIp4</a> address, const std::string &amp;name=&quot;Receiver&quot;)</td></tr>
-<tr class="separator:a99e64894ca69fc3cd19af5ef000b18b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1330fea692708cc04088e7e8a60f28c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmessaging_1_1_receiver.html#aa1330fea692708cc04088e7e8a60f28c">Receiver</a> (const <a class="el" href="classmessaging_1_1_i_address_ip.html">IAddressIp</a> *address, const std::string &amp;name=&quot;Receiver&quot;)</td></tr>
+<tr class="separator:aa1330fea692708cc04088e7e8a60f28c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e524ad4a1147f8968dd980f00c8a9d1"><td class="memTemplParams" colspan="2">template&lt;typename CallableObject &gt; </td></tr>
 <tr class="memitem:a7e524ad4a1147f8968dd980f00c8a9d1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmessaging_1_1_receiver.html#a7e524ad4a1147f8968dd980f00c8a9d1">start</a> (CallableObject &amp;callable_object)</td></tr>
 <tr class="separator:a7e524ad4a1147f8968dd980f00c8a9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -94,18 +95,21 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_receiver_8h_source.html#l00022">22</a> of file <a class="el" href="_receiver_8h_source.html">Receiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_receiver_8h_source.html#l00023">23</a> of file <a class="el" href="_receiver_8h_source.html">Receiver.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a99e64894ca69fc3cd19af5ef000b18b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99e64894ca69fc3cd19af5ef000b18b5">&#9670;&nbsp;</a></span>Receiver()</h2>
+<a id="aa1330fea692708cc04088e7e8a60f28c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1330fea692708cc04088e7e8a60f28c">&#9670;&nbsp;</a></span>Receiver()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">messaging::Receiver::Receiver </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classmessaging_1_1_address_ip4.html">AddressIp4</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="classmessaging_1_1_i_address_ip.html">IAddressIp</a> *&#160;</td>
           <td class="paramname"><em>address</em>, </td>
         </tr>
         <tr>
@@ -120,9 +124,14 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_receiver_8cpp_source.html#l00004">4</a> of file <a class="el" href="_receiver_8cpp_source.html">Receiver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_receiver_8h_source.html#l00031">31</a> of file <a class="el" href="_receiver_8h_source.html">Receiver.h</a>.</p>
 
 </div>
 </div>
@@ -142,7 +151,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_receiver_8cpp_source.html#l00019">19</a> of file <a class="el" href="_receiver_8cpp_source.html">Receiver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_receiver_8cpp_source.html#l00013">13</a> of file <a class="el" href="_receiver_8cpp_source.html">Receiver.cpp</a>.</p>
 
 </div>
 </div>
@@ -161,7 +170,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_receiver_8cpp_source.html#l00009">9</a> of file <a class="el" href="_receiver_8cpp_source.html">Receiver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_receiver_8cpp_source.html#l00003">3</a> of file <a class="el" href="_receiver_8cpp_source.html">Receiver.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmessaging_1_1_receiver_a91b1ab368f342acf6034a06d28888f0c_icgraph.png" border="0" usemap="#aclassmessaging_1_1_receiver_a91b1ab368f342acf6034a06d28888f0c_icgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -191,11 +205,16 @@ template&lt;typename CallableObject &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_receiver_8h_source.html#l00027">27</a> of file <a class="el" href="_receiver_8h_source.html">Receiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_receiver_8h_source.html#l00038">38</a> of file <a class="el" href="_receiver_8h_source.html">Receiver.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmessaging_1_1_receiver_a7e524ad4a1147f8968dd980f00c8a9d1_cgraph.png" border="0" usemap="#aclassmessaging_1_1_receiver_a7e524ad4a1147f8968dd980f00c8a9d1_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmessaging_1_1_receiver_a7e524ad4a1147f8968dd980f00c8a9d1_icgraph.png" border="0" usemap="#aclassmessaging_1_1_receiver_a7e524ad4a1147f8968dd980f00c8a9d1_icgraph" alt=""/></div>
 </div>
 
 </div>
@@ -236,7 +255,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_receiver_8h_source.html#l00032">32</a> of file <a class="el" href="_receiver_8h_source.html">Receiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_receiver_8h_source.html#l00043">43</a> of file <a class="el" href="_receiver_8h_source.html">Receiver.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -260,7 +279,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_receiver_8cpp_source.html#l00014">14</a> of file <a class="el" href="_receiver_8cpp_source.html">Receiver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_receiver_8cpp_source.html#l00008">8</a> of file <a class="el" href="_receiver_8cpp_source.html">Receiver.cpp</a>.</p>
 
 </div>
 </div>

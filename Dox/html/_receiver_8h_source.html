@@ -22,6 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CSE687 Group#5 Project
+   &#160;<span id="projectnumber">HW #4</span>
    </div>
   </td>
  </tr>
@@ -73,64 +74,72 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef __RECEOVER_H__</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="_receiver_8h.html#a53ecff8e3ab8316f305ff1e3a6c0756c">    3</a></span>&#160;<span class="preprocessor">#define __RECEOVER_H__</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;thread&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_message_8h.html">Message.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_blocking_queue_8h.html">BlockingQueue.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_socket_connecter_8h.html">SocketConnecter.h</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_socket_listener_8h.html">SocketListener.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using</span> std::string;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using</span> std::thread;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using</span> <a class="code" href="classmessaging_1_1_message.html">messaging::Message</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using</span> <a class="code" href="classmessaging_1_1_address_ip4.html">messaging::AddressIp4</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using</span> <a class="code" href="classmessaging_1_1_socket_connecter.html">messaging::SocketConnecter</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using</span> <a class="code" href="classqueue_1_1_blocking_queue.html">queue::BlockingQueue</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemessaging.html">messaging</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classmessaging_1_1_receiver.html">   22</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classmessaging_1_1_receiver.html">Receiver</a></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classmessaging_1_1_receiver.html#a99e64894ca69fc3cd19af5ef000b18b5">Receiver</a>(<a class="code" href="classmessaging_1_1_address_ip4.html">AddressIp4</a> address, <span class="keyword">const</span> std::string&amp; name = <span class="stringliteral">&quot;Receiver&quot;</span>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> CallableObject&gt;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classmessaging_1_1_receiver.html#a7e524ad4a1147f8968dd980f00c8a9d1">   27</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmessaging_1_1_receiver.html#a7e524ad4a1147f8968dd980f00c8a9d1">start</a>(CallableObject&amp; callable_object) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            socket_listener_.<a class="code" href="classmessaging_1_1_socket_listener.html#afaa24fc8b00669db93aa549928276d21">start</a>(callable_object);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        };</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classmessaging_1_1_receiver.html#ab77699ed64f0aaf13e96e11fb8e705e3">   32</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmessaging_1_1_receiver.html#ab77699ed64f0aaf13e96e11fb8e705e3">start</a>(T* the_class, <span class="keywordtype">bool</span>(T::* the_method)()) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            socket_listener_.<a class="code" href="classmessaging_1_1_socket_listener.html#afaa24fc8b00669db93aa549928276d21">start</a>(the_class, the_method);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        };</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmessaging_1_1_receiver.html#ab97504485dd888d031c5521cc7d43664">stop</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classmessaging_1_1_message.html">Message</a> <a class="code" href="classmessaging_1_1_receiver.html#a84aaab442fb16894c4d613126a8e6e2c">getMessage</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classqueue_1_1_blocking_queue.html">BlockingQueue&lt;Message&gt;</a>* <a class="code" href="classmessaging_1_1_receiver.html#a91b1ab368f342acf6034a06d28888f0c">queue</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classqueue_1_1_blocking_queue.html">BlockingQueue&lt;Message&gt;</a> receiver_queue_;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classmessaging_1_1_socket_listener.html">SocketListener</a> socket_listener_;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        std::string receiver_name_;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    };</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif // !__RECEOVER_H__</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_blocking_queue_8h.html">BlockingQueue.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_address_ip_8h.html">IAddressIp.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_message_8h.html">Message.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_socket_connecter_8h.html">SocketConnecter.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_socket_listener_8h.html">SocketListener.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using</span> std::string;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using</span> std::thread;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using</span> <a class="code" href="classmessaging_1_1_message.html">messaging::Message</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using</span> <a class="code" href="classmessaging_1_1_i_address_ip.html">messaging::IAddressIp</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using</span> <a class="code" href="classmessaging_1_1_socket_connecter.html">messaging::SocketConnecter</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using</span> <a class="code" href="classqueue_1_1_blocking_queue.html">queue::BlockingQueue</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemessaging.html">messaging</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classmessaging_1_1_receiver.html">   23</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classmessaging_1_1_receiver.html">Receiver</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classqueue_1_1_blocking_queue.html">BlockingQueue&lt;Message&gt;</a> receiver_queue_;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classmessaging_1_1_socket_listener.html">SocketListener</a> socket_listener_;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        std::string receiver_name_;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classmessaging_1_1_receiver.html#aa1330fea692708cc04088e7e8a60f28c">   31</a></span>&#160;        <a class="code" href="classmessaging_1_1_receiver.html#aa1330fea692708cc04088e7e8a60f28c">Receiver</a>(<span class="keyword">const</span> <a class="code" href="classmessaging_1_1_i_address_ip.html">IAddressIp</a>* address, <span class="keyword">const</span> std::string&amp; name = <span class="stringliteral">&quot;Receiver&quot;</span>)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            : socket_listener_(address-&gt;getPort()), receiver_name_(name)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="comment">// do nothing at this time.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> CallableObject&gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classmessaging_1_1_receiver.html#a7e524ad4a1147f8968dd980f00c8a9d1">   38</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmessaging_1_1_receiver.html#a7e524ad4a1147f8968dd980f00c8a9d1">start</a>(CallableObject&amp; callable_object) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            socket_listener_.<a class="code" href="classmessaging_1_1_socket_listener.html#afaa24fc8b00669db93aa549928276d21">start</a>(callable_object);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        };</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classmessaging_1_1_receiver.html#ab77699ed64f0aaf13e96e11fb8e705e3">   43</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmessaging_1_1_receiver.html#ab77699ed64f0aaf13e96e11fb8e705e3">start</a>(T* the_class, <span class="keywordtype">bool</span>(T::* the_method)()) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            socket_listener_.<a class="code" href="classmessaging_1_1_socket_listener.html#afaa24fc8b00669db93aa549928276d21">start</a>(the_class, the_method);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmessaging_1_1_receiver.html#ab97504485dd888d031c5521cc7d43664">stop</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classmessaging_1_1_message.html">Message</a> <a class="code" href="classmessaging_1_1_receiver.html#a84aaab442fb16894c4d613126a8e6e2c">getMessage</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classqueue_1_1_blocking_queue.html">BlockingQueue&lt;Message&gt;</a>* <a class="code" href="classmessaging_1_1_receiver.html#a91b1ab368f342acf6034a06d28888f0c">queue</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif // !__RECEOVER_H__</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassmessaging_1_1_receiver_html_a7e524ad4a1147f8968dd980f00c8a9d1"><div class="ttname"><a href="classmessaging_1_1_receiver.html#a7e524ad4a1147f8968dd980f00c8a9d1">messaging::Receiver::start</a></div><div class="ttdeci">void start(CallableObject &amp;callable_object)</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8h_source.html#l00027">Receiver.h:27</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_i_address_ip_html"><div class="ttname"><a href="classmessaging_1_1_i_address_ip.html">messaging::IAddressIp</a></div><div class="ttdoc">Interface Class to handle IP Addressing.</div><div class="ttdef"><b>Definition:</b> <a href="_i_address_ip_8h_source.html#l00013">IAddressIp.h:13</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_receiver_html_a7e524ad4a1147f8968dd980f00c8a9d1"><div class="ttname"><a href="classmessaging_1_1_receiver.html#a7e524ad4a1147f8968dd980f00c8a9d1">messaging::Receiver::start</a></div><div class="ttdeci">void start(CallableObject &amp;callable_object)</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8h_source.html#l00038">Receiver.h:38</a></div></div>
 <div class="ttc" id="a_socket_listener_8h_html"><div class="ttname"><a href="_socket_listener_8h.html">SocketListener.h</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_receiver_html"><div class="ttname"><a href="classmessaging_1_1_receiver.html">messaging::Receiver</a></div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8h_source.html#l00022">Receiver.h:23</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_socket_listener_html_afaa24fc8b00669db93aa549928276d21"><div class="ttname"><a href="classmessaging_1_1_socket_listener.html#afaa24fc8b00669db93aa549928276d21">messaging::SocketListener::start</a></div><div class="ttdeci">bool start(CallObj &amp;co)</div><div class="ttdef"><b>Definition:</b> <a href="_socket_listener_8h_source.html#l00044">SocketListener.h:44</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_receiver_html_ab97504485dd888d031c5521cc7d43664"><div class="ttname"><a href="classmessaging_1_1_receiver.html#ab97504485dd888d031c5521cc7d43664">messaging::Receiver::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8cpp_source.html#l00014">Receiver.cpp:14</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_address_ip4_html"><div class="ttname"><a href="classmessaging_1_1_address_ip4.html">messaging::AddressIp4</a></div><div class="ttdef"><b>Definition:</b> <a href="_address_ip4_8h_source.html#l00010">AddressIp4.h:11</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_receiver_html"><div class="ttname"><a href="classmessaging_1_1_receiver.html">messaging::Receiver</a></div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8h_source.html#l00023">Receiver.h:24</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_socket_listener_html_afaa24fc8b00669db93aa549928276d21"><div class="ttname"><a href="classmessaging_1_1_socket_listener.html#afaa24fc8b00669db93aa549928276d21">messaging::SocketListener::start</a></div><div class="ttdeci">bool start(CallObj &amp;co)</div><div class="ttdef"><b>Definition:</b> <a href="_socket_listener_8h_source.html#l00043">SocketListener.h:43</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_receiver_html_ab97504485dd888d031c5521cc7d43664"><div class="ttname"><a href="classmessaging_1_1_receiver.html#ab97504485dd888d031c5521cc7d43664">messaging::Receiver::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8cpp_source.html#l00008">Receiver.cpp:8</a></div></div>
+<div class="ttc" id="a_i_address_ip_8h_html"><div class="ttname"><a href="_i_address_ip_8h.html">IAddressIp.h</a></div></div>
 <div class="ttc" id="a_blocking_queue_8h_html"><div class="ttname"><a href="_blocking_queue_8h.html">BlockingQueue.h</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_receiver_html_a99e64894ca69fc3cd19af5ef000b18b5"><div class="ttname"><a href="classmessaging_1_1_receiver.html#a99e64894ca69fc3cd19af5ef000b18b5">messaging::Receiver::Receiver</a></div><div class="ttdeci">Receiver(AddressIp4 address, const std::string &amp;name=&quot;Receiver&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8cpp_source.html#l00004">Receiver.cpp:4</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_message_html"><div class="ttname"><a href="classmessaging_1_1_message.html">messaging::Message</a></div><div class="ttdef"><b>Definition:</b> <a href="_message_8h_source.html#l00015">Message.h:16</a></div></div>
-<div class="ttc" id="anamespacemessaging_html"><div class="ttname"><a href="namespacemessaging.html">messaging</a></div><div class="ttdef"><b>Definition:</b> <a href="_address_ip4_8h_source.html#l00009">AddressIp4.h:9</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_message_html"><div class="ttname"><a href="classmessaging_1_1_message.html">messaging::Message</a></div><div class="ttdef"><b>Definition:</b> <a href="_message_8h_source.html#l00016">Message.h:17</a></div></div>
+<div class="ttc" id="anamespacemessaging_html"><div class="ttname"><a href="namespacemessaging.html">messaging</a></div><div class="ttdef"><b>Definition:</b> <a href="_address_ip4_8h_source.html#l00011">AddressIp4.h:11</a></div></div>
 <div class="ttc" id="aclassqueue_1_1_blocking_queue_html"><div class="ttname"><a href="classqueue_1_1_blocking_queue.html">queue::BlockingQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="_blocking_queue_8h_source.html#l00016">BlockingQueue.h:16</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_socket_listener_html"><div class="ttname"><a href="classmessaging_1_1_socket_listener.html">messaging::SocketListener</a></div><div class="ttdef"><b>Definition:</b> <a href="_socket_listener_8h_source.html#l00015">SocketListener.h:16</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_receiver_html_a84aaab442fb16894c4d613126a8e6e2c"><div class="ttname"><a href="classmessaging_1_1_receiver.html#a84aaab442fb16894c4d613126a8e6e2c">messaging::Receiver::getMessage</a></div><div class="ttdeci">Message getMessage()</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8cpp_source.html#l00019">Receiver.cpp:19</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_receiver_html_a91b1ab368f342acf6034a06d28888f0c"><div class="ttname"><a href="classmessaging_1_1_receiver.html#a91b1ab368f342acf6034a06d28888f0c">messaging::Receiver::queue</a></div><div class="ttdeci">BlockingQueue&lt; Message &gt; * queue()</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8cpp_source.html#l00009">Receiver.cpp:9</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_receiver_html_ab77699ed64f0aaf13e96e11fb8e705e3"><div class="ttname"><a href="classmessaging_1_1_receiver.html#ab77699ed64f0aaf13e96e11fb8e705e3">messaging::Receiver::start</a></div><div class="ttdeci">void start(T *the_class, bool(T::*the_method)())</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8h_source.html#l00032">Receiver.h:32</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_socket_listener_html"><div class="ttname"><a href="classmessaging_1_1_socket_listener.html">messaging::SocketListener</a></div><div class="ttdef"><b>Definition:</b> <a href="_socket_listener_8h_source.html#l00014">SocketListener.h:15</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_receiver_html_a84aaab442fb16894c4d613126a8e6e2c"><div class="ttname"><a href="classmessaging_1_1_receiver.html#a84aaab442fb16894c4d613126a8e6e2c">messaging::Receiver::getMessage</a></div><div class="ttdeci">Message getMessage()</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8cpp_source.html#l00013">Receiver.cpp:13</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_receiver_html_a91b1ab368f342acf6034a06d28888f0c"><div class="ttname"><a href="classmessaging_1_1_receiver.html#a91b1ab368f342acf6034a06d28888f0c">messaging::Receiver::queue</a></div><div class="ttdeci">BlockingQueue&lt; Message &gt; * queue()</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8cpp_source.html#l00003">Receiver.cpp:3</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_receiver_html_ab77699ed64f0aaf13e96e11fb8e705e3"><div class="ttname"><a href="classmessaging_1_1_receiver.html#ab77699ed64f0aaf13e96e11fb8e705e3">messaging::Receiver::start</a></div><div class="ttdeci">void start(T *the_class, bool(T::*the_method)())</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8h_source.html#l00043">Receiver.h:43</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_receiver_html_aa1330fea692708cc04088e7e8a60f28c"><div class="ttname"><a href="classmessaging_1_1_receiver.html#aa1330fea692708cc04088e7e8a60f28c">messaging::Receiver::Receiver</a></div><div class="ttdeci">Receiver(const IAddressIp *address, const std::string &amp;name=&quot;Receiver&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8h_source.html#l00031">Receiver.h:31</a></div></div>
 <div class="ttc" id="aclassmessaging_1_1_socket_connecter_html"><div class="ttname"><a href="classmessaging_1_1_socket_connecter.html">messaging::SocketConnecter</a></div><div class="ttdef"><b>Definition:</b> <a href="_socket_connecter_8h_source.html#l00010">SocketConnecter.h:11</a></div></div>
 <div class="ttc" id="a_socket_connecter_8h_html"><div class="ttname"><a href="_socket_connecter_8h.html">SocketConnecter.h</a></div></div>
 <div class="ttc" id="a_message_8h_html"><div class="ttname"><a href="_message_8h.html">Message.h</a></div></div>

@@ -22,6 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CSE687 Group#5 Project
+   &#160;<span id="projectnumber">HW #4</span>
    </div>
   </td>
  </tr>
@@ -73,25 +74,31 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>This class handles getting message about testing and running tests.  
+ <a href="classthreading_1_1_child_tester.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_child_tester_8h_source.html">ChildTester.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a45d3744d461a72cef0a8b6cc642388ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthreading_1_1_child_tester.html#a45d3744d461a72cef0a8b6cc642388ea">ChildTester</a> (<a class="el" href="classmessaging_1_1_address_ip4.html">messaging::AddressIp4</a> child_address, <a class="el" href="classmessaging_1_1_address_ip4.html">messaging::AddressIp4</a> mother_address, const string &amp;childs_name)</td></tr>
-<tr class="separator:a45d3744d461a72cef0a8b6cc642388ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab09b15f38d67c68d34272b419f0e722c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthreading_1_1_child_tester.html#ab09b15f38d67c68d34272b419f0e722c">ChildTester</a> (<a class="el" href="classmessaging_1_1_i_address_ip.html">IAddressIp</a> *child_address, <a class="el" href="classmessaging_1_1_i_address_ip.html">IAddressIp</a> *mother_address, <a class="el" href="classqueue_1_1_blocking_queue.html">BlockingQueue</a>&lt; <a class="el" href="classtest_1_1_i_test.html">ITest</a> * &gt; &amp;blocking_queue_of_test_drivers, const string &amp;childs_name)</td></tr>
+<tr class="separator:ab09b15f38d67c68d34272b419f0e722c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac73a9739607b9b249f38d5ba04506649"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthreading_1_1_child_tester.html#ac73a9739607b9b249f38d5ba04506649">~ChildTester</a> ()</td></tr>
 <tr class="separator:ac73a9739607b9b249f38d5ba04506649"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a050212b10dab399b7acc165f5eded92a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthreading_1_1_child_tester.html#a050212b10dab399b7acc165f5eded92a">setup</a> (<a class="el" href="classqueue_1_1_blocking_queue.html">BlockingQueue</a>&lt; <a class="el" href="classtest_1_1_i_test.html">ITest</a> * &gt; *blocking_queue_of_test_drivers, <a class="el" href="classlogger_1_1_i_logger.html">ILogger</a> *logger)</td></tr>
-<tr class="separator:a050212b10dab399b7acc165f5eded92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2386c985f1d24cb6f143b658f4376ba5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthreading_1_1_child_tester.html#a2386c985f1d24cb6f143b658f4376ba5">run</a> () const</td></tr>
-<tr class="separator:a2386c985f1d24cb6f143b658f4376ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac601df89af08228611bea8d1e3bc718b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthreading_1_1_child_tester.html#ac601df89af08228611bea8d1e3bc718b">setup</a> (<a class="el" href="classlogger_1_1_i_logger.html">ILogger</a> *logger)</td></tr>
+<tr class="memdesc:ac601df89af08228611bea8d1e3bc718b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The setup method is used to set the logger and other things needed before running.  <a href="classthreading_1_1_child_tester.html#ac601df89af08228611bea8d1e3bc718b">More...</a><br /></td></tr>
+<tr class="separator:ac601df89af08228611bea8d1e3bc718b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9620f7823b0baffc023ef5ad2ff27152"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthreading_1_1_child_tester.html#a9620f7823b0baffc023ef5ad2ff27152">run</a> ()</td></tr>
+<tr class="memdesc:a9620f7823b0baffc023ef5ad2ff27152"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method will start running things. Start communications and run test when asked.  <a href="classthreading_1_1_child_tester.html#a9620f7823b0baffc023ef5ad2ff27152">More...</a><br /></td></tr>
+<tr class="separator:a9620f7823b0baffc023ef5ad2ff27152"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_child_tester_8h_source.html#l00025">25</a> of file <a class="el" href="_child_tester_8h_source.html">ChildTester.h</a>.</p>
+<div class="textblock"><p>This class handles getting message about testing and running tests. </p>
+
+<p class="definition">Definition at line <a class="el" href="_child_tester_8h_source.html#l00030">30</a> of file <a class="el" href="_child_tester_8h_source.html">ChildTester.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a45d3744d461a72cef0a8b6cc642388ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45d3744d461a72cef0a8b6cc642388ea">&#9670;&nbsp;</a></span>ChildTester()</h2>
+<a id="ab09b15f38d67c68d34272b419f0e722c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab09b15f38d67c68d34272b419f0e722c">&#9670;&nbsp;</a></span>ChildTester()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -102,14 +109,20 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">threading::ChildTester::ChildTester </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classmessaging_1_1_address_ip4.html">messaging::AddressIp4</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classmessaging_1_1_i_address_ip.html">IAddressIp</a> *&#160;</td>
           <td class="paramname"><em>child_address</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classmessaging_1_1_address_ip4.html">messaging::AddressIp4</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classmessaging_1_1_i_address_ip.html">IAddressIp</a> *&#160;</td>
           <td class="paramname"><em>mother_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqueue_1_1_blocking_queue.html">BlockingQueue</a>&lt; <a class="el" href="classtest_1_1_i_test.html">ITest</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>blocking_queue_of_test_drivers</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -130,7 +143,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_child_tester_8h_source.html#l00036">36</a> of file <a class="el" href="_child_tester_8h_source.html">ChildTester.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_child_tester_8h_source.html#l00047">47</a> of file <a class="el" href="_child_tester_8h_source.html">ChildTester.h</a>.</p>
 
 </div>
 </div>
@@ -157,13 +170,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_child_tester_8h_source.html#l00041">41</a> of file <a class="el" href="_child_tester_8h_source.html">ChildTester.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_child_tester_8h_source.html#l00057">57</a> of file <a class="el" href="_child_tester_8h_source.html">ChildTester.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2386c985f1d24cb6f143b658f4376ba5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2386c985f1d24cb6f143b658f4376ba5">&#9670;&nbsp;</a></span>run()</h2>
+<a id="a9620f7823b0baffc023ef5ad2ff27152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9620f7823b0baffc023ef5ad2ff27152">&#9670;&nbsp;</a></span>run()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,27 +185,29 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void threading::ChildTester::run </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_child_tester_8cpp_source.html#l00009">9</a> of file <a class="el" href="_child_tester_8cpp_source.html">ChildTester.cpp</a>.</p>
+<p>This method will start running things. Start communications and run test when asked. </p>
+
+<p class="definition">Definition at line <a class="el" href="_child_tester_8cpp_source.html#l00008">8</a> of file <a class="el" href="_child_tester_8cpp_source.html">ChildTester.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classthreading_1_1_child_tester_a2386c985f1d24cb6f143b658f4376ba5_cgraph.png" border="0" usemap="#aclassthreading_1_1_child_tester_a2386c985f1d24cb6f143b658f4376ba5_cgraph" alt=""/></div>
+<div class="center"><img src="classthreading_1_1_child_tester_a9620f7823b0baffc023ef5ad2ff27152_cgraph.png" border="0" usemap="#aclassthreading_1_1_child_tester_a9620f7823b0baffc023ef5ad2ff27152_cgraph" alt=""/></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classthreading_1_1_child_tester_a2386c985f1d24cb6f143b658f4376ba5_icgraph.png" border="0" usemap="#aclassthreading_1_1_child_tester_a2386c985f1d24cb6f143b658f4376ba5_icgraph" alt=""/></div>
+<div class="center"><img src="classthreading_1_1_child_tester_a9620f7823b0baffc023ef5ad2ff27152_icgraph.png" border="0" usemap="#aclassthreading_1_1_child_tester_a9620f7823b0baffc023ef5ad2ff27152_icgraph" alt=""/></div>
 </div>
 
 </div>
 </div>
-<a id="a050212b10dab399b7acc165f5eded92a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a050212b10dab399b7acc165f5eded92a">&#9670;&nbsp;</a></span>setup()</h2>
+<a id="ac601df89af08228611bea8d1e3bc718b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac601df89af08228611bea8d1e3bc718b">&#9670;&nbsp;</a></span>setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,29 +215,16 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void threading::ChildTester::setup </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classqueue_1_1_blocking_queue.html">BlockingQueue</a>&lt; <a class="el" href="classtest_1_1_i_test.html">ITest</a> * &gt; *&#160;</td>
-          <td class="paramname"><em>blocking_queue_of_test_drivers</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="classlogger_1_1_i_logger.html">ILogger</a> *&#160;</td>
-          <td class="paramname"><em>logger</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>logger</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>The setup method is used to set the logger and other things needed before running. </p>
+
 <p class="definition">Definition at line <a class="el" href="_child_tester_8cpp_source.html#l00003">3</a> of file <a class="el" href="_child_tester_8cpp_source.html">ChildTester.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classthreading_1_1_child_tester_a050212b10dab399b7acc165f5eded92a_icgraph.png" border="0" usemap="#aclassthreading_1_1_child_tester_a050212b10dab399b7acc165f5eded92a_icgraph" alt=""/></div>
-</div>
 
 </div>
 </div>

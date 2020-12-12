@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="threading::Communications",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classthreading_1_1_communications.html",tooltip=" "];
+  Node0 [label="queue::BlockingQueue\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classqueue_1_1_blocking_queue.html",tooltip=" "];
 }

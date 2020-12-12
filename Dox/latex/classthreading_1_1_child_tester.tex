@@ -2,38 +2,45 @@
 \label{classthreading_1_1_child_tester}\index{threading::ChildTester@{threading::ChildTester}}
 
 
+This class handles getting message about testing and running tests.  
+
+
+
+
 {\ttfamily \#include $<$Child\+Tester.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classthreading_1_1_child_tester_a45d3744d461a72cef0a8b6cc642388ea}{Child\+Tester}} (\mbox{\hyperlink{classmessaging_1_1_address_ip4}{messaging\+::\+Address\+Ip4}} child\+\_\+address, \mbox{\hyperlink{classmessaging_1_1_address_ip4}{messaging\+::\+Address\+Ip4}} mother\+\_\+address, const string \&childs\+\_\+name)
+\mbox{\hyperlink{classthreading_1_1_child_tester_ab09b15f38d67c68d34272b419f0e722c}{Child\+Tester}} (\mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$child\+\_\+address, \mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$mother\+\_\+address, \mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ \mbox{\hyperlink{classtest_1_1_i_test}{I\+Test}} $\ast$ $>$ \&blocking\+\_\+queue\+\_\+of\+\_\+test\+\_\+drivers, const string \&childs\+\_\+name)
 \item 
 \mbox{\hyperlink{classthreading_1_1_child_tester_ac73a9739607b9b249f38d5ba04506649}{$\sim$\+Child\+Tester}} ()
 \item 
-void \mbox{\hyperlink{classthreading_1_1_child_tester_a050212b10dab399b7acc165f5eded92a}{setup}} (\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ \mbox{\hyperlink{classtest_1_1_i_test}{I\+Test}} $\ast$ $>$ $\ast$blocking\+\_\+queue\+\_\+of\+\_\+test\+\_\+drivers, \mbox{\hyperlink{classlogger_1_1_i_logger}{I\+Logger}} $\ast$logger)
-\item 
-void \mbox{\hyperlink{classthreading_1_1_child_tester_a2386c985f1d24cb6f143b658f4376ba5}{run}} () const
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classthreading_1_1_child_tester_ac601df89af08228611bea8d1e3bc718b}{setup}} (\mbox{\hyperlink{classlogger_1_1_i_logger}{I\+Logger}} $\ast$logger)
+\begin{DoxyCompactList}\small\item\em The setup method is used to set the logger and other things needed before running. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classthreading_1_1_child_tester_a9620f7823b0baffc023ef5ad2ff27152}{run}} ()
+\begin{DoxyCompactList}\small\item\em This method will start running things. Start communications and run test when asked. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+This class handles getting message about testing and running tests. 
 
 
-Definition at line 25 of file Child\+Tester.\+h.
+
+Definition at line 30 of file Child\+Tester.\+h.
 
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classthreading_1_1_child_tester_a45d3744d461a72cef0a8b6cc642388ea}\label{classthreading_1_1_child_tester_a45d3744d461a72cef0a8b6cc642388ea}} 
+\mbox{\Hypertarget{classthreading_1_1_child_tester_ab09b15f38d67c68d34272b419f0e722c}\label{classthreading_1_1_child_tester_ab09b15f38d67c68d34272b419f0e722c}} 
 \index{threading::ChildTester@{threading::ChildTester}!ChildTester@{ChildTester}}
 \index{ChildTester@{ChildTester}!threading::ChildTester@{threading::ChildTester}}
 \doxysubsubsection{\texorpdfstring{ChildTester()}{ChildTester()}}
-{\footnotesize\ttfamily threading\+::\+Child\+Tester\+::\+Child\+Tester (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmessaging_1_1_address_ip4}{messaging\+::\+Address\+Ip4}}}]{child\+\_\+address,  }\item[{\mbox{\hyperlink{classmessaging_1_1_address_ip4}{messaging\+::\+Address\+Ip4}}}]{mother\+\_\+address,  }\item[{const string \&}]{childs\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily threading\+::\+Child\+Tester\+::\+Child\+Tester (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$}]{child\+\_\+address,  }\item[{\mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$}]{mother\+\_\+address,  }\item[{\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ \mbox{\hyperlink{classtest_1_1_i_test}{I\+Test}} $\ast$ $>$ \&}]{blocking\+\_\+queue\+\_\+of\+\_\+test\+\_\+drivers,  }\item[{const string \&}]{childs\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 36 of file Child\+Tester.\+h.
+Definition at line 47 of file Child\+Tester.\+h.
 
 \mbox{\Hypertarget{classthreading_1_1_child_tester_ac73a9739607b9b249f38d5ba04506649}\label{classthreading_1_1_child_tester_ac73a9739607b9b249f38d5ba04506649}} 
 \index{threading::ChildTester@{threading::ChildTester}!````~ChildTester@{$\sim$ChildTester}}
@@ -43,37 +50,43 @@ Definition at line 36 of file Child\+Tester.\+h.
 
 
 
-Definition at line 41 of file Child\+Tester.\+h.
+Definition at line 57 of file Child\+Tester.\+h.
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classthreading_1_1_child_tester_a2386c985f1d24cb6f143b658f4376ba5}\label{classthreading_1_1_child_tester_a2386c985f1d24cb6f143b658f4376ba5}} 
+\mbox{\Hypertarget{classthreading_1_1_child_tester_a9620f7823b0baffc023ef5ad2ff27152}\label{classthreading_1_1_child_tester_a9620f7823b0baffc023ef5ad2ff27152}} 
 \index{threading::ChildTester@{threading::ChildTester}!run@{run}}
 \index{run@{run}!threading::ChildTester@{threading::ChildTester}}
 \doxysubsubsection{\texorpdfstring{run()}{run()}}
-{\footnotesize\ttfamily void threading\+::\+Child\+Tester\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily void threading\+::\+Child\+Tester\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 9 of file Child\+Tester.\+cpp.
+This method will start running things. Start communications and run test when asked. 
+
+
+
+Definition at line 8 of file Child\+Tester.\+cpp.
 
 Here is the call graph for this function\+:
 % FIG 0
 Here is the caller graph for this function\+:
 % FIG 1
-\mbox{\Hypertarget{classthreading_1_1_child_tester_a050212b10dab399b7acc165f5eded92a}\label{classthreading_1_1_child_tester_a050212b10dab399b7acc165f5eded92a}} 
+\mbox{\Hypertarget{classthreading_1_1_child_tester_ac601df89af08228611bea8d1e3bc718b}\label{classthreading_1_1_child_tester_ac601df89af08228611bea8d1e3bc718b}} 
 \index{threading::ChildTester@{threading::ChildTester}!setup@{setup}}
 \index{setup@{setup}!threading::ChildTester@{threading::ChildTester}}
 \doxysubsubsection{\texorpdfstring{setup()}{setup()}}
-{\footnotesize\ttfamily void threading\+::\+Child\+Tester\+::setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqueue_1_1_blocking_queue}{Blocking\+Queue}}$<$ \mbox{\hyperlink{classtest_1_1_i_test}{I\+Test}} $\ast$ $>$ $\ast$}]{blocking\+\_\+queue\+\_\+of\+\_\+test\+\_\+drivers,  }\item[{\mbox{\hyperlink{classlogger_1_1_i_logger}{I\+Logger}} $\ast$}]{logger }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void threading\+::\+Child\+Tester\+::setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlogger_1_1_i_logger}{I\+Logger}} $\ast$}]{logger }\end{DoxyParamCaption})}
+
+
+
+The setup method is used to set the logger and other things needed before running. 
 
 
 
 Definition at line 3 of file Child\+Tester.\+cpp.
 
-Here is the caller graph for this function\+:
-% FIG 2
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

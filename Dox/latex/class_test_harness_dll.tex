@@ -1,0 +1,94 @@
+\hypertarget{class_test_harness_dll}{}\doxysection{Test\+Harness\+Dll Class Reference}
+\label{class_test_harness_dll}\index{TestHarnessDll@{TestHarnessDll}}
+
+
+This class is the main class that will setup everything that will test the tests in the D\+LL file(s).  
+
+
+
+
+{\ttfamily \#include $<$Test\+Harness\+Dll.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_harness_dll_a2b70dfb8ce198affc85b18894b45a0d0}{Test\+Harness\+Dll}} (\mbox{\hyperlink{classlogger_1_1_i_logger}{I\+Logger}} $\ast$logger, int number\+\_\+of\+\_\+children=3, ostream \&output\+\_\+stream=std\+::cout, const string \&dll\+\_\+directory=\char`\"{}../x64/Debug/\char`\"{})
+\begin{DoxyCompactList}\small\item\em The main constructor to setup everything properly. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_test_harness_dll_aabf0e532fbf9789177df936f6f135f57}{$\sim$\+Test\+Harness\+Dll}} ()
+\item 
+void \mbox{\hyperlink{class_test_harness_dll_a77cef9b50f8aafae64650bbd0f228323}{Run}} ()
+\begin{DoxyCompactList}\small\item\em This method is the one that runs everything. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is the main class that will setup everything that will test the tests in the D\+LL file(s). 
+
+
+
+Definition at line 49 of file Test\+Harness\+Dll.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_test_harness_dll_a2b70dfb8ce198affc85b18894b45a0d0}\label{class_test_harness_dll_a2b70dfb8ce198affc85b18894b45a0d0}} 
+\index{TestHarnessDll@{TestHarnessDll}!TestHarnessDll@{TestHarnessDll}}
+\index{TestHarnessDll@{TestHarnessDll}!TestHarnessDll@{TestHarnessDll}}
+\doxysubsubsection{\texorpdfstring{TestHarnessDll()}{TestHarnessDll()}}
+{\footnotesize\ttfamily Test\+Harness\+Dll\+::\+Test\+Harness\+Dll (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlogger_1_1_i_logger}{I\+Logger}} $\ast$}]{logger,  }\item[{int}]{number\+\_\+of\+\_\+children = {\ttfamily 3},  }\item[{ostream \&}]{output\+\_\+stream = {\ttfamily std\+:\+:cout},  }\item[{const string \&}]{dll\+\_\+directory = {\ttfamily \char`\"{}../x64/Debug/\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The main constructor to setup everything properly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logger} & a pointer to the logger to log stuff.\\
+\hline
+{\em number\+\_\+of\+\_\+children} & an integer of the number of threads that will be generated to test functions/methods.\\
+\hline
+{\em output\+\_\+stream} & an output stream to print things out.\\
+\hline
+{\em dll\+\_\+directory} & a string containing the location of the D\+L\+L(s) that need to be tested.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file Test\+Harness\+Dll.\+h.
+
+\mbox{\Hypertarget{class_test_harness_dll_aabf0e532fbf9789177df936f6f135f57}\label{class_test_harness_dll_aabf0e532fbf9789177df936f6f135f57}} 
+\index{TestHarnessDll@{TestHarnessDll}!````~TestHarnessDll@{$\sim$TestHarnessDll}}
+\index{````~TestHarnessDll@{$\sim$TestHarnessDll}!TestHarnessDll@{TestHarnessDll}}
+\doxysubsubsection{\texorpdfstring{$\sim$TestHarnessDll()}{~TestHarnessDll()}}
+{\footnotesize\ttfamily Test\+Harness\+Dll\+::$\sim$\+Test\+Harness\+Dll (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Test\+Harness\+Dll.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_harness_dll_a77cef9b50f8aafae64650bbd0f228323}\label{class_test_harness_dll_a77cef9b50f8aafae64650bbd0f228323}} 
+\index{TestHarnessDll@{TestHarnessDll}!Run@{Run}}
+\index{Run@{Run}!TestHarnessDll@{TestHarnessDll}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily void Test\+Harness\+Dll\+::\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method is the one that runs everything. 
+
+
+
+Definition at line 7 of file Test\+Harness\+Dll.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 0
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_test_harness_dll_8h}{Test\+Harness\+Dll.\+h}}\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_test_harness_dll_8cpp}{Test\+Harness\+Dll.\+cpp}}\end{DoxyCompactItemize}

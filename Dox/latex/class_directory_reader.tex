@@ -1,0 +1,89 @@
+\hypertarget{class_directory_reader}{}\doxysection{Directory\+Reader Class Reference}
+\label{class_directory_reader}\index{DirectoryReader@{DirectoryReader}}
+
+
+This class will read from the directory and pull out all the D\+LL file information that it can find.  
+
+
+
+
+{\ttfamily \#include $<$Directory\+Reader.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_directory_reader_ac3e3217add2b1016a53e4185065312e3}{Directory\+Reader}} (const string \&dir\+\_\+path)
+\begin{DoxyCompactList}\small\item\em This is the main constructor. When the constructor is called the folder is immediately serached. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_directory_reader_a82178f06b7d7c698e6ddba7ed5a9fca2}{$\sim$\+Directory\+Reader}} ()
+\item 
+vector$<$ \mbox{\hyperlink{struct_dll_data_structure}{Dll\+Data\+Structure}} $\ast$ $>$ \mbox{\hyperlink{class_directory_reader_aa2fb851b4c09297e9a904d84dd4ee54b}{Get\+List\+Of\+Dlls}} () const
+\begin{DoxyCompactList}\small\item\em This method is a way for other classes to get access to the dll list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class will read from the directory and pull out all the D\+LL file information that it can find. 
+
+
+
+Definition at line 19 of file Directory\+Reader.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_directory_reader_ac3e3217add2b1016a53e4185065312e3}\label{class_directory_reader_ac3e3217add2b1016a53e4185065312e3}} 
+\index{DirectoryReader@{DirectoryReader}!DirectoryReader@{DirectoryReader}}
+\index{DirectoryReader@{DirectoryReader}!DirectoryReader@{DirectoryReader}}
+\doxysubsubsection{\texorpdfstring{DirectoryReader()}{DirectoryReader()}}
+{\footnotesize\ttfamily Directory\+Reader\+::\+Directory\+Reader (\begin{DoxyParamCaption}\item[{const string \&}]{dir\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+This is the main constructor. When the constructor is called the folder is immediately serached. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+\_\+path} & This is a string to the directory where the dll(s) are located.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3 of file Directory\+Reader.\+cpp.
+
+\mbox{\Hypertarget{class_directory_reader_a82178f06b7d7c698e6ddba7ed5a9fca2}\label{class_directory_reader_a82178f06b7d7c698e6ddba7ed5a9fca2}} 
+\index{DirectoryReader@{DirectoryReader}!````~DirectoryReader@{$\sim$DirectoryReader}}
+\index{````~DirectoryReader@{$\sim$DirectoryReader}!DirectoryReader@{DirectoryReader}}
+\doxysubsubsection{\texorpdfstring{$\sim$DirectoryReader()}{~DirectoryReader()}}
+{\footnotesize\ttfamily Directory\+Reader\+::$\sim$\+Directory\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file Directory\+Reader.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_directory_reader_aa2fb851b4c09297e9a904d84dd4ee54b}\label{class_directory_reader_aa2fb851b4c09297e9a904d84dd4ee54b}} 
+\index{DirectoryReader@{DirectoryReader}!GetListOfDlls@{GetListOfDlls}}
+\index{GetListOfDlls@{GetListOfDlls}!DirectoryReader@{DirectoryReader}}
+\doxysubsubsection{\texorpdfstring{GetListOfDlls()}{GetListOfDlls()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{struct_dll_data_structure}{Dll\+Data\+Structure}} $\ast$ $>$ Directory\+Reader\+::\+Get\+List\+Of\+Dlls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+This method is a way for other classes to get access to the dll list. 
+
+\begin{DoxyReturn}{Returns}
+Returns an array (vector) of dll data structures that were found.
+\end{DoxyReturn}
+
+
+Definition at line 25 of file Directory\+Reader.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_directory_reader_8h}{Directory\+Reader.\+h}}\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_directory_reader_8cpp}{Directory\+Reader.\+cpp}}\end{DoxyCompactItemize}

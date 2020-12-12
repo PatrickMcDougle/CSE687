@@ -22,6 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CSE687 Group#5 Project
+   &#160;<span id="projectnumber">HW #4</span>
    </div>
   </td>
  </tr>
@@ -82,39 +83,36 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> <a class="code" href="classqueue_1_1_blocking_queue.html">queue::BlockingQueue</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemessaging.html">messaging</a> {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">// Class for LogData</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classmessaging_1_1_client_handler.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classmessaging_1_1_client_handler.html">ClientHandler</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classmessaging_1_1_client_handler.html#abdf40e2376e7d7e6dbe82ed8bf9d94fe">   17</a></span>&#160;        <a class="code" href="classmessaging_1_1_client_handler.html#abdf40e2376e7d7e6dbe82ed8bf9d94fe">ClientHandler</a>(<a class="code" href="classqueue_1_1_blocking_queue.html">BlockingQueue&lt;Message&gt;</a>* blocking_queue, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            : blocking_queue_(blocking_queue), name_(name) {};</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classmessaging_1_1_client_handler.html#a899afc52e2359a37ba67b1fd507dff9f">   19</a></span>&#160;        <a class="code" href="classmessaging_1_1_client_handler.html#a899afc52e2359a37ba67b1fd507dff9f">~ClientHandler</a>() {};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmessaging_1_1_client_handler.html#a109099ef09c9c438f2d8845790dbf7cd">setQueue</a>(<a class="code" href="classqueue_1_1_blocking_queue.html">BlockingQueue&lt;Message&gt;</a>* blocking_queue);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">string</span> <a class="code" href="classmessaging_1_1_client_handler.html#ac8bab4c29db0d7a9b166832707f555a0">readMessage</a>(<a class="code" href="classmessaging_1_1_socket.html">Socket</a>&amp; socket) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classmessaging_1_1_client_handler.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classmessaging_1_1_client_handler.html">ClientHandler</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classmessaging_1_1_client_handler.html#abdf40e2376e7d7e6dbe82ed8bf9d94fe">   16</a></span>&#160;        <a class="code" href="classmessaging_1_1_client_handler.html#abdf40e2376e7d7e6dbe82ed8bf9d94fe">ClientHandler</a>(<a class="code" href="classqueue_1_1_blocking_queue.html">BlockingQueue&lt;Message&gt;</a>* blocking_queue, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            : blocking_queue_(blocking_queue), name_(name) {};</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classmessaging_1_1_client_handler.html#a899afc52e2359a37ba67b1fd507dff9f">   18</a></span>&#160;        <a class="code" href="classmessaging_1_1_client_handler.html#a899afc52e2359a37ba67b1fd507dff9f">~ClientHandler</a>() {};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmessaging_1_1_client_handler.html#a109099ef09c9c438f2d8845790dbf7cd">setQueue</a>(<a class="code" href="classqueue_1_1_blocking_queue.html">BlockingQueue&lt;Message&gt;</a>* blocking_queue);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmessaging_1_1_client_handler.html#a5bd0e35edbf31af326419353fd391071">operator()</a>(<a class="code" href="classmessaging_1_1_socket.html">Socket</a> socket);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmessaging_1_1_client_handler.html#a5bd0e35edbf31af326419353fd391071">operator()</a>(<a class="code" href="classmessaging_1_1_socket.html">Socket</a> socket);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classqueue_1_1_blocking_queue.html">BlockingQueue&lt;Message&gt;</a>* blocking_queue_;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">string</span> name_;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    };</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classqueue_1_1_blocking_queue.html">BlockingQueue&lt;Message&gt;</a>* blocking_queue_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">string</span> name_;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">string</span> readMessage(<a class="code" href="classmessaging_1_1_socket.html">Socket</a>&amp; socket) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    };</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif // !__CLIENT_HANDLER_H__</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif // !__CLIENT_HANDLER_H__</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassmessaging_1_1_socket_html"><div class="ttname"><a href="classmessaging_1_1_socket.html">messaging::Socket</a></div><div class="ttdef"><b>Definition:</b> <a href="_socket_8h_source.html#l00013">Socket.h:14</a></div></div>
 <div class="ttc" id="a_blocking_queue_8h_html"><div class="ttname"><a href="_blocking_queue_8h.html">BlockingQueue.h</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_client_handler_html_a899afc52e2359a37ba67b1fd507dff9f"><div class="ttname"><a href="classmessaging_1_1_client_handler.html#a899afc52e2359a37ba67b1fd507dff9f">messaging::ClientHandler::~ClientHandler</a></div><div class="ttdeci">~ClientHandler()</div><div class="ttdef"><b>Definition:</b> <a href="_client_handler_8h_source.html#l00019">ClientHandler.h:19</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_client_handler_html_a899afc52e2359a37ba67b1fd507dff9f"><div class="ttname"><a href="classmessaging_1_1_client_handler.html#a899afc52e2359a37ba67b1fd507dff9f">messaging::ClientHandler::~ClientHandler</a></div><div class="ttdeci">~ClientHandler()</div><div class="ttdef"><b>Definition:</b> <a href="_client_handler_8h_source.html#l00018">ClientHandler.h:18</a></div></div>
 <div class="ttc" id="aclassmessaging_1_1_client_handler_html_a109099ef09c9c438f2d8845790dbf7cd"><div class="ttname"><a href="classmessaging_1_1_client_handler.html#a109099ef09c9c438f2d8845790dbf7cd">messaging::ClientHandler::setQueue</a></div><div class="ttdeci">void setQueue(BlockingQueue&lt; Message &gt; *blocking_queue)</div><div class="ttdef"><b>Definition:</b> <a href="_client_handler_8cpp_source.html#l00003">ClientHandler.cpp:3</a></div></div>
-<div class="ttc" id="anamespacemessaging_html"><div class="ttname"><a href="namespacemessaging.html">messaging</a></div><div class="ttdef"><b>Definition:</b> <a href="_address_ip4_8h_source.html#l00009">AddressIp4.h:9</a></div></div>
+<div class="ttc" id="anamespacemessaging_html"><div class="ttname"><a href="namespacemessaging.html">messaging</a></div><div class="ttdef"><b>Definition:</b> <a href="_address_ip4_8h_source.html#l00011">AddressIp4.h:11</a></div></div>
 <div class="ttc" id="aclassqueue_1_1_blocking_queue_html"><div class="ttname"><a href="classqueue_1_1_blocking_queue.html">queue::BlockingQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="_blocking_queue_8h_source.html#l00016">BlockingQueue.h:16</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_client_handler_html_ac8bab4c29db0d7a9b166832707f555a0"><div class="ttname"><a href="classmessaging_1_1_client_handler.html#ac8bab4c29db0d7a9b166832707f555a0">messaging::ClientHandler::readMessage</a></div><div class="ttdeci">string readMessage(Socket &amp;socket) const</div><div class="ttdef"><b>Definition:</b> <a href="_client_handler_8cpp_source.html#l00008">ClientHandler.cpp:8</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_client_handler_html_a5bd0e35edbf31af326419353fd391071"><div class="ttname"><a href="classmessaging_1_1_client_handler.html#a5bd0e35edbf31af326419353fd391071">messaging::ClientHandler::operator()</a></div><div class="ttdeci">void operator()(Socket socket)</div><div class="ttdef"><b>Definition:</b> <a href="_client_handler_8cpp_source.html#l00025">ClientHandler.cpp:25</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_client_handler_html_abdf40e2376e7d7e6dbe82ed8bf9d94fe"><div class="ttname"><a href="classmessaging_1_1_client_handler.html#abdf40e2376e7d7e6dbe82ed8bf9d94fe">messaging::ClientHandler::ClientHandler</a></div><div class="ttdeci">ClientHandler(BlockingQueue&lt; Message &gt; *blocking_queue, const string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="_client_handler_8h_source.html#l00017">ClientHandler.h:17</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_client_handler_html_a5bd0e35edbf31af326419353fd391071"><div class="ttname"><a href="classmessaging_1_1_client_handler.html#a5bd0e35edbf31af326419353fd391071">messaging::ClientHandler::operator()</a></div><div class="ttdeci">void operator()(Socket socket)</div><div class="ttdef"><b>Definition:</b> <a href="_client_handler_8cpp_source.html#l00008">ClientHandler.cpp:8</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_client_handler_html_abdf40e2376e7d7e6dbe82ed8bf9d94fe"><div class="ttname"><a href="classmessaging_1_1_client_handler.html#abdf40e2376e7d7e6dbe82ed8bf9d94fe">messaging::ClientHandler::ClientHandler</a></div><div class="ttdeci">ClientHandler(BlockingQueue&lt; Message &gt; *blocking_queue, const string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="_client_handler_8h_source.html#l00016">ClientHandler.h:16</a></div></div>
 <div class="ttc" id="a_socket_8h_html"><div class="ttname"><a href="_socket_8h.html">Socket.h</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_client_handler_html"><div class="ttname"><a href="classmessaging_1_1_client_handler.html">messaging::ClientHandler</a></div><div class="ttdef"><b>Definition:</b> <a href="_client_handler_8h_source.html#l00015">ClientHandler.h:15</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_client_handler_html"><div class="ttname"><a href="classmessaging_1_1_client_handler.html">messaging::ClientHandler</a></div><div class="ttdef"><b>Definition:</b> <a href="_client_handler_8h_source.html#l00014">ClientHandler.h:14</a></div></div>
 <div class="ttc" id="a_message_8h_html"><div class="ttname"><a href="_message_8h.html">Message.h</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

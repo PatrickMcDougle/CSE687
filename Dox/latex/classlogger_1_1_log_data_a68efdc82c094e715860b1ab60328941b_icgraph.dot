@@ -1,0 +1,12 @@
+digraph "logger::LogData::isPassed"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="logger::LogData::isPassed",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Test_LogData_isPassed\l_false",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_test_logger_8h.html#a9b8fb87ccee5966c3ff66a396e559f6a",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Test_LogData_isPassed_true",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_test_logger_8h.html#a9c9743ca9fe3b6a74bae17e86728f75b",tooltip=" "];
+}

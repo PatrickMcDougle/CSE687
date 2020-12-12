@@ -1,0 +1,21 @@
+digraph "TestingDevelopmentOfLogMessage"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="TestingDevelopmentOfLogMessage",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="logger::LogMessageDecorator\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_log_message_decorator.html#ae33e140756354426fc7fe33b7a0e100a",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="logger::ILogData::getMessage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_i_log_data.html#ace4614ba1c88bfe1dedd8b064273069a",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="logger::ALogDecorator\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_a_log_decorator.html#ab5fcb306007337ddaa506a83a79427f4",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="logger::ILogComponent\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_i_log_component.html#a12ab1853b4a5eb25046ada685883271a",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="logger::LogTimestampDecorator\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_log_timestamp_decorator.html#adffd49b0dad89b43c5d730e71fa89eb0",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="logger::ILogData::getDateTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_i_log_data.html#a649658bbe9773c253276e860cc08126f",tooltip=" "];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}
