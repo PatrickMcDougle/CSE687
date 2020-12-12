@@ -36,6 +36,7 @@
     <ClCompile Include="SocketListener.cpp" />
     <ClCompile Include="SocketSystem.cpp" />
     <ClCompile Include="StringHelper.cpp" />
+    <ClCompile Include="TestHarnessDll.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddressIp4.h" />
@@ -56,6 +57,7 @@
     <ClInclude Include="SocketListener.h" />
     <ClInclude Include="SocketSystem.h" />
     <ClInclude Include="StringHelper.h" />
+    <ClInclude Include="TestHarnessDll.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagramLogger.cd" />
