@@ -1,0 +1,54 @@
+digraph "TestingChildThreads"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="TestingChildThreads",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This is the best method, I mean function in the world."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="logger::LoggerFactory\l::create",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_logger_factory.html#ad30ef96fa81fae82fb969e49c7e5c4a7",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="threading::MotherController::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classthreading_1_1_mother_controller.html#a52449ec5c73d3e2c36852b5578398448",tooltip="This method will start running things. Generate child threads and communicate with them."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="messaging::Message\l::getMessage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_message.html#a10e3fe197efff8565232d7df23d8c19c",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="messaging::AddressIp4::set",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_address_ip4.html#ad08d08fac93c0afb96b4061b6085281b",tooltip="This method will set the address"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="messaging::IAddressIp::set",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_i_address_ip.html#ae4d641c03910917460aac23f5e0ca13d",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="threading::MotherController\l::setup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classthreading_1_1_mother_controller.html#ac691297c96aff006c3e39d7c2947d755",tooltip="The setup method is used to set the logger and other things needed before running."];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="threading::ChildTester::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classthreading_1_1_child_tester.html#a9620f7823b0baffc023ef5ad2ff27152",tooltip="This method will start running things. Start communications and run test when asked."];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="messaging::Communications\l::getMessage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_communications.html#ab0e9401a70d1cf25604bd3ad07a36c33",tooltip=" "];
+  Node9 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="messaging::Communications\l::sendMessage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_communications.html#ace9f419515066a4dd25eada6ff826341",tooltip=" "];
+  Node8 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="messaging::Message\l::setAuthor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_message.html#ab0f55e68e96819e721fb86f6325bedb1",tooltip=" "];
+  Node8 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="messaging::Message\l::setMessage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_message.html#a598339cd6881bb7eff09d4b7102177b8",tooltip=" "];
+  Node8 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="messaging::Message\l::setType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_message.html#a62ee84a9b628706dff9f1828ea464d28",tooltip=" "];
+  Node8 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="messaging::Communications\l::start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_communications.html#a1a93f47c7171939fb74d1f52c814c747",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="messaging::Receiver\l::queue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_receiver.html#a91b1ab368f342acf6034a06d28888f0c",tooltip=" "];
+  Node14 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="messaging::Sender::\lstart",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_sender.html#a6f52ff6506505dd53a3f8f789a4002ef",tooltip=" "];
+  Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="messaging::IAddressIp\l::getAddressAndPort",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_i_address_ip.html#aca03ee3e47965133ffc3453306dbfb40",tooltip=" "];
+  Node16 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="messaging::Message\l::getDestination",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_message.html#a04e8b8b70e66d3e8e7a504dd42d819cf",tooltip=" "];
+  Node16 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="messaging::Message\l::getType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_message.html#a6bbb938d0158f0fe131fde9a76f3d644",tooltip=" "];
+  Node16 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="messaging::Message\l::writeMessage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_message.html#a46b1a125113b3e3ea83dbfb5c492455b",tooltip=" "];
+  Node14 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="messaging::Receiver\l::start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_receiver.html#a7e524ad4a1147f8968dd980f00c8a9d1",tooltip=" "];
+  Node21 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="messaging::SocketListener\l::start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmessaging_1_1_socket_listener.html#afaa24fc8b00669db93aa549928276d21",tooltip=" "];
+  Node7 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="queue::BlockingQueue\l::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classqueue_1_1_blocking_queue.html#ab0e38f917fb8dca6eea32ebc6caa424a",tooltip=" "];
+}

@@ -6,4 +6,7 @@ digraph "D:/GitHub/CSE687/CSE687_Main_Project/CSE687_Main/AddressIp4.h"
   Node1 [label="D:/GitHub/CSE687/CSE687\l_Main_Project/CSE687_Main\l/AddressIp4.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="IAddressIp.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_i_address_ip_8h.html",tooltip=" "];
+  Node3 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

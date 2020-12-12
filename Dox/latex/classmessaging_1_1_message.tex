@@ -7,13 +7,9 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classmessaging_1_1_message_ac31b02397900e674befbd8ffc851e007}{Message}} ()
+\mbox{\hyperlink{classmessaging_1_1_message_a7bc6e64a190202ce6c00f8e931ae614a}{Message}} (\mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$address\+\_\+source, \mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$address\+\_\+destination)
 \item 
 \mbox{\hyperlink{classmessaging_1_1_message_a8a842221adf1720793a1b27dedad9ad6}{$\sim$\+Message}} ()
-\item 
-bool \mbox{\hyperlink{classmessaging_1_1_message_ab4d378355cc6c101ab996abd69aa22a7}{set\+Source}} (\mbox{\hyperlink{classmessaging_1_1_address_ip4}{Address\+Ip4}})
-\item 
-bool \mbox{\hyperlink{classmessaging_1_1_message_a6a8474a05ea9ff0ea29c2fdc5933fd49}{set\+Destination}} (\mbox{\hyperlink{classmessaging_1_1_address_ip4}{Address\+Ip4}})
 \item 
 bool \mbox{\hyperlink{classmessaging_1_1_message_a62ee84a9b628706dff9f1828ea464d28}{set\+Type}} (const string \&)
 \item 
@@ -25,35 +21,38 @@ string \mbox{\hyperlink{classmessaging_1_1_message_a6bbb938d0158f0fe131fde9a76f3
 \item 
 string \mbox{\hyperlink{classmessaging_1_1_message_a5c8bd13367c7ca6c8cd54ecc3eacf659}{get\+Author}} () const
 \item 
-\mbox{\hyperlink{classmessaging_1_1_address_ip4}{Address\+Ip4}} \mbox{\hyperlink{classmessaging_1_1_message_a929a3aafb9c95969842f3d64d26c1a08}{get\+Destination}} () const
+\mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$ \mbox{\hyperlink{classmessaging_1_1_message_a04e8b8b70e66d3e8e7a504dd42d819cf}{get\+Destination}} () const
 \item 
-\mbox{\hyperlink{classmessaging_1_1_address_ip4}{Address\+Ip4}} \mbox{\hyperlink{classmessaging_1_1_message_a701a6122a5e1149b7b56ba9f85437196}{get\+Source}} () const
+\mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$ \mbox{\hyperlink{classmessaging_1_1_message_a570aca67e556598d59a63da87452cfed}{get\+Source}} () const
 \item 
 string \mbox{\hyperlink{classmessaging_1_1_message_a10e3fe197efff8565232d7df23d8c19c}{get\+Message}} () const
 \item 
 string \mbox{\hyperlink{classmessaging_1_1_message_a46b1a125113b3e3ea83dbfb5c492455b}{write\+Message}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{classmessaging_1_1_message_a8dd38e0414d3260a34455c7ba85e4b3b}{read\+Message}} (const string \&)
+static \mbox{\hyperlink{classmessaging_1_1_message}{Message}} \mbox{\hyperlink{classmessaging_1_1_message_a2e8e2889dab8392698df8d5e445aa9ee}{read\+Message}} (const string \&)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 
 
-Definition at line 15 of file Message.\+h.
+Definition at line 16 of file Message.\+h.
 
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classmessaging_1_1_message_ac31b02397900e674befbd8ffc851e007}\label{classmessaging_1_1_message_ac31b02397900e674befbd8ffc851e007}} 
+\mbox{\Hypertarget{classmessaging_1_1_message_a7bc6e64a190202ce6c00f8e931ae614a}\label{classmessaging_1_1_message_a7bc6e64a190202ce6c00f8e931ae614a}} 
 \index{messaging::Message@{messaging::Message}!Message@{Message}}
 \index{Message@{Message}!messaging::Message@{messaging::Message}}
 \doxysubsubsection{\texorpdfstring{Message()}{Message()}}
-{\footnotesize\ttfamily messaging\+::\+Message\+::\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily messaging\+::\+Message\+::\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$}]{address\+\_\+source,  }\item[{\mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$}]{address\+\_\+destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 32 of file Message.\+h.
+Definition at line 36 of file Message.\+h.
 
 \mbox{\Hypertarget{classmessaging_1_1_message_a8a842221adf1720793a1b27dedad9ad6}\label{classmessaging_1_1_message_a8a842221adf1720793a1b27dedad9ad6}} 
 \index{messaging::Message@{messaging::Message}!````~Message@{$\sim$Message}}
@@ -63,7 +62,7 @@ Definition at line 32 of file Message.\+h.
 
 
 
-Definition at line 33 of file Message.\+h.
+Definition at line 41 of file Message.\+h.
 
 
 
@@ -76,17 +75,17 @@ Definition at line 33 of file Message.\+h.
 
 
 
-Definition at line 42 of file Message.\+h.
+Definition at line 48 of file Message.\+h.
 
-\mbox{\Hypertarget{classmessaging_1_1_message_a929a3aafb9c95969842f3d64d26c1a08}\label{classmessaging_1_1_message_a929a3aafb9c95969842f3d64d26c1a08}} 
+\mbox{\Hypertarget{classmessaging_1_1_message_a04e8b8b70e66d3e8e7a504dd42d819cf}\label{classmessaging_1_1_message_a04e8b8b70e66d3e8e7a504dd42d819cf}} 
 \index{messaging::Message@{messaging::Message}!getDestination@{getDestination}}
 \index{getDestination@{getDestination}!messaging::Message@{messaging::Message}}
 \doxysubsubsection{\texorpdfstring{getDestination()}{getDestination()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classmessaging_1_1_address_ip4}{Address\+Ip4}} messaging\+::\+Message\+::get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}}$\ast$ messaging\+::\+Message\+::get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 43 of file Message.\+h.
+Definition at line 49 of file Message.\+h.
 
 Here is the caller graph for this function\+:
 % FIG 0
@@ -98,19 +97,19 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 45 of file Message.\+h.
+Definition at line 51 of file Message.\+h.
 
 Here is the caller graph for this function\+:
 % FIG 1
-\mbox{\Hypertarget{classmessaging_1_1_message_a701a6122a5e1149b7b56ba9f85437196}\label{classmessaging_1_1_message_a701a6122a5e1149b7b56ba9f85437196}} 
+\mbox{\Hypertarget{classmessaging_1_1_message_a570aca67e556598d59a63da87452cfed}\label{classmessaging_1_1_message_a570aca67e556598d59a63da87452cfed}} 
 \index{messaging::Message@{messaging::Message}!getSource@{getSource}}
 \index{getSource@{getSource}!messaging::Message@{messaging::Message}}
 \doxysubsubsection{\texorpdfstring{getSource()}{getSource()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classmessaging_1_1_address_ip4}{Address\+Ip4}} messaging\+::\+Message\+::get\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}}$\ast$ messaging\+::\+Message\+::get\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 44 of file Message.\+h.
+Definition at line 50 of file Message.\+h.
 
 \mbox{\Hypertarget{classmessaging_1_1_message_a6bbb938d0158f0fe131fde9a76f3d644}\label{classmessaging_1_1_message_a6bbb938d0158f0fe131fde9a76f3d644}} 
 \index{messaging::Message@{messaging::Message}!getType@{getType}}
@@ -120,19 +119,19 @@ Definition at line 44 of file Message.\+h.
 
 
 
-Definition at line 41 of file Message.\+h.
+Definition at line 47 of file Message.\+h.
 
 Here is the caller graph for this function\+:
 % FIG 2
-\mbox{\Hypertarget{classmessaging_1_1_message_a8dd38e0414d3260a34455c7ba85e4b3b}\label{classmessaging_1_1_message_a8dd38e0414d3260a34455c7ba85e4b3b}} 
+\mbox{\Hypertarget{classmessaging_1_1_message_a2e8e2889dab8392698df8d5e445aa9ee}\label{classmessaging_1_1_message_a2e8e2889dab8392698df8d5e445aa9ee}} 
 \index{messaging::Message@{messaging::Message}!readMessage@{readMessage}}
 \index{readMessage@{readMessage}!messaging::Message@{messaging::Message}}
 \doxysubsubsection{\texorpdfstring{readMessage()}{readMessage()}}
-{\footnotesize\ttfamily bool messaging\+::\+Message\+::read\+Message (\begin{DoxyParamCaption}\item[{const string \&}]{message }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmessaging_1_1_message}{messaging\+::\+Message}} messaging\+::\+Message\+::read\+Message (\begin{DoxyParamCaption}\item[{const string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Definition at line 76 of file Message.\+cpp.
+Definition at line 64 of file Message.\+cpp.
 
 Here is the call graph for this function\+:
 % FIG 3
@@ -146,22 +145,10 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 47 of file Message.\+cpp.
-
-Here is the caller graph for this function\+:
-% FIG 5
-\mbox{\Hypertarget{classmessaging_1_1_message_a6a8474a05ea9ff0ea29c2fdc5933fd49}\label{classmessaging_1_1_message_a6a8474a05ea9ff0ea29c2fdc5933fd49}} 
-\index{messaging::Message@{messaging::Message}!setDestination@{setDestination}}
-\index{setDestination@{setDestination}!messaging::Message@{messaging::Message}}
-\doxysubsubsection{\texorpdfstring{setDestination()}{setDestination()}}
-{\footnotesize\ttfamily bool messaging\+::\+Message\+::set\+Destination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmessaging_1_1_address_ip4}{Address\+Ip4}}}]{destination }\end{DoxyParamCaption})}
-
-
-
 Definition at line 35 of file Message.\+cpp.
 
 Here is the caller graph for this function\+:
-% FIG 6
+% FIG 5
 \mbox{\Hypertarget{classmessaging_1_1_message_a598339cd6881bb7eff09d4b7102177b8}\label{classmessaging_1_1_message_a598339cd6881bb7eff09d4b7102177b8}} 
 \index{messaging::Message@{messaging::Message}!setMessage@{setMessage}}
 \index{setMessage@{setMessage}!messaging::Message@{messaging::Message}}
@@ -170,22 +157,10 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 53 of file Message.\+cpp.
+Definition at line 41 of file Message.\+cpp.
 
 Here is the caller graph for this function\+:
-% FIG 7
-\mbox{\Hypertarget{classmessaging_1_1_message_ab4d378355cc6c101ab996abd69aa22a7}\label{classmessaging_1_1_message_ab4d378355cc6c101ab996abd69aa22a7}} 
-\index{messaging::Message@{messaging::Message}!setSource@{setSource}}
-\index{setSource@{setSource}!messaging::Message@{messaging::Message}}
-\doxysubsubsection{\texorpdfstring{setSource()}{setSource()}}
-{\footnotesize\ttfamily bool messaging\+::\+Message\+::set\+Source (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmessaging_1_1_address_ip4}{Address\+Ip4}}}]{source }\end{DoxyParamCaption})}
-
-
-
-Definition at line 29 of file Message.\+cpp.
-
-Here is the caller graph for this function\+:
-% FIG 8
+% FIG 6
 \mbox{\Hypertarget{classmessaging_1_1_message_a62ee84a9b628706dff9f1828ea464d28}\label{classmessaging_1_1_message_a62ee84a9b628706dff9f1828ea464d28}} 
 \index{messaging::Message@{messaging::Message}!setType@{setType}}
 \index{setType@{setType}!messaging::Message@{messaging::Message}}
@@ -194,10 +169,10 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 41 of file Message.\+cpp.
+Definition at line 29 of file Message.\+cpp.
 
 Here is the caller graph for this function\+:
-% FIG 9
+% FIG 7
 \mbox{\Hypertarget{classmessaging_1_1_message_a46b1a125113b3e3ea83dbfb5c492455b}\label{classmessaging_1_1_message_a46b1a125113b3e3ea83dbfb5c492455b}} 
 \index{messaging::Message@{messaging::Message}!writeMessage@{writeMessage}}
 \index{writeMessage@{writeMessage}!messaging::Message@{messaging::Message}}
@@ -206,10 +181,10 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 60 of file Message.\+cpp.
+Definition at line 48 of file Message.\+cpp.
 
 Here is the caller graph for this function\+:
-% FIG 10
+% FIG 8
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

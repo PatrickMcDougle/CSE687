@@ -22,6 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CSE687 Group#5 Project
+   &#160;<span id="projectnumber">HW #4</span>
    </div>
   </td>
  </tr>
@@ -71,54 +72,50 @@ $(function() {
 <div class="contents">
 <a href="_communications_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_communications_8h.html">Communications.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="classthreading_1_1_communications.html#a32208cab91a391c07200ceb56c6257d5">    3</a></span>&#160;<a class="code" href="classthreading_1_1_communications.html#a32208cab91a391c07200ceb56c6257d5">threading::Communications::Communications</a>(<a class="code" href="classmessaging_1_1_address_ip4.html">AddressIp4</a> end_point, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name)</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    : receiver_(end_point, name), sender_(name), name_(name)</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classthreading_1_1_communications.html#ab3028ee8a9da98f0dd61f0af4644a504">    8</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classthreading_1_1_communications.html#ab3028ee8a9da98f0dd61f0af4644a504">threading::Communications::start</a>()</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classqueue_1_1_blocking_queue.html">BlockingQueue&lt;Message&gt;</a>* blocking_queue = receiver_.queue();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classmessaging_1_1_client_handler.html">ClientHandler</a>* client_handler = <span class="keyword">new</span> <a class="code" href="classmessaging_1_1_client_handler.html">ClientHandler</a>(blocking_queue, name_);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    receiver_.start(*client_handler);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    sender_.start();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classthreading_1_1_communications.html#a56e37690565951b0a411d53ee4ef39f0">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classthreading_1_1_communications.html#a56e37690565951b0a411d53ee4ef39f0">threading::Communications::stop</a>()</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    receiver_.stop();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    sender_.stop();</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="classmessaging_1_1_communications.html#a1a93f47c7171939fb74d1f52c814c747">    3</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmessaging_1_1_communications.html#a1a93f47c7171939fb74d1f52c814c747">messaging::Communications::start</a>()</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="classqueue_1_1_blocking_queue.html">BlockingQueue&lt;Message&gt;</a>* blocking_queue = receiver_.<a class="code" href="classmessaging_1_1_receiver.html#a91b1ab368f342acf6034a06d28888f0c">queue</a>();</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    client_handler_ = <span class="keyword">new</span> <a class="code" href="classmessaging_1_1_client_handler.html">ClientHandler</a>(blocking_queue, name_);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    receiver_.<a class="code" href="classmessaging_1_1_receiver.html#a7e524ad4a1147f8968dd980f00c8a9d1">start</a>(*client_handler_);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    sender_.<a class="code" href="classmessaging_1_1_sender.html#a6f52ff6506505dd53a3f8f789a4002ef">start</a>();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classmessaging_1_1_communications.html#aeacd399b2e6e4f4fab23401819688605">   13</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmessaging_1_1_communications.html#aeacd399b2e6e4f4fab23401819688605">messaging::Communications::stop</a>()</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    sender_.stop();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    receiver_.stop();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classmessaging_1_1_communications.html#ace9f419515066a4dd25eada6ff826341">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmessaging_1_1_communications.html#ace9f419515066a4dd25eada6ff826341">messaging::Communications::sendMessage</a>(<a class="code" href="classmessaging_1_1_message.html">Message</a>&amp; message)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    sender_.postMessage(message);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classthreading_1_1_communications.html#ada375187f772d76c0dc07bdde2a90ee1">   24</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classthreading_1_1_communications.html#ada375187f772d76c0dc07bdde2a90ee1">threading::Communications::sendMessage</a>(<a class="code" href="classmessaging_1_1_message.html">Message</a> message)</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classmessaging_1_1_communications.html#ab0e9401a70d1cf25604bd3ad07a36c33">   24</a></span>&#160;<a class="code" href="classmessaging_1_1_message.html">Message</a> <a class="code" href="classmessaging_1_1_communications.html#ab0e9401a70d1cf25604bd3ad07a36c33">messaging::Communications::getMessage</a>()</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    sender_.postMessage(message);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> receiver_.<a class="code" href="classmessaging_1_1_message.html#a10e3fe197efff8565232d7df23d8c19c">getMessage</a>();</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classthreading_1_1_communications.html#acdd2033e83d33cb475c38bb3652a257c">   29</a></span>&#160;<a class="code" href="classmessaging_1_1_message.html">Message</a> <a class="code" href="classthreading_1_1_communications.html#acdd2033e83d33cb475c38bb3652a257c">threading::Communications::getMessage</a>()</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> receiver_.<a class="code" href="classmessaging_1_1_message.html#a10e3fe197efff8565232d7df23d8c19c">getMessage</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classmessaging_1_1_communications.html#ad25c01b53aadd597ec91c004ee6fc072">   29</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classmessaging_1_1_communications.html#ad25c01b53aadd597ec91c004ee6fc072">messaging::Communications::getName</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> name_;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classthreading_1_1_communications.html#afb6dc28a81f0752cfabf85648bc641b3">   34</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classthreading_1_1_communications.html#afb6dc28a81f0752cfabf85648bc641b3">threading::Communications::getName</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> name_;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassthreading_1_1_communications_html_ab3028ee8a9da98f0dd61f0af4644a504"><div class="ttname"><a href="classthreading_1_1_communications.html#ab3028ee8a9da98f0dd61f0af4644a504">threading::Communications::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> <a href="_communications_8cpp_source.html#l00008">Communications.cpp:8</a></div></div>
-<div class="ttc" id="aclassthreading_1_1_communications_html_ada375187f772d76c0dc07bdde2a90ee1"><div class="ttname"><a href="classthreading_1_1_communications.html#ada375187f772d76c0dc07bdde2a90ee1">threading::Communications::sendMessage</a></div><div class="ttdeci">void sendMessage(Message message)</div><div class="ttdef"><b>Definition:</b> <a href="_communications_8cpp_source.html#l00024">Communications.cpp:24</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_address_ip4_html"><div class="ttname"><a href="classmessaging_1_1_address_ip4.html">messaging::AddressIp4</a></div><div class="ttdef"><b>Definition:</b> <a href="_address_ip4_8h_source.html#l00010">AddressIp4.h:11</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_receiver_html_a7e524ad4a1147f8968dd980f00c8a9d1"><div class="ttname"><a href="classmessaging_1_1_receiver.html#a7e524ad4a1147f8968dd980f00c8a9d1">messaging::Receiver::start</a></div><div class="ttdeci">void start(CallableObject &amp;callable_object)</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8h_source.html#l00038">Receiver.h:38</a></div></div>
 <div class="ttc" id="a_communications_8h_html"><div class="ttname"><a href="_communications_8h.html">Communications.h</a></div></div>
-<div class="ttc" id="aclassthreading_1_1_communications_html_acdd2033e83d33cb475c38bb3652a257c"><div class="ttname"><a href="classthreading_1_1_communications.html#acdd2033e83d33cb475c38bb3652a257c">threading::Communications::getMessage</a></div><div class="ttdeci">Message getMessage()</div><div class="ttdef"><b>Definition:</b> <a href="_communications_8cpp_source.html#l00029">Communications.cpp:29</a></div></div>
-<div class="ttc" id="aclassthreading_1_1_communications_html_a32208cab91a391c07200ceb56c6257d5"><div class="ttname"><a href="classthreading_1_1_communications.html#a32208cab91a391c07200ceb56c6257d5">threading::Communications::Communications</a></div><div class="ttdeci">Communications(AddressIp4 end_point, const string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="_communications_8cpp_source.html#l00003">Communications.cpp:3</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_message_html"><div class="ttname"><a href="classmessaging_1_1_message.html">messaging::Message</a></div><div class="ttdef"><b>Definition:</b> <a href="_message_8h_source.html#l00015">Message.h:16</a></div></div>
-<div class="ttc" id="aclassthreading_1_1_communications_html_a56e37690565951b0a411d53ee4ef39f0"><div class="ttname"><a href="classthreading_1_1_communications.html#a56e37690565951b0a411d53ee4ef39f0">threading::Communications::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition:</b> <a href="_communications_8cpp_source.html#l00018">Communications.cpp:18</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_communications_html_aeacd399b2e6e4f4fab23401819688605"><div class="ttname"><a href="classmessaging_1_1_communications.html#aeacd399b2e6e4f4fab23401819688605">messaging::Communications::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition:</b> <a href="_communications_8cpp_source.html#l00013">Communications.cpp:13</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_message_html"><div class="ttname"><a href="classmessaging_1_1_message.html">messaging::Message</a></div><div class="ttdef"><b>Definition:</b> <a href="_message_8h_source.html#l00016">Message.h:17</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_communications_html_a1a93f47c7171939fb74d1f52c814c747"><div class="ttname"><a href="classmessaging_1_1_communications.html#a1a93f47c7171939fb74d1f52c814c747">messaging::Communications::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> <a href="_communications_8cpp_source.html#l00003">Communications.cpp:3</a></div></div>
 <div class="ttc" id="aclassqueue_1_1_blocking_queue_html"><div class="ttname"><a href="classqueue_1_1_blocking_queue.html">queue::BlockingQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="_blocking_queue_8h_source.html#l00016">BlockingQueue.h:16</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_client_handler_html"><div class="ttname"><a href="classmessaging_1_1_client_handler.html">messaging::ClientHandler</a></div><div class="ttdef"><b>Definition:</b> <a href="_client_handler_8h_source.html#l00015">ClientHandler.h:15</a></div></div>
-<div class="ttc" id="aclassmessaging_1_1_message_html_a10e3fe197efff8565232d7df23d8c19c"><div class="ttname"><a href="classmessaging_1_1_message.html#a10e3fe197efff8565232d7df23d8c19c">messaging::Message::getMessage</a></div><div class="ttdeci">string getMessage() const</div><div class="ttdef"><b>Definition:</b> <a href="_message_8h_source.html#l00045">Message.h:45</a></div></div>
-<div class="ttc" id="aclassthreading_1_1_communications_html_afb6dc28a81f0752cfabf85648bc641b3"><div class="ttname"><a href="classthreading_1_1_communications.html#afb6dc28a81f0752cfabf85648bc641b3">threading::Communications::getName</a></div><div class="ttdeci">string getName() const</div><div class="ttdef"><b>Definition:</b> <a href="_communications_8cpp_source.html#l00034">Communications.cpp:34</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_receiver_html_a91b1ab368f342acf6034a06d28888f0c"><div class="ttname"><a href="classmessaging_1_1_receiver.html#a91b1ab368f342acf6034a06d28888f0c">messaging::Receiver::queue</a></div><div class="ttdeci">BlockingQueue&lt; Message &gt; * queue()</div><div class="ttdef"><b>Definition:</b> <a href="_receiver_8cpp_source.html#l00003">Receiver.cpp:3</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_communications_html_ab0e9401a70d1cf25604bd3ad07a36c33"><div class="ttname"><a href="classmessaging_1_1_communications.html#ab0e9401a70d1cf25604bd3ad07a36c33">messaging::Communications::getMessage</a></div><div class="ttdeci">Message getMessage()</div><div class="ttdef"><b>Definition:</b> <a href="_communications_8cpp_source.html#l00024">Communications.cpp:24</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_sender_html_a6f52ff6506505dd53a3f8f789a4002ef"><div class="ttname"><a href="classmessaging_1_1_sender.html#a6f52ff6506505dd53a3f8f789a4002ef">messaging::Sender::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> <a href="_sender_8cpp_source.html#l00014">Sender.cpp:14</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_communications_html_ad25c01b53aadd597ec91c004ee6fc072"><div class="ttname"><a href="classmessaging_1_1_communications.html#ad25c01b53aadd597ec91c004ee6fc072">messaging::Communications::getName</a></div><div class="ttdeci">string getName() const</div><div class="ttdef"><b>Definition:</b> <a href="_communications_8cpp_source.html#l00029">Communications.cpp:29</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_communications_html_ace9f419515066a4dd25eada6ff826341"><div class="ttname"><a href="classmessaging_1_1_communications.html#ace9f419515066a4dd25eada6ff826341">messaging::Communications::sendMessage</a></div><div class="ttdeci">void sendMessage(Message &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_communications_8cpp_source.html#l00019">Communications.cpp:19</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_client_handler_html"><div class="ttname"><a href="classmessaging_1_1_client_handler.html">messaging::ClientHandler</a></div><div class="ttdef"><b>Definition:</b> <a href="_client_handler_8h_source.html#l00014">ClientHandler.h:14</a></div></div>
+<div class="ttc" id="aclassmessaging_1_1_message_html_a10e3fe197efff8565232d7df23d8c19c"><div class="ttname"><a href="classmessaging_1_1_message.html#a10e3fe197efff8565232d7df23d8c19c">messaging::Message::getMessage</a></div><div class="ttdeci">string getMessage() const</div><div class="ttdef"><b>Definition:</b> <a href="_message_8h_source.html#l00051">Message.h:51</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

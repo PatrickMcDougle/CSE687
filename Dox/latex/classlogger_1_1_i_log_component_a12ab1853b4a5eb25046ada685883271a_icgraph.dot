@@ -7,15 +7,17 @@ digraph "logger::ILogComponent::logInfo"
   Node1 [label="logger::ILogComponent\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node2 [label="logger::MyLogger::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_my_logger.html#a8e18fc403ad9edf35c43702dae524187",tooltip=" "];
-  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node3 [label="logger::ALogDecorator\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_a_log_decorator.html#ab5fcb306007337ddaa506a83a79427f4",tooltip=" "];
-  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node4 [label="logger::LogMessageDecorator\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_log_message_decorator.html#ae33e140756354426fc7fe33b7a0e100a",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Test_MyLogger_logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_test_logger_8h.html#aceaa280bcc4075cacb84a269533328f1",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="logger::ALogDecorator\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_a_log_decorator.html#ab5fcb306007337ddaa506a83a79427f4",tooltip=" "];
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node5 [label="TestingDevelopmentOfLogMessage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_c_s_e687___test_harness_8cpp.html#a1761b28b7b1271df593b71627487747d",tooltip=" "];
-  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node6 [label="logger::LogStatusDecorator\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_log_status_decorator.html#ac16108895dd69a54fb8a96b0ac7186e4",tooltip=" "];
-  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node7 [label="logger::LogTimestampDecorator\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_log_timestamp_decorator.html#adffd49b0dad89b43c5d730e71fa89eb0",tooltip=" "];
-  Node7 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="logger::LogMessageDecorator\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_log_message_decorator.html#ae33e140756354426fc7fe33b7a0e100a",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="TestingDevelopmentOfLogMessage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_c_s_e687___test_harness___o_r_i_g___b_a_c_k_u_p_8cpp.html#a1761b28b7b1271df593b71627487747d",tooltip=" "];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="logger::LogStatusDecorator\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_log_status_decorator.html#ac16108895dd69a54fb8a96b0ac7186e4",tooltip=" "];
+  Node4 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="logger::LogTimestampDecorator\l::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogger_1_1_log_timestamp_decorator.html#adffd49b0dad89b43c5d730e71fa89eb0",tooltip=" "];
+  Node8 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
 }

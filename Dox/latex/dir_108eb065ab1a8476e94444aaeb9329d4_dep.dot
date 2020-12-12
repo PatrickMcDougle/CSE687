@@ -1,0 +1,20 @@
+digraph "D:/GitHub/CSE687/CSE687_Main_Project/CSE687_Main" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_e0c9d52a8ab80760700742b6d772e6db {
+    graph [ bgcolor="#ddddee", pencolor="black", label="CSE687_Main_Project" fontname="Helvetica", fontsize="10", URL="dir_e0c9d52a8ab80760700742b6d772e6db.html"]
+  subgraph clusterdir_108eb065ab1a8476e94444aaeb9329d4 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_108eb065ab1a8476e94444aaeb9329d4.html"];
+    dir_108eb065ab1a8476e94444aaeb9329d4 [shape=plaintext label="CSE687_Main"];
+    dir_1049c4f39c3d307d7428e3957be471ff [shape=box label="x64" color="red" fillcolor="white" style="filled" URL="dir_1049c4f39c3d307d7428e3957be471ff.html"];
+  }
+  }
+  dir_be80a901764c7acc8fb4a04658cb1d10 [shape=box label="TestBase" fillcolor="white" style="filled" color="red" URL="dir_be80a901764c7acc8fb4a04658cb1d10.html"];
+  dir_5b19f245b9b8b0def5eedd6642d045c2 [shape=box label="Logger" fillcolor="white" style="filled" color="red" URL="dir_5b19f245b9b8b0def5eedd6642d045c2.html"];
+  dir_c5f0d4bb4548d09c78c75092a4b2174c [shape=box label="DllForTests" fillcolor="white" style="filled" color="red" URL="dir_c5f0d4bb4548d09c78c75092a4b2174c.html"];
+  dir_108eb065ab1a8476e94444aaeb9329d4->dir_be80a901764c7acc8fb4a04658cb1d10 [headlabel="8", labeldistance=1.5 headhref="dir_000004_000014.html"];
+  dir_108eb065ab1a8476e94444aaeb9329d4->dir_5b19f245b9b8b0def5eedd6642d045c2 [headlabel="10", labeldistance=1.5 headhref="dir_000004_000011.html"];
+  dir_108eb065ab1a8476e94444aaeb9329d4->dir_c5f0d4bb4548d09c78c75092a4b2174c [headlabel="1", labeldistance=1.5 headhref="dir_000004_000007.html"];
+  dir_be80a901764c7acc8fb4a04658cb1d10->dir_5b19f245b9b8b0def5eedd6642d045c2 [headlabel="2", labeldistance=1.5 headhref="dir_000014_000011.html"];
+}

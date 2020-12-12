@@ -2,35 +2,50 @@
 \label{classmessaging_1_1_address_ip4}\index{messaging::AddressIp4@{messaging::AddressIp4}}
 
 
+This class stores an IP version 4 network address for use by network code.  
+
+
+
+
 {\ttfamily \#include $<$Address\+Ip4.\+h$>$}
 
+
+
+Inheritance diagram for messaging\+::Address\+Ip4\+:
+% FIG 0
+
+
+Collaboration diagram for messaging\+::Address\+Ip4\+:
+% FIG 1
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{classmessaging_1_1_address_ip4_a310e7579958472f146af70dcaf291496}{get\+Address}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em This method will return just the address as a string that is readable by humans and can be used by the system \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{classmessaging_1_1_address_ip4_ace6c39c8716448f90e4a98ac5f0cb2d5}{get\+Port}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em This method will return just the port number. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{classmessaging_1_1_address_ip4_a4483da65316c187c67d7450c9bf10fae}{get\+Address\+And\+Port}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em This method will return the address as a string that is readable by humans and can be used by the system \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmessaging_1_1_address_ip4_a032afd6055661bf4e984051e6269fab6}{set\+Address}} (unsigned int)
-\item 
+\begin{DoxyCompactList}\small\item\em This method will set the address \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmessaging_1_1_address_ip4_a96a96fdc15e6a1e6e5cf8411878a5ec7}{set\+Address}} (int, int, int, int)
-\item 
+\begin{DoxyCompactList}\small\item\em This method will set the address \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmessaging_1_1_address_ip4_af34655ad106ae63d3889c0545c3e310a}{set\+Address}} (const string \&)
-\item 
+\begin{DoxyCompactList}\small\item\em This method will set the address \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmessaging_1_1_address_ip4_a2a7b29ed3c689a191110943a2aaaa220}{set\+Port}} (size\+\_\+t)
-\item 
+\begin{DoxyCompactList}\small\item\em This method will set the port number. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmessaging_1_1_address_ip4_ad08d08fac93c0afb96b4061b6085281b}{set}} (int, int, int, int, size\+\_\+t)
-\item 
+\begin{DoxyCompactList}\small\item\em This method will set the address \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmessaging_1_1_address_ip4_a698a6474cebc43423a5bcec35e968fcf}{set}} (const string \&)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This method will set the address \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+This class stores an IP version 4 network address for use by network code. 
 
 
-Definition at line 10 of file Address\+Ip4.\+h.
+
+Definition at line 15 of file Address\+Ip4.\+h.
 
 
 
@@ -39,43 +54,89 @@ Definition at line 10 of file Address\+Ip4.\+h.
 \index{messaging::AddressIp4@{messaging::AddressIp4}!getAddress@{getAddress}}
 \index{getAddress@{getAddress}!messaging::AddressIp4@{messaging::AddressIp4}}
 \doxysubsubsection{\texorpdfstring{getAddress()}{getAddress()}}
-{\footnotesize\ttfamily string messaging\+::\+Address\+Ip4\+::get\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily string messaging\+::\+Address\+Ip4\+::get\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This method will return just the address as a string that is readable by humans and can be used by the system 
+
+\begin{DoxyReturn}{Returns}
+Returns a string of the address without the port number.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmessaging_1_1_i_address_ip_aae08a9c9765b584e94743b8dc48263d8}{messaging\+::\+I\+Address\+Ip}}.
 
 
 
 Definition at line 3 of file Address\+Ip4.\+cpp.
 
 Here is the caller graph for this function\+:
-% FIG 0
+% FIG 2
 \mbox{\Hypertarget{classmessaging_1_1_address_ip4_a4483da65316c187c67d7450c9bf10fae}\label{classmessaging_1_1_address_ip4_a4483da65316c187c67d7450c9bf10fae}} 
 \index{messaging::AddressIp4@{messaging::AddressIp4}!getAddressAndPort@{getAddressAndPort}}
 \index{getAddressAndPort@{getAddressAndPort}!messaging::AddressIp4@{messaging::AddressIp4}}
 \doxysubsubsection{\texorpdfstring{getAddressAndPort()}{getAddressAndPort()}}
-{\footnotesize\ttfamily string messaging\+::\+Address\+Ip4\+::get\+Address\+And\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily string messaging\+::\+Address\+Ip4\+::get\+Address\+And\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This method will return the address as a string that is readable by humans and can be used by the system 
+
+\begin{DoxyReturn}{Returns}
+Returns a string of the address with the port number.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmessaging_1_1_i_address_ip_aca03ee3e47965133ffc3453306dbfb40}{messaging\+::\+I\+Address\+Ip}}.
 
 
 
 Definition at line 32 of file Address\+Ip4.\+cpp.
 
 Here is the caller graph for this function\+:
-% FIG 1
+% FIG 3
 \mbox{\Hypertarget{classmessaging_1_1_address_ip4_ace6c39c8716448f90e4a98ac5f0cb2d5}\label{classmessaging_1_1_address_ip4_ace6c39c8716448f90e4a98ac5f0cb2d5}} 
 \index{messaging::AddressIp4@{messaging::AddressIp4}!getPort@{getPort}}
 \index{getPort@{getPort}!messaging::AddressIp4@{messaging::AddressIp4}}
 \doxysubsubsection{\texorpdfstring{getPort()}{getPort()}}
-{\footnotesize\ttfamily size\+\_\+t messaging\+::\+Address\+Ip4\+::get\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily size\+\_\+t messaging\+::\+Address\+Ip4\+::get\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This method will return just the port number. 
+
+\begin{DoxyReturn}{Returns}
+Returns the port number as a size\+\_\+t(int) value.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmessaging_1_1_i_address_ip_a7260b285c39b61f0206fee66450259b1}{messaging\+::\+I\+Address\+Ip}}.
 
 
 
 Definition at line 27 of file Address\+Ip4.\+cpp.
 
 Here is the caller graph for this function\+:
-% FIG 2
+% FIG 4
 \mbox{\Hypertarget{classmessaging_1_1_address_ip4_a698a6474cebc43423a5bcec35e968fcf}\label{classmessaging_1_1_address_ip4_a698a6474cebc43423a5bcec35e968fcf}} 
 \index{messaging::AddressIp4@{messaging::AddressIp4}!set@{set}}
 \index{set@{set}!messaging::AddressIp4@{messaging::AddressIp4}}
 \doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool messaging\+::\+Address\+Ip4\+::set (\begin{DoxyParamCaption}\item[{const string \&}]{address\+\_\+port }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool messaging\+::\+Address\+Ip4\+::set (\begin{DoxyParamCaption}\item[{const string \&}]{address\+\_\+port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This method will set the address 
+
+This value is the address as a string. This string contains the 4 ip address numbers seperated by \textquotesingle{}.\textquotesingle{} as well as a port number after \textquotesingle{}\+:\textquotesingle{}.
+
+\begin{DoxyReturn}{Returns}
+Returns true on success.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmessaging_1_1_i_address_ip_a3ba7e4eacff01910c3c31ab0c2d08016}{messaging\+::\+I\+Address\+Ip}}.
 
 
 
@@ -85,19 +146,55 @@ Definition at line 129 of file Address\+Ip4.\+cpp.
 \index{messaging::AddressIp4@{messaging::AddressIp4}!set@{set}}
 \index{set@{set}!messaging::AddressIp4@{messaging::AddressIp4}}
 \doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily bool messaging\+::\+Address\+Ip4\+::set (\begin{DoxyParamCaption}\item[{int}]{p1,  }\item[{int}]{p2,  }\item[{int}]{p3,  }\item[{int}]{p4,  }\item[{size\+\_\+t}]{port }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool messaging\+::\+Address\+Ip4\+::set (\begin{DoxyParamCaption}\item[{int}]{p1,  }\item[{int}]{p2,  }\item[{int}]{p3,  }\item[{int}]{p4,  }\item[{size\+\_\+t}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This method will set the address 
+
+The first byte of the address
+
+The second byte of the address
+
+The third byte of the address
+
+The fourth byte of the address
+
+This value is teh port number as a size\+\_\+t(int)
+
+\begin{DoxyReturn}{Returns}
+Returns true on success.
+
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmessaging_1_1_i_address_ip_ae4d641c03910917460aac23f5e0ca13d}{messaging\+::\+I\+Address\+Ip}}.
 
 
 
 Definition at line 122 of file Address\+Ip4.\+cpp.
 
 Here is the caller graph for this function\+:
-% FIG 3
+% FIG 5
 \mbox{\Hypertarget{classmessaging_1_1_address_ip4_af34655ad106ae63d3889c0545c3e310a}\label{classmessaging_1_1_address_ip4_af34655ad106ae63d3889c0545c3e310a}} 
 \index{messaging::AddressIp4@{messaging::AddressIp4}!setAddress@{setAddress}}
 \index{setAddress@{setAddress}!messaging::AddressIp4@{messaging::AddressIp4}}
 \doxysubsubsection{\texorpdfstring{setAddress()}{setAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily bool messaging\+::\+Address\+Ip4\+::set\+Address (\begin{DoxyParamCaption}\item[{const string \&}]{address }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool messaging\+::\+Address\+Ip4\+::set\+Address (\begin{DoxyParamCaption}\item[{const string \&}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This method will set the address 
+
+This value is the address as a string. This string only contains the 4 ip address numbers seperated by \textquotesingle{}.\textquotesingle{}.
+
+\begin{DoxyReturn}{Returns}
+Returns true on success.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmessaging_1_1_i_address_ip_a10d52bac252523258aa2e5d78962eeb7}{messaging\+::\+I\+Address\+Ip}}.
 
 
 
@@ -107,7 +204,26 @@ Definition at line 79 of file Address\+Ip4.\+cpp.
 \index{messaging::AddressIp4@{messaging::AddressIp4}!setAddress@{setAddress}}
 \index{setAddress@{setAddress}!messaging::AddressIp4@{messaging::AddressIp4}}
 \doxysubsubsection{\texorpdfstring{setAddress()}{setAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily bool messaging\+::\+Address\+Ip4\+::set\+Address (\begin{DoxyParamCaption}\item[{int}]{p1,  }\item[{int}]{p2,  }\item[{int}]{p3,  }\item[{int}]{p4 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool messaging\+::\+Address\+Ip4\+::set\+Address (\begin{DoxyParamCaption}\item[{int}]{p1,  }\item[{int}]{p2,  }\item[{int}]{p3,  }\item[{int}]{p4 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This method will set the address 
+
+The first byte of the address
+
+The second byte of the address
+
+The third byte of the address
+
+The fourth byte of the address
+
+\begin{DoxyReturn}{Returns}
+Returns true on success.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmessaging_1_1_i_address_ip_a349e1f833dcd5e85b27326eff3edfc22}{messaging\+::\+I\+Address\+Ip}}.
 
 
 
@@ -117,26 +233,52 @@ Definition at line 50 of file Address\+Ip4.\+cpp.
 \index{messaging::AddressIp4@{messaging::AddressIp4}!setAddress@{setAddress}}
 \index{setAddress@{setAddress}!messaging::AddressIp4@{messaging::AddressIp4}}
 \doxysubsubsection{\texorpdfstring{setAddress()}{setAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily bool messaging\+::\+Address\+Ip4\+::set\+Address (\begin{DoxyParamCaption}\item[{unsigned int}]{address }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool messaging\+::\+Address\+Ip4\+::set\+Address (\begin{DoxyParamCaption}\item[{unsigned int}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This method will set the address 
+
+This value is the address as one int value.
+
+\begin{DoxyReturn}{Returns}
+Returns true on success.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmessaging_1_1_i_address_ip_a7b30dfbad1a49601cc7fa55d4a320e40}{messaging\+::\+I\+Address\+Ip}}.
 
 
 
 Definition at line 43 of file Address\+Ip4.\+cpp.
 
 Here is the caller graph for this function\+:
-% FIG 4
+% FIG 6
 \mbox{\Hypertarget{classmessaging_1_1_address_ip4_a2a7b29ed3c689a191110943a2aaaa220}\label{classmessaging_1_1_address_ip4_a2a7b29ed3c689a191110943a2aaaa220}} 
 \index{messaging::AddressIp4@{messaging::AddressIp4}!setPort@{setPort}}
 \index{setPort@{setPort}!messaging::AddressIp4@{messaging::AddressIp4}}
 \doxysubsubsection{\texorpdfstring{setPort()}{setPort()}}
-{\footnotesize\ttfamily bool messaging\+::\+Address\+Ip4\+::set\+Port (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{port }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool messaging\+::\+Address\+Ip4\+::set\+Port (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This method will set the port number. 
+
+This value is teh port number as a size\+\_\+t(int)
+
+\begin{DoxyReturn}{Returns}
+Returns true on success.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmessaging_1_1_i_address_ip_a8e0574d6f6390c33d895b2a1edcd98bd}{messaging\+::\+I\+Address\+Ip}}.
 
 
 
 Definition at line 111 of file Address\+Ip4.\+cpp.
 
 Here is the caller graph for this function\+:
-% FIG 5
+% FIG 7
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\hypertarget{class_dll_client}{}\doxysection{Dll\+Client Class Reference}
+\label{class_dll_client}\index{DllClient@{DllClient}}
+
+
+This class is in charge of loading up the dlls and pulling the tests out.  
+
+
+
+
+{\ttfamily \#include $<$Dll\+Client.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dll_client_a742b6d9001c88f5190de28bc3c521703}{Dll\+Client}} ()
+\begin{DoxyCompactList}\small\item\em The default Constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dll_client_a54610cd087bc2a66a628257a4e2e1c93}{$\sim$\+Dll\+Client}} ()
+\item 
+void \mbox{\hyperlink{class_dll_client_ad9c9cf959625fb564aec8e7fd1123a15}{Load\+Dll}} (const string \&dir\+\_\+path)
+\begin{DoxyCompactList}\small\item\em This method will go through all the dlls found in the directory and start loading in all the functions found in the dlls. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{struct_dll_data_structure}{Dll\+Data\+Structure}} $\ast$ $>$ \mbox{\hyperlink{class_dll_client_a6cb91834cb17e061ad7f7b7262c6a196}{Get\+Data\+List}} () const
+\begin{DoxyCompactList}\small\item\em This method returns the data structure list of the dll(s) that it found. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is in charge of loading up the dlls and pulling the tests out. 
+
+
+
+Definition at line 21 of file Dll\+Client.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dll_client_a742b6d9001c88f5190de28bc3c521703}\label{class_dll_client_a742b6d9001c88f5190de28bc3c521703}} 
+\index{DllClient@{DllClient}!DllClient@{DllClient}}
+\index{DllClient@{DllClient}!DllClient@{DllClient}}
+\doxysubsubsection{\texorpdfstring{DllClient()}{DllClient()}}
+{\footnotesize\ttfamily Dll\+Client\+::\+Dll\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The default Constructor 
+
+
+
+Definition at line 36 of file Dll\+Client.\+h.
+
+\mbox{\Hypertarget{class_dll_client_a54610cd087bc2a66a628257a4e2e1c93}\label{class_dll_client_a54610cd087bc2a66a628257a4e2e1c93}} 
+\index{DllClient@{DllClient}!````~DllClient@{$\sim$DllClient}}
+\index{````~DllClient@{$\sim$DllClient}!DllClient@{DllClient}}
+\doxysubsubsection{\texorpdfstring{$\sim$DllClient()}{~DllClient()}}
+{\footnotesize\ttfamily Dll\+Client\+::$\sim$\+Dll\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file Dll\+Client.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dll_client_a6cb91834cb17e061ad7f7b7262c6a196}\label{class_dll_client_a6cb91834cb17e061ad7f7b7262c6a196}} 
+\index{DllClient@{DllClient}!GetDataList@{GetDataList}}
+\index{GetDataList@{GetDataList}!DllClient@{DllClient}}
+\doxysubsubsection{\texorpdfstring{GetDataList()}{GetDataList()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{struct_dll_data_structure}{Dll\+Data\+Structure}}$\ast$$>$ Dll\+Client\+::\+Get\+Data\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method returns the data structure list of the dll(s) that it found. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 50 of file Dll\+Client.\+h.
+
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{class_dll_client_ad9c9cf959625fb564aec8e7fd1123a15}\label{class_dll_client_ad9c9cf959625fb564aec8e7fd1123a15}} 
+\index{DllClient@{DllClient}!LoadDll@{LoadDll}}
+\index{LoadDll@{LoadDll}!DllClient@{DllClient}}
+\doxysubsubsection{\texorpdfstring{LoadDll()}{LoadDll()}}
+{\footnotesize\ttfamily void Dll\+Client\+::\+Load\+Dll (\begin{DoxyParamCaption}\item[{const string \&}]{dir\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+This method will go through all the dlls found in the directory and start loading in all the functions found in the dlls. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+\_\+path} & The path to where the dll(s) are located.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file Dll\+Client.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_dll_client_8h}{Dll\+Client.\+h}}\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_dll_client_8cpp}{Dll\+Client.\+cpp}}\end{DoxyCompactItemize}

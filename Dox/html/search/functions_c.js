@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queue_335',['queue',['../classmessaging_1_1_receiver.html#a91b1ab368f342acf6034a06d28888f0c',1,'messaging::Receiver']]]
+  ['postmessage_469',['postMessage',['../classmessaging_1_1_sender.html#ad6d6f6ab413e776ef4d40051e1a57ef5',1,'messaging::Sender']]]
 ];

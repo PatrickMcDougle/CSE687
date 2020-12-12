@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['postmessage_116',['postMessage',['../classmessaging_1_1_sender.html#ad6d6f6ab413e776ef4d40051e1a57ef5',1,'messaging::Sender']]],
-  ['ptr_117',['ptr',['../classmessaging_1_1_socket.html#ae28db32ab945e9ea7b892237602c769d',1,'messaging::Socket']]]
+  ['operator_28_29_164',['operator()',['../classmessaging_1_1_client_handler.html#a5bd0e35edbf31af326419353fd391071',1,'messaging::ClientHandler']]],
+  ['operator_3c_3c_165',['operator&lt;&lt;',['../namespacelogger.html#ab2350f9fde58c59d0f746d1afbd38460',1,'logger']]],
+  ['operator_3d_166',['operator=',['../classqueue_1_1_blocking_queue.html#a94b9c25b4d54c5490b39a1dcf1a77859',1,'queue::BlockingQueue::operator=(BlockingQueue&lt; T &gt; &amp;&amp;bq) noexcept'],['../classqueue_1_1_blocking_queue.html#ac3811c304aaf976b2cf8f8c0a6c8e17a',1,'queue::BlockingQueue::operator=(const BlockingQueue&lt; T &gt; &amp;)=delete'],['../classmessaging_1_1_socket.html#ac41bfacdc88210e560c8782dddf72fe4',1,'messaging::Socket::operator=(const Socket &amp;s)=delete'],['../classmessaging_1_1_socket.html#acc48ad4ab11ca68e1e2fa770644eddb7',1,'messaging::Socket::operator=(Socket &amp;&amp;s)'],['../classmessaging_1_1_socket_connecter.html#aafd0c3415123adafb4d23296f6c5c1c5',1,'messaging::SocketConnecter::operator=(const SocketConnecter &amp;s)=delete'],['../classmessaging_1_1_socket_connecter.html#a5525edae94420feff19daf4a2987eb4d',1,'messaging::SocketConnecter::operator=(SocketConnecter &amp;&amp;s)'],['../classmessaging_1_1_socket_listener.html#a7771a0172198325449fd8034ea0b3acd',1,'messaging::SocketListener::operator=(const SocketListener &amp;s)=delete'],['../classmessaging_1_1_socket_listener.html#abeb044580b28a21cd6124ad4eab86d6c',1,'messaging::SocketListener::operator=(SocketListener &amp;&amp;s) noexcept']]],
+  ['socket_167',['SOCKET',['../classmessaging_1_1_socket.html#a28c4facac75ea7a33c6cd6e9c10d71c5',1,'messaging::Socket']]]
 ];

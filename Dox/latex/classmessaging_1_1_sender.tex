@@ -15,7 +15,7 @@ void \mbox{\hyperlink{classmessaging_1_1_sender_a6f52ff6506505dd53a3f8f789a4002e
 \item 
 void \mbox{\hyperlink{classmessaging_1_1_sender_a76a019b03b6ba7afe8b3a18d2c4ac5fb}{stop}} ()
 \item 
-bool \mbox{\hyperlink{classmessaging_1_1_sender_aae91f9f5fae21019da6b34d970ad046a}{connect}} (\mbox{\hyperlink{classmessaging_1_1_address_ip4}{Address\+Ip4}} ip\+\_\+address)
+bool \mbox{\hyperlink{classmessaging_1_1_sender_a46c0f41bdb66b245b0abafa641225567}{connect}} (\mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$ip\+\_\+address)
 \item 
 void \mbox{\hyperlink{classmessaging_1_1_sender_ad6d6f6ab413e776ef4d40051e1a57ef5}{post\+Message}} (\mbox{\hyperlink{classmessaging_1_1_message}{Message}} message)
 \end{DoxyCompactItemize}
@@ -24,7 +24,7 @@ void \mbox{\hyperlink{classmessaging_1_1_sender_ad6d6f6ab413e776ef4d40051e1a57ef
 \doxysubsection{Detailed Description}
 
 
-Definition at line 21 of file Sender.\+h.
+Definition at line 22 of file Sender.\+h.
 
 
 
@@ -33,7 +33,7 @@ Definition at line 21 of file Sender.\+h.
 \index{messaging::Sender@{messaging::Sender}!Sender@{Sender}}
 \index{Sender@{Sender}!messaging::Sender@{messaging::Sender}}
 \doxysubsubsection{\texorpdfstring{Sender()}{Sender()}}
-{\footnotesize\ttfamily messaging\+::\+Sender\+::\+Sender (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name = {\ttfamily \char`\"{}Sender\char`\"{}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily messaging\+::\+Sender\+::\+Sender (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name = {\ttfamily \char`\"{}Sender\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -47,20 +47,20 @@ Definition at line 3 of file Sender.\+cpp.
 
 
 
-Definition at line 8 of file Sender.\+cpp.
+Definition at line 7 of file Sender.\+cpp.
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classmessaging_1_1_sender_aae91f9f5fae21019da6b34d970ad046a}\label{classmessaging_1_1_sender_aae91f9f5fae21019da6b34d970ad046a}} 
+\mbox{\Hypertarget{classmessaging_1_1_sender_a46c0f41bdb66b245b0abafa641225567}\label{classmessaging_1_1_sender_a46c0f41bdb66b245b0abafa641225567}} 
 \index{messaging::Sender@{messaging::Sender}!connect@{connect}}
 \index{connect@{connect}!messaging::Sender@{messaging::Sender}}
 \doxysubsubsection{\texorpdfstring{connect()}{connect()}}
-{\footnotesize\ttfamily bool messaging\+::\+Sender\+::connect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmessaging_1_1_address_ip4}{Address\+Ip4}}}]{ip\+\_\+address }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool messaging\+::\+Sender\+::connect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmessaging_1_1_i_address_ip}{I\+Address\+Ip}} $\ast$}]{ip\+\_\+address }\end{DoxyParamCaption})}
 
 
 
-Definition at line 60 of file Sender.\+cpp.
+Definition at line 57 of file Sender.\+cpp.
 
 Here is the call graph for this function\+:
 % FIG 0
@@ -72,7 +72,7 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line 66 of file Sender.\+cpp.
+Definition at line 63 of file Sender.\+cpp.
 
 \mbox{\Hypertarget{classmessaging_1_1_sender_a6f52ff6506505dd53a3f8f789a4002ef}\label{classmessaging_1_1_sender_a6f52ff6506505dd53a3f8f789a4002ef}} 
 \index{messaging::Sender@{messaging::Sender}!start@{start}}
@@ -86,6 +86,8 @@ Definition at line 14 of file Sender.\+cpp.
 
 Here is the call graph for this function\+:
 % FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
 \mbox{\Hypertarget{classmessaging_1_1_sender_a76a019b03b6ba7afe8b3a18d2c4ac5fb}\label{classmessaging_1_1_sender_a76a019b03b6ba7afe8b3a18d2c4ac5fb}} 
 \index{messaging::Sender@{messaging::Sender}!stop@{stop}}
 \index{stop@{stop}!messaging::Sender@{messaging::Sender}}
@@ -96,8 +98,6 @@ Here is the call graph for this function\+:
 
 Definition at line 51 of file Sender.\+cpp.
 
-Here is the call graph for this function\+:
-% FIG 2
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CSE687 Group#5 Project: D:/GitHub/CSE687/CSE687_Main_Project/CSE687_Main/ITest.h Source File</title>
+<title>CSE687 Group#5 Project: D:/GitHub/CSE687/CSE687_Main_Project/TestBase/ITest.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,6 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CSE687 Group#5 Project
+   &#160;<span id="projectnumber">HW #4</span>
    </div>
   </td>
  </tr>
@@ -61,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_e0c9d52a8ab80760700742b6d772e6db.html">CSE687_Main_Project</a></li><li class="navelem"><a class="el" href="dir_108eb065ab1a8476e94444aaeb9329d4.html">CSE687_Main</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e0c9d52a8ab80760700742b6d772e6db.html">CSE687_Main_Project</a></li><li class="navelem"><a class="el" href="dir_be80a901764c7acc8fb4a04658cb1d10.html">TestBase</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -96,20 +97,22 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classtest_1_1_i_test.html#a233de36a9999591336533d01e068a5df">   25</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">string</span> <a class="code" href="classtest_1_1_i_test.html#a233de36a9999591336533d01e068a5df">testLogResults</a>() = 0; <span class="comment">// Return Log Details</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classtest_1_1_i_test.html#aa1221063d6ac2deee27236fd201da204">   26</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classtest_1_1_i_test.html">ITest</a>* <a class="code" href="classtest_1_1_i_test.html#aa1221063d6ac2deee27236fd201da204">loadLogger</a>(<a class="code" href="classlogger_1_1_i_logger.html">ILogger</a>* <a class="code" href="namespacelogger.html">logger</a>) = 0; <span class="comment">// Load logger</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classtest_1_1_i_test.html#a2aa3dde65dfe0a8187c514be29eb1428">   27</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classtest_1_1_i_test.html">ITest</a>* <a class="code" href="classtest_1_1_i_test.html#a2aa3dde65dfe0a8187c514be29eb1428">loadMessage</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message) = 0; <span class="comment">// Load message</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    };</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif // !__I_TEST_H__</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classtest_1_1_i_test.html#a9852876019fdf4342fc0d266f9a62fa4">   28</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">string</span> <a class="code" href="classtest_1_1_i_test.html#a9852876019fdf4342fc0d266f9a62fa4">methodName</a>() = 0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    };</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif // !__I_TEST_H__</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclasstest_1_1_i_test_html"><div class="ttname"><a href="classtest_1_1_i_test.html">test::ITest</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_test_8h_source.html#l00020">ITest.h:21</a></div></div>
 <div class="ttc" id="aclasstest_1_1_i_test_html_a233de36a9999591336533d01e068a5df"><div class="ttname"><a href="classtest_1_1_i_test.html#a233de36a9999591336533d01e068a5df">test::ITest::testLogResults</a></div><div class="ttdeci">virtual string testLogResults()=0</div></div>
 <div class="ttc" id="anamespacelogger_html"><div class="ttname"><a href="namespacelogger.html">logger</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_log_decorator_8h_source.html#l00017">ALogDecorator.h:17</a></div></div>
 <div class="ttc" id="aclasslogger_1_1_i_logger_html"><div class="ttname"><a href="classlogger_1_1_i_logger.html">logger::ILogger</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_logger_8h_source.html#l00021">ILogger.h:22</a></div></div>
-<div class="ttc" id="anamespacetest_html"><div class="ttname"><a href="namespacetest.html">test</a></div><div class="ttdef"><b>Definition:</b> <a href="_class_of_tests_8h_source.html#l00015">ClassOfTests.h:15</a></div></div>
+<div class="ttc" id="anamespacetest_html"><div class="ttname"><a href="namespacetest.html">test</a></div><div class="ttdef"><b>Definition:</b> <a href="_simple_tests_8h_source.html#l00017">SimpleTests.h:17</a></div></div>
 <div class="ttc" id="a_i_logger_8h_html"><div class="ttname"><a href="_i_logger_8h.html">ILogger.h</a></div></div>
 <div class="ttc" id="aclasstest_1_1_i_test_html_a2aa3dde65dfe0a8187c514be29eb1428"><div class="ttname"><a href="classtest_1_1_i_test.html#a2aa3dde65dfe0a8187c514be29eb1428">test::ITest::loadMessage</a></div><div class="ttdeci">virtual ITest * loadMessage(const string &amp;message)=0</div></div>
 <div class="ttc" id="aclasstest_1_1_i_test_html_a725b5d04df0cd5ed68958360400c2a00"><div class="ttname"><a href="classtest_1_1_i_test.html#a725b5d04df0cd5ed68958360400c2a00">test::ITest::~ITest</a></div><div class="ttdeci">virtual ~ITest()</div><div class="ttdef"><b>Definition:</b> <a href="_i_test_8h_source.html#l00023">ITest.h:23</a></div></div>
 <div class="ttc" id="aclasstest_1_1_i_test_html_a0bbe875771775775d8907c224a4dc741"><div class="ttname"><a href="classtest_1_1_i_test.html#a0bbe875771775775d8907c224a4dc741">test::ITest::test</a></div><div class="ttdeci">virtual bool test()=0</div></div>
+<div class="ttc" id="aclasstest_1_1_i_test_html_a9852876019fdf4342fc0d266f9a62fa4"><div class="ttname"><a href="classtest_1_1_i_test.html#a9852876019fdf4342fc0d266f9a62fa4">test::ITest::methodName</a></div><div class="ttdeci">virtual string methodName()=0</div></div>
 <div class="ttc" id="aclasstest_1_1_i_test_html_aa1221063d6ac2deee27236fd201da204"><div class="ttname"><a href="classtest_1_1_i_test.html#aa1221063d6ac2deee27236fd201da204">test::ITest::loadLogger</a></div><div class="ttdeci">virtual ITest * loadLogger(ILogger *logger)=0</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

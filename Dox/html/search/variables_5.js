@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wsadata_408',['wsaData',['../classmessaging_1_1_socket.html#a3bcafc61cf54b8d603f57855defc18ea',1,'messaging::Socket']]]
+  ['ptr_560',['ptr',['../classmessaging_1_1_socket.html#ae28db32ab945e9ea7b892237602c769d',1,'messaging::Socket']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ptr_405',['ptr',['../classmessaging_1_1_socket.html#ae28db32ab945e9ea7b892237602c769d',1,'messaging::Socket']]]
+  ['hints_557',['hints',['../classmessaging_1_1_socket.html#afed4d17a010fe9d1575f6b4929a53844',1,'messaging::Socket']]]
 ];

@@ -1,0 +1,158 @@
+\hypertarget{struct_dll_data_structure}{}\doxysection{Dll\+Data\+Structure Struct Reference}
+\label{struct_dll_data_structure}\index{DllDataStructure@{DllDataStructure}}
+
+
+This structure is holding onto information about the D\+LL that was dynamicly read in.  
+
+
+
+
+{\ttfamily \#include $<$Dll\+Data\+Structure.\+h$>$}
+
+
+
+Collaboration diagram for Dll\+Data\+Structure\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_dll_data_structure_a8ee1cc52df3edc3c0d2870a61c459cbd}{Dll\+Data\+Structure}} ()
+\begin{DoxyCompactList}\small\item\em Default Construct. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_dll_data_structure_aadb0064cd452c2aa0cf5898a189f4762}{Dll\+Data\+Structure}} (const \mbox{\hyperlink{struct_dll_data_structure}{Dll\+Data\+Structure}} \&copy)
+\begin{DoxyCompactList}\small\item\em Copy Constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+H\+I\+N\+S\+T\+A\+N\+CE \mbox{\hyperlink{struct_dll_data_structure_ad26964a47426ebaea04cfdac3003db29}{dll\+\_\+instance}} = nullptr
+\begin{DoxyCompactList}\small\item\em a pointer to the dynamic dll. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_dll_data_structure_af395a72751c72463ebf9fc8fcf383998}{number\+\_\+of\+\_\+functions}} = 0
+\begin{DoxyCompactList}\small\item\em Is the number of functions in this dll that needs to be tested. \end{DoxyCompactList}\item 
+string $\ast$ \mbox{\hyperlink{struct_dll_data_structure_a0eeaed17285fec23f9fd5566262bae0f}{function\+\_\+list\+\_\+array}} = nullptr
+\begin{DoxyCompactList}\small\item\em Is an array of all the function names in the dll that need to be tested. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{struct_dll_data_structure_a5606bea7e213877df84f00821377a4b9}{dll\+\_\+path}}
+\begin{DoxyCompactList}\small\item\em Is the path to the dll file. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{struct_dll_data_structure_afa9a6be04d03a6cd69085150b2fce894}{dll\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Is the name of the dll file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This structure is holding onto information about the D\+LL that was dynamicly read in. 
+
+
+
+Definition at line 15 of file Dll\+Data\+Structure.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_dll_data_structure_a8ee1cc52df3edc3c0d2870a61c459cbd}\label{struct_dll_data_structure_a8ee1cc52df3edc3c0d2870a61c459cbd}} 
+\index{DllDataStructure@{DllDataStructure}!DllDataStructure@{DllDataStructure}}
+\index{DllDataStructure@{DllDataStructure}!DllDataStructure@{DllDataStructure}}
+\doxysubsubsection{\texorpdfstring{DllDataStructure()}{DllDataStructure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Dll\+Data\+Structure\+::\+Dll\+Data\+Structure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default Construct. 
+
+
+
+Definition at line 45 of file Dll\+Data\+Structure.\+h.
+
+\mbox{\Hypertarget{struct_dll_data_structure_aadb0064cd452c2aa0cf5898a189f4762}\label{struct_dll_data_structure_aadb0064cd452c2aa0cf5898a189f4762}} 
+\index{DllDataStructure@{DllDataStructure}!DllDataStructure@{DllDataStructure}}
+\index{DllDataStructure@{DllDataStructure}!DllDataStructure@{DllDataStructure}}
+\doxysubsubsection{\texorpdfstring{DllDataStructure()}{DllDataStructure()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Dll\+Data\+Structure\+::\+Dll\+Data\+Structure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_dll_data_structure}{Dll\+Data\+Structure}} \&}]{copy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & The stuct that we want to copy from.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file Dll\+Data\+Structure.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_dll_data_structure_ad26964a47426ebaea04cfdac3003db29}\label{struct_dll_data_structure_ad26964a47426ebaea04cfdac3003db29}} 
+\index{DllDataStructure@{DllDataStructure}!dll\_instance@{dll\_instance}}
+\index{dll\_instance@{dll\_instance}!DllDataStructure@{DllDataStructure}}
+\doxysubsubsection{\texorpdfstring{dll\_instance}{dll\_instance}}
+{\footnotesize\ttfamily H\+I\+N\+S\+T\+A\+N\+CE Dll\+Data\+Structure\+::dll\+\_\+instance = nullptr}
+
+
+
+a pointer to the dynamic dll. 
+
+
+
+Definition at line 20 of file Dll\+Data\+Structure.\+h.
+
+\mbox{\Hypertarget{struct_dll_data_structure_afa9a6be04d03a6cd69085150b2fce894}\label{struct_dll_data_structure_afa9a6be04d03a6cd69085150b2fce894}} 
+\index{DllDataStructure@{DllDataStructure}!dll\_name@{dll\_name}}
+\index{dll\_name@{dll\_name}!DllDataStructure@{DllDataStructure}}
+\doxysubsubsection{\texorpdfstring{dll\_name}{dll\_name}}
+{\footnotesize\ttfamily string Dll\+Data\+Structure\+::dll\+\_\+name}
+
+
+
+Is the name of the dll file. 
+
+
+
+Definition at line 40 of file Dll\+Data\+Structure.\+h.
+
+\mbox{\Hypertarget{struct_dll_data_structure_a5606bea7e213877df84f00821377a4b9}\label{struct_dll_data_structure_a5606bea7e213877df84f00821377a4b9}} 
+\index{DllDataStructure@{DllDataStructure}!dll\_path@{dll\_path}}
+\index{dll\_path@{dll\_path}!DllDataStructure@{DllDataStructure}}
+\doxysubsubsection{\texorpdfstring{dll\_path}{dll\_path}}
+{\footnotesize\ttfamily string Dll\+Data\+Structure\+::dll\+\_\+path}
+
+
+
+Is the path to the dll file. 
+
+
+
+Definition at line 35 of file Dll\+Data\+Structure.\+h.
+
+\mbox{\Hypertarget{struct_dll_data_structure_a0eeaed17285fec23f9fd5566262bae0f}\label{struct_dll_data_structure_a0eeaed17285fec23f9fd5566262bae0f}} 
+\index{DllDataStructure@{DllDataStructure}!function\_list\_array@{function\_list\_array}}
+\index{function\_list\_array@{function\_list\_array}!DllDataStructure@{DllDataStructure}}
+\doxysubsubsection{\texorpdfstring{function\_list\_array}{function\_list\_array}}
+{\footnotesize\ttfamily string$\ast$ Dll\+Data\+Structure\+::function\+\_\+list\+\_\+array = nullptr}
+
+
+
+Is an array of all the function names in the dll that need to be tested. 
+
+
+
+Definition at line 30 of file Dll\+Data\+Structure.\+h.
+
+\mbox{\Hypertarget{struct_dll_data_structure_af395a72751c72463ebf9fc8fcf383998}\label{struct_dll_data_structure_af395a72751c72463ebf9fc8fcf383998}} 
+\index{DllDataStructure@{DllDataStructure}!number\_of\_functions@{number\_of\_functions}}
+\index{number\_of\_functions@{number\_of\_functions}!DllDataStructure@{DllDataStructure}}
+\doxysubsubsection{\texorpdfstring{number\_of\_functions}{number\_of\_functions}}
+{\footnotesize\ttfamily size\+\_\+t Dll\+Data\+Structure\+::number\+\_\+of\+\_\+functions = 0}
+
+
+
+Is the number of functions in this dll that needs to be tested. 
+
+
+
+Definition at line 25 of file Dll\+Data\+Structure.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Hub/\+C\+S\+E687/\+C\+S\+E687\+\_\+\+Main\+\_\+\+Project/\+C\+S\+E687\+\_\+\+Main/\mbox{\hyperlink{_dll_data_structure_8h}{Dll\+Data\+Structure.\+h}}\end{DoxyCompactItemize}

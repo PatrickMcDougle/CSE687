@@ -1,0 +1,18 @@
+digraph "D:/GitHub/CSE687/CSE687_Main_Project/ClassOfTests" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_e0c9d52a8ab80760700742b6d772e6db {
+    graph [ bgcolor="#ddddee", pencolor="black", label="CSE687_Main_Project" fontname="Helvetica", fontsize="10", URL="dir_e0c9d52a8ab80760700742b6d772e6db.html"]
+  subgraph clusterdir_a484fc96708f4fe039b1db5b67722df0 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_a484fc96708f4fe039b1db5b67722df0.html"];
+    dir_a484fc96708f4fe039b1db5b67722df0 [shape=plaintext label="ClassOfTests"];
+    dir_8f6de5d34cde2d46d40a332b41fa79dc [shape=box label="x64" color="red" fillcolor="white" style="filled" URL="dir_8f6de5d34cde2d46d40a332b41fa79dc.html"];
+  }
+  }
+  dir_be80a901764c7acc8fb4a04658cb1d10 [shape=box label="TestBase" fillcolor="white" style="filled" color="red" URL="dir_be80a901764c7acc8fb4a04658cb1d10.html"];
+  dir_5b19f245b9b8b0def5eedd6642d045c2 [shape=box label="Logger" fillcolor="white" style="filled" color="red" URL="dir_5b19f245b9b8b0def5eedd6642d045c2.html"];
+  dir_be80a901764c7acc8fb4a04658cb1d10->dir_5b19f245b9b8b0def5eedd6642d045c2 [headlabel="2", labeldistance=1.5 headhref="dir_000014_000011.html"];
+  dir_a484fc96708f4fe039b1db5b67722df0->dir_be80a901764c7acc8fb4a04658cb1d10 [headlabel="2", labeldistance=1.5 headhref="dir_000001_000014.html"];
+  dir_a484fc96708f4fe039b1db5b67722df0->dir_5b19f245b9b8b0def5eedd6642d045c2 [headlabel="2", labeldistance=1.5 headhref="dir_000001_000011.html"];
+}

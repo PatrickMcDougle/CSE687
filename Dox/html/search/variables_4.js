@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['socket_5f_407',['socket_',['../classmessaging_1_1_socket.html#ae8f3f1fe24c5915a30be0c5779ac9468',1,'messaging::Socket']]]
+  ['number_5fof_5ffunctions_559',['number_of_functions',['../struct_dll_data_structure.html#af395a72751c72463ebf9fc8fcf383998',1,'DllDataStructure']]]
 ];
