@@ -13,11 +13,6 @@ void TestHarnessDll::Run()
 	// class is destroyed.
 	SocketSystem socket_system_setup;
 
-	// DLL stuff.
-	HINSTANCE hDLL = nullptr;
-	funcListOfFunctions list_of_functions = nullptr;
-	funcNumberOfTests number_of_tests = nullptr;
-
 	DllClient dll_client;
 
 	dll_client.LoadDll(dll_directory_location);

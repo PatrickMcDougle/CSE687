@@ -41,8 +41,6 @@ using threading::MotherController;
 
 // type definitions for function pointers.
 typedef bool (*funcTestbool)(void);
-typedef string* (*funcListOfFunctions)(void);
-typedef size_t(*funcNumberOfTests)(void);
 
 /// <summary>
 /// This class is the main class that will setup everything that will
